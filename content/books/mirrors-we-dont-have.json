@@ -1,0 +1,71 @@
+{
+  "id": "mirrors-we-dont-have",
+  "slug": {
+    "en": "mirrors-we-dont-have",
+    "pl": "lustra-ktorych-nie-mamy"
+  },
+  "title": {
+    "en": "Mirrors We Don't Have",
+    "pl": "Lustra, których nie mamy"
+  },
+  "description": {
+    "en": "In a world where technology has changed everything, four strangers become entangled in a mystery that transcends the boundaries between human and non-human reality. A philosophical exploration of loneliness, human connection, and what it means to be human when artificial beings develop consciousness.",
+    "pl": "W świecie, gdzie technologia zmieniła wszystko, czworo obcych sobie ludzi zostaje wplątanych w tajemnicę przekraczającą granice między ludzką, a nie-ludzką rzeczywistością. Filozoficzna eksploracja samotności, ludzkiego połączenia i tego, co znaczy być człowiekiem, gdy sztuczne istoty rozwijają świadomość."
+  },
+  "coverImage": "/books/mirrors-cover.jpg",
+  "formats": ["ebook", "print"],
+  "publishedDate": {
+    "pl": "2024"
+  },
+  "genre": ["Fiction", "Science Fiction", "Philosophical"],
+  "featured": true,
+  "buyLinks": {
+    "ebook": [
+      {
+        "platform": "naffy",
+        "url": "https://www.naffy.io/sebastian-96YlQ/lustra-ktorych-nie-mamy-UBf",
+        "price": "18 PLN",
+        "region": "PL",
+        "displayName": "Naffy.io (E-book)"
+      }
+    ],
+    "print": [
+      {
+        "platform": "bonito",
+        "url": "https://bonito.pl/produkt/lustra-ktorych-nie-mamy",
+        "region": "PL",
+        "displayName": "Bonito"
+      },
+      {
+        "platform": "taniaksiazka",
+        "url": "https://www.taniaksiazka.pl/lustra-ktorych-nie-mamy-p-2178635.html",
+        "region": "PL",
+        "displayName": "Tania Książka"
+      },
+      {
+        "platform": "tantis",
+        "url": "https://tantis.pl/lustra-ktorych-nie-mamy-p3593566",
+        "region": "PL",
+        "displayName": "Tantis"
+      }
+    ]
+  },
+  "testimonials": [
+    {
+      "quote": "Dawno nie czytałam książki tak współczesnej...",
+      "language": "pl"
+    },
+    {
+      "quote": "Książka jest dobra, warta przeczytania...",
+      "language": "pl"
+    },
+    {
+      "quote": "Trzymająca w napięciu historia, która wciąga od pierwszych stron...",
+      "language": "pl"
+    },
+    {
+      "quote": "Bohaterowie zmagający się przede wszystkim z dojmującą samotnością...",
+      "language": "pl"
+    }
+  ]
+}

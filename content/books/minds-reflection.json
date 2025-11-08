@@ -1,0 +1,37 @@
+{
+  "id": "minds-reflection",
+  "slug": {
+    "en": "minds-reflection",
+    "pl": "odbicie-umyslu"
+  },
+  "title": {
+    "en": "Mind's Reflection",
+    "pl": "Odbicie umysłu"
+  },
+  "subtitle": {
+    "en": "An Essay on Human-AI Collaboration",
+    "pl": "Esej o współpracy człowieka i AI"
+  },
+  "description": {
+    "en": "A short essay exploring creative collaboration between humans and artificial intelligence through translating William Wordsworth's 'Ode on Intimations of Immortality.' An insightful look into the future of creative partnership.",
+    "pl": "Krótki esej badający kreatywną współpracę między ludźmi a sztuczną inteligencją poprzez tłumaczenie 'Ody na przeczucia nieśmiertelności' Williama Wordswortha. Wnikliwe spojrzenie na przyszłość kreatywnej współpracy."
+  },
+  "coverImage": "/books/minds-reflection-cover.jpg",
+  "formats": ["ebook"],
+  "publishedDate": {
+    "pl": "2024"
+  },
+  "genre": ["Essay", "AI", "Philosophy", "Poetry"],
+  "buyLinks": {
+    "ebook": [
+      {
+        "platform": "naffy",
+        "url": "https://www.naffy.io/sebastian-96YlQ/odbicie-umyslu-ebook-o-wspolpracy-czlowieka-i-ai-fDI",
+        "region": "PL",
+        "displayName": "Naffy.io (Free Download)"
+      }
+    ],
+    "print": []
+  },
+  "sampleUrl": "https://www.naffy.io/sebastian-96YlQ/odbicie-umyslu-ebook-o-wspolpracy-czlowieka-i-ai-fDI"
+}

@@ -1,0 +1,60 @@
+{
+  "nav": {
+    "home": "Strona główna",
+    "books": "Książki",
+    "about": "O autorze",
+    "contact": "Kontakt"
+  },
+  "home": {
+    "hero": {
+      "title": "Sebastian Proba",
+      "subtitle": "Autor fikcji filozoficznej eksplorującej granice między ludzką a sztuczną świadomością",
+      "cta": {
+        "latestBook": "Najnowsza książka",
+        "allBooks": "Zobacz wszystkie książki"
+      }
+    },
+    "featuredBooks": {
+      "title": "Wybrane dzieła",
+      "viewAll": "Zobacz wszystkie książki"
+    }
+  },
+  "books": {
+    "title": "Książki",
+    "subtitle": "Poznaj moje opublikowane dzieła",
+    "formats": {
+      "ebook": "E-book",
+      "print": "Druk",
+      "audiobook": "Audiobook"
+    },
+    "buyNow": "Kup teraz",
+    "readSample": "Przeczytaj fragment",
+    "availableFormats": "Dostępne formaty"
+  },
+  "about": {
+    "title": "O autorze",
+    "contact": "Skontaktuj się"
+  },
+  "contact": {
+    "title": "Kontakt",
+    "subtitle": "Skontaktuj się ze mną",
+    "form": {
+      "name": "Imię",
+      "email": "Email",
+      "message": "Wiadomość",
+      "submit": "Wyślij wiadomość",
+      "sending": "Wysyłanie...",
+      "success": "Wiadomość została wysłana!",
+      "error": "Nie udało się wysłać wiadomości. Spróbuj ponownie."
+    }
+  },
+  "footer": {
+    "copyright": "© 2025 Sebastian Proba. Wszelkie prawa zastrzeżone.",
+    "social": "Śledź mnie"
+  },
+  "common": {
+    "readMore": "Czytaj więcej",
+    "learnMore": "Dowiedz się więcej",
+    "backToHome": "Powrót do strony głównej"
+  }
+}

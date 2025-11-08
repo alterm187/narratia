@@ -1,0 +1,60 @@
+{
+  "nav": {
+    "home": "Home",
+    "books": "Books",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "home": {
+    "hero": {
+      "title": "Sebastian Proba",
+      "subtitle": "Author of philosophical fiction exploring the boundaries between human and artificial consciousness",
+      "cta": {
+        "latestBook": "Latest Book",
+        "allBooks": "View All Books"
+      }
+    },
+    "featuredBooks": {
+      "title": "Featured Works",
+      "viewAll": "View All Books"
+    }
+  },
+  "books": {
+    "title": "Books",
+    "subtitle": "Explore my published works",
+    "formats": {
+      "ebook": "E-book",
+      "print": "Print",
+      "audiobook": "Audiobook"
+    },
+    "buyNow": "Buy Now",
+    "readSample": "Read Sample",
+    "availableFormats": "Available Formats"
+  },
+  "about": {
+    "title": "About the Author",
+    "contact": "Get in Touch"
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Get in touch with me",
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "message": "Message",
+      "submit": "Send Message",
+      "sending": "Sending...",
+      "success": "Message sent successfully!",
+      "error": "Failed to send message. Please try again."
+    }
+  },
+  "footer": {
+    "copyright": "© 2025 Sebastian Proba. All rights reserved.",
+    "social": "Follow me"
+  },
+  "common": {
+    "readMore": "Read More",
+    "learnMore": "Learn More",
+    "backToHome": "Back to Home"
+  }
+}
