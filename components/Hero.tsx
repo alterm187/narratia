@@ -9,15 +9,24 @@ interface HeroProps {
 export default function Hero({ dict, lang }: HeroProps) {
   return (
     <section className="relative overflow-hidden bg-[#191919] py-20 sm:py-32">
-      <div className="container mx-auto max-w-7xl px-6 lg:px-8">
+      {/* Background Image */}
+      <div className="absolute inset-0 opacity-30">
+        <img
+          src="/books/hero_background1.png"
+          alt=""
+          className="w-full h-full object-cover object-right"
+        />
+      </div>
+
+      <div className="container relative z-10 mx-auto max-w-7xl px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Text Content - Left Side */}
           <div className="text-left">
-            <div className="decorative-text text-[#ffbd59] text-xl mb-4">
+            <div className="decorative-text text-[#ffbd59] text-2xl mb-4">
               Narratia
             </div>
 
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white leading-tight mb-6">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
               {dict.home.hero.title}
             </h1>
 
@@ -42,13 +51,14 @@ export default function Hero({ dict, lang }: HeroProps) {
             </div>
           </div>
 
-          {/* Image Placeholder - Right Side */}
+          {/* Author Image - Right Side */}
           <div className="relative hidden lg:block">
-            <div className="aspect-[3/4] bg-gradient-to-br from-[#667c8b] to-[#9aadb6] rounded-lg shadow-2xl">
-              {/* This is where a hero image or book cover collage would go */}
-              <div className="flex items-center justify-center h-full">
-                <span className="text-[#f1ede9] text-9xl font-bold opacity-20">N</span>
-              </div>
+            <div className="aspect-[3/4] rounded-lg overflow-hidden">
+              <img
+                src="/author/author.png"
+                alt="Sebastian Proba"
+                className="w-full h-full object-cover object-center"
+              />
             </div>
           </div>
         </div>

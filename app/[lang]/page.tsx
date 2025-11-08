@@ -56,12 +56,12 @@ export default async function HomePage({ params }: PageProps) {
                 >
                   {/* Book Image */}
                   <div className={index % 2 === 1 ? 'lg:col-start-2' : ''}>
-                    <div className="aspect-[2/3] bg-gradient-to-br from-[#cbc5bd] to-[#9aadb6] shadow-2xl">
+                    <div className="aspect-[2/3] bg-gradient-to-br from-[#cbc5bd] to-[#9aadb6] shadow-2xl max-w-sm mx-auto">
                       {book.coverImage ? (
                         <img
                           src={book.coverImage}
                           alt={book.title[lang]}
-                          className="w-full h-full object-cover"
+                          className="w-full h-full object-contain"
                         />
                       ) : (
                         <div className="flex items-center justify-center h-full">

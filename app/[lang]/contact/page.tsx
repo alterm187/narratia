@@ -30,41 +30,42 @@ export default async function ContactPage({ params }: PageProps) {
     <>
       <Header dict={dict} lang={lang} />
 
-      <main className="min-h-screen bg-white">
-        <div className="border-b bg-zinc-50 py-16">
-          <div className="container mx-auto max-w-4xl px-4">
-            <h1 className="text-4xl font-bold tracking-tight text-zinc-900 sm:text-5xl">
+      <main className="min-h-screen bg-[#f1ede9]">
+        <div className="py-20">
+          <div className="container mx-auto max-w-4xl px-6">
+            <h1 className="text-4xl sm:text-5xl font-bold text-[#2a332a] mb-4">
               {dict.contact.title}
             </h1>
-            <p className="mt-4 text-lg text-zinc-600">{dict.contact.subtitle}</p>
+            <div className="w-20 h-1 bg-[#ffbd59] mb-4" />
+            <p className="text-xl text-[#667c8b] font-light">{dict.contact.subtitle}</p>
           </div>
         </div>
 
-        <div className="py-16">
-          <div className="container mx-auto max-w-2xl px-4">
+        <div className="pb-20">
+          <div className="container mx-auto max-w-2xl px-6">
             <ContactForm dict={dict} />
 
-            <div className="mt-12 border-t pt-12">
-              <h2 className="text-lg font-semibold text-zinc-900">
+            <div className="mt-12 pt-12 border-t border-[#cbc5bd]">
+              <h2 className="text-2xl font-bold text-[#2a332a] mb-4">
                 {lang === 'pl' ? 'Inne sposoby kontaktu' : 'Other ways to reach me'}
               </h2>
-              <div className="mt-4 space-y-2">
-                <p className="text-zinc-600">
-                  <strong>Email:</strong>{' '}
+              <div className="space-y-3">
+                <p className="text-[#2a332a] font-light">
+                  <strong className="font-semibold">Email:</strong>{' '}
                   <a
                     href="mailto:sebastian.narratia@gmail.com"
-                    className="text-zinc-900 hover:underline"
+                    className="text-[#191919] hover:text-[#ffbd59] transition-colors"
                   >
                     sebastian.narratia@gmail.com
                   </a>
                 </p>
-                <p className="text-zinc-600">
-                  <strong>Facebook:</strong>{' '}
+                <p className="text-[#2a332a] font-light">
+                  <strong className="font-semibold">Facebook:</strong>{' '}
                   <a
                     href="https://www.facebook.com/profile.php?id=61571652627363"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-zinc-900 hover:underline"
+                    className="text-[#191919] hover:text-[#ffbd59] transition-colors"
                   >
                     Sebastian Proba - Narratia
                   </a>

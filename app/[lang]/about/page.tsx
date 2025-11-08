@@ -56,78 +56,89 @@ export default async function AboutPage({ params }: PageProps) {
 
       <Header dict={dict} lang={lang} />
 
-      <main className="min-h-screen bg-white">
-        <div className="border-b bg-zinc-50 py-16">
-          <div className="container mx-auto max-w-4xl px-4">
-            <h1 className="text-4xl font-bold tracking-tight text-zinc-900 sm:text-5xl">
+      <main className="min-h-screen bg-[#f1ede9]">
+        <div className="py-20">
+          <div className="container mx-auto max-w-6xl px-6">
+            <h1 className="text-4xl sm:text-5xl font-bold text-[#2a332a] mb-4">
               {dict.about.title}
             </h1>
-          </div>
-        </div>
+            <div className="w-20 h-1 bg-[#ffbd59] mb-12" />
 
-        <div className="py-16">
-          <div className="container mx-auto max-w-4xl px-4">
-            <div className="prose prose-zinc max-w-none">
-              <h2 className="text-2xl font-semibold text-zinc-900">
-                Sebastian Proba
-              </h2>
-
-              <p className="mt-6 text-lg leading-8 text-zinc-600">
-                {bio.question}
-              </p>
-
-              {bio.content.map((paragraph, index) => (
-                <p key={index} className="mt-4 text-lg leading-8 text-zinc-600">
-                  {paragraph}
-                </p>
-              ))}
-
-              <div className="mt-12">
-                <h3 className="text-xl font-semibold text-zinc-900">
-                  {dict.about.contact}
-                </h3>
-                <div className="mt-4 space-y-2">
-                  <p className="text-zinc-600">
-                    <strong>Email:</strong>{' '}
-                    <a
-                      href="mailto:sebastian.narratia@gmail.com"
-                      className="text-zinc-900 hover:underline"
-                    >
-                      sebastian.narratia@gmail.com
-                    </a>
-                  </p>
-                  <p className="text-zinc-600">
-                    <strong>Facebook:</strong>{' '}
-                    <a
-                      href="https://www.facebook.com/profile.php?id=61571652627363"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-zinc-900 hover:underline"
-                    >
-                      Sebastian Proba - Narratia
-                    </a>
-                  </p>
+            <div className="grid lg:grid-cols-[300px_1fr] gap-12 items-start">
+              {/* Author Photo */}
+              <div className="relative">
+                <div className="aspect-square rounded-lg shadow-xl overflow-hidden max-w-[300px] mx-auto lg:mx-0">
+                  <img
+                    src="/books/Seba_Narratia.png"
+                    alt="Sebastian Proba"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
               </div>
 
-              <div className="mt-12 rounded-lg bg-zinc-50 p-6">
-                <h3 className="text-xl font-semibold text-zinc-900">
-                  {lang === 'pl' ? 'Opublikowane dzieła' : 'Published Works'}
-                </h3>
-                <ul className="mt-4 space-y-2 text-zinc-600">
-                  <li>
-                    {lang === 'pl'
-                      ? 'Lustra, których nie mamy'
-                      : 'Mirrors We Don\'t Have'}{' '}
-                    (2024)
-                  </li>
-                  <li>
-                    {lang === 'pl' ? 'Łaska i kij' : 'The Stick and the Carrot'} (2024)
-                  </li>
-                  <li>
-                    {lang === 'pl' ? 'Odbicie umysłu' : 'Mind\'s Reflection'} (2024)
-                  </li>
-                </ul>
+              {/* Bio Content */}
+              <div>
+                <h2 className="text-3xl font-bold text-[#2a332a] mb-6">
+                  Sebastian Proba
+                </h2>
+
+                <p className="text-xl font-light italic text-[#667c8b] mb-6">
+                  {bio.question}
+                </p>
+
+                {bio.content.map((paragraph, index) => (
+                  <p key={index} className="mt-4 text-lg text-[#2a332a] leading-relaxed font-light">
+                    {paragraph}
+                  </p>
+                ))}
+
+                <div className="mt-12">
+                  <h3 className="text-2xl font-bold text-[#2a332a] mb-4">
+                    {dict.about.contact}
+                  </h3>
+                  <div className="space-y-3">
+                    <p className="text-[#2a332a] font-light">
+                      <strong className="font-semibold">Email:</strong>{' '}
+                      <a
+                        href="mailto:sebastian.narratia@gmail.com"
+                        className="text-[#191919] hover:text-[#ffbd59] transition-colors"
+                      >
+                        sebastian.narratia@gmail.com
+                      </a>
+                    </p>
+                    <p className="text-[#2a332a] font-light">
+                      <strong className="font-semibold">Facebook:</strong>{' '}
+                      <a
+                        href="https://www.facebook.com/profile.php?id=61571652627363"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-[#191919] hover:text-[#ffbd59] transition-colors"
+                      >
+                        Sebastian Proba - Narratia
+                      </a>
+                    </p>
+                  </div>
+                </div>
+
+                <div className="mt-12 bg-white p-6 shadow-sm">
+                  <h3 className="text-2xl font-bold text-[#2a332a] mb-4">
+                    {lang === 'pl' ? 'Opublikowane dzieła' : 'Published Works'}
+                  </h3>
+                  <ul className="space-y-2 text-[#2a332a] font-light">
+                    <li>
+                      {lang === 'pl'
+                        ? 'Lustra, których nie mamy'
+                        : 'Mirrors We Don\'t Have'}{' '}
+                      (2024)
+                    </li>
+                    <li>
+                      {lang === 'pl' ? 'Łaska i kij' : 'The Stick and the Carrot'} (2024)
+                    </li>
+                    <li>
+                      {lang === 'pl' ? 'Odbicie umysłu' : 'Mind\'s Reflection'} (2024)
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
           </div>

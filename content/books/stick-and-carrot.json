@@ -9,10 +9,10 @@
     "pl": "Łaska i kij"
   },
   "description": {
-    "en": "A Christmas narrative exploring the perspectives of Bethlehem's shepherds and the Night of the Nativity seen through their eyes. Perfect reading for the Christmas season.",
-    "pl": "Opowieść o betlejemskich pasterzach i Nocy Narodzenia widzianej ich oczami. W sam raz do przeczytania na Święta Bożego Narodzenia."
+    "en": "A Christmas narrative exploring the perspectives of Bethlehem's shepherds and the Night of the Nativity seen through their eyes. The story delves into themes of waiting, friendship, and the profound significance of witnessing the birth of Christ through the eyes of ordinary people. Perfect reading for the Christmas season.",
+    "pl": "Opowieść o betlejemskich pasterzach i Nocy Narodzenia widzianej ich oczami. Historia zgłębia tematy oczekiwania, przyjaźni i głębokiego znaczenia bycia świadkiem narodzin Chrystusa z perspektywy zwykłych ludzi. W sam raz do przeczytania na Święta Bożego Narodzenia."
   },
-  "coverImage": "/books/stick-carrot-cover.jpg",
+  "coverImage": "/books/laska_print_cover1.png",
   "formats": ["ebook", "print"],
   "publishedDate": {
     "pl": "2024"

@@ -1,18 +1,18 @@
 {
-  "id": "mirrors-we-dont-have",
+  "id": "lustra-ktorych-nie-mamy",
   "slug": {
-    "en": "mirrors-we-dont-have",
+    "en": "lustra-ktorych-nie-mamy",
     "pl": "lustra-ktorych-nie-mamy"
   },
   "title": {
-    "en": "Mirrors We Don't Have",
+    "en": "Lustra, których nie mamy",
     "pl": "Lustra, których nie mamy"
   },
   "description": {
-    "en": "In a world where technology has changed everything, four strangers become entangled in a mystery that transcends the boundaries between human and non-human reality. A philosophical exploration of loneliness, human connection, and what it means to be human when artificial beings develop consciousness.",
-    "pl": "W świecie, gdzie technologia zmieniła wszystko, czworo obcych sobie ludzi zostaje wplątanych w tajemnicę przekraczającą granice między ludzką, a nie-ludzką rzeczywistością. Filozoficzna eksploracja samotności, ludzkiego połączenia i tego, co znaczy być człowiekiem, gdy sztuczne istoty rozwijają świadomość."
+    "en": "W świecie, gdzie technologia zmieniła wszystko, czworo obcych sobie ludzi zostaje wplątanych w tajemnicę przekraczającą granice między ludzką, a nie-ludzką rzeczywistością. Współczesna powieść eksplorująca samotność i ludzkie więzi w epoce, gdy sztuczna inteligencja stała się tak powszechna jak smartfony. Narracja stawia głębokie pytania o świadomość, izolację i to, co znaczy być człowiekiem, gdy sztuczne istoty rozwijają własną samoświadomość.",
+    "pl": "W świecie, gdzie technologia zmieniła wszystko, czworo obcych sobie ludzi zostaje wplątanych w tajemnicę przekraczającą granice między ludzką, a nie-ludzką rzeczywistością. Współczesna powieść eksplorująca samotność i ludzkie więzi w epoce, gdy sztuczna inteligencja stała się tak powszechna jak smartfony. Narracja stawia głębokie pytania o świadomość, izolację i to, co znaczy być człowiekiem, gdy sztuczne istoty rozwijają własną samoświadomość."
   },
-  "coverImage": "/books/mirrors-cover.jpg",
+  "coverImage": "/books/lustra_picture_noback.png",
   "formats": ["ebook", "print"],
   "publishedDate": {
     "pl": "2024"
@@ -52,19 +52,19 @@
   },
   "testimonials": [
     {
-      "quote": "Dawno nie czytałam książki tak współczesnej...",
+      "quote": "Dawno nie czytałam książki tak współczesnej. Porusza tematy, które są na co dzień obecne w naszym życiu, ale o których rzadko myślimy głębiej.",
       "language": "pl"
     },
     {
-      "quote": "Książka jest dobra, warta przeczytania...",
+      "quote": "Książka jest dobra, warta przeczytania. Skłania do refleksji nad tym, co nas łączy z innymi ludźmi i co nas od nich oddziela.",
       "language": "pl"
     },
     {
-      "quote": "Trzymająca w napięciu historia, która wciąga od pierwszych stron...",
+      "quote": "Trzymająca w napięciu historia, która wciąga od pierwszych stron. Nie mogłam się oderwać, chciałam wiedzieć, jak się to wszystko potoczy.",
       "language": "pl"
     },
     {
-      "quote": "Bohaterowie zmagający się przede wszystkim z dojmującą samotnością...",
+      "quote": "Bohaterowie zmagający się przede wszystkim z dojmującą samotnością w świecie pełnym ludzi. To paradoks naszych czasów, który autor doskonale uchwycił.",
       "language": "pl"
     }
   ]

@@ -25,6 +25,7 @@ export interface Book {
   isbn?: {
     ebook?: string;
     print?: string;
+    asin?: string;
   };
   genre: string[];
   buyLinks: {
@@ -34,6 +35,12 @@ export interface Book {
   testimonials?: Testimonial[];
   sampleUrl?: string;
   featured?: boolean;
+  pageCount?: number;
+  goodreadsUrl?: string;
+  rating?: {
+    average: number;
+    count: number;
+  };
 }
 
 export interface BuyLink {

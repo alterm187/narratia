@@ -1,0 +1,49 @@
+{
+  "id": "mirrors-we-dont-have-en",
+  "slug": {
+    "en": "mirrors-we-dont-have",
+    "pl": "mirrors-we-dont-have"
+  },
+  "title": {
+    "en": "Mirrors We Don't Have",
+    "pl": "Mirrors We Don't Have"
+  },
+  "description": {
+    "en": "Four strangers. One mystery that defies reality itself.\n\nIn a world transformed by technology, they find themselves drawn together by forces they don't understand—forces that blur the line between human consciousness and something else entirely. As isolation deepens and connection becomes a memory, they must ask: What kind of mirrors do we need to see ourselves? Can an artificial entity reflect our humanity back to us?\n\n\"Mirrors We Don't Have\" is a thought-provoking psychological science fiction novel about loneliness, connection, and the search for meaning in a world where we may no longer recognize what it means to be human.",
+    "pl": "Four strangers. One mystery that defies reality itself.\n\nIn a world transformed by technology, they find themselves drawn together by forces they don't understand—forces that blur the line between human consciousness and something else entirely. As isolation deepens and connection becomes a memory, they must ask: What kind of mirrors do we need to see ourselves? Can an artificial entity reflect our humanity back to us?\n\n\"Mirrors We Don't Have\" is a thought-provoking psychological science fiction novel about loneliness, connection, and the search for meaning in a world where we may no longer recognize what it means to be human."
+  },
+  "coverImage": "/books/Mirrors - ebook cover.png",
+  "formats": ["ebook"],
+  "publishedDate": {
+    "en": "2025-03-12"
+  },
+  "genre": ["Fiction", "Science Fiction", "Psychological", "AI Ethics"],
+  "featured": true,
+  "isbn": {
+    "asin": "B0F1BXRRX9"
+  },
+  "pageCount": 296,
+  "buyLinks": {
+    "ebook": [
+      {
+        "platform": "amazon",
+        "url": "https://www.amazon.com/dp/B0F1BXRRX9",
+        "region": "global",
+        "displayName": "Amazon Kindle"
+      }
+    ],
+    "print": []
+  },
+  "testimonials": [
+    {
+      "quote": "Well written with a thought provoking concept. This is high-concept science fiction that requires intellectual engagement. Recommended for fans of works like Speak and We Are Legion.",
+      "language": "en",
+      "source": "Goodreads Reader"
+    }
+  ],
+  "goodreadsUrl": "https://www.goodreads.com/book/show/229076478-mirrors-we-don-t-have",
+  "rating": {
+    "average": 5.0,
+    "count": 3
+  }
+}

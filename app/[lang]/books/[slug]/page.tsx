@@ -64,23 +64,29 @@ export default async function BookPage({ params }: PageProps) {
 
       <Header dict={dict} lang={lang} />
 
-      <main className="min-h-screen bg-white">
-        <div className="container mx-auto max-w-6xl px-4 py-16">
-          <div className="grid gap-12 lg:grid-cols-2">
+      <main className="min-h-screen bg-[#f1ede9] relative">
+        {/* Subtle background image */}
+        <div
+          className="absolute inset-0 bg-cover bg-center opacity-5 pointer-events-none"
+          style={{ backgroundImage: 'url(/books/hero_background2.png)' }}
+        />
+
+        <div className="container mx-auto max-w-6xl px-6 py-20 relative z-10">
+          <div className="grid gap-12 lg:grid-cols-[400px_1fr]">
             {/* Book cover */}
-            <div className="relative aspect-[2/3] overflow-hidden rounded-lg bg-zinc-100">
+            <div className="relative aspect-[2/3] overflow-hidden shadow-2xl bg-white max-w-[400px] mx-auto lg:mx-0">
               {book.coverImage ? (
                 <Image
                   src={book.coverImage}
                   alt={book.title[lang]}
                   fill
-                  className="object-cover"
+                  className="object-contain"
                   priority
-                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  sizes="(max-width: 1024px) 80vw, 400px"
                 />
               ) : (
-                <div className="flex h-full items-center justify-center bg-gradient-to-br from-zinc-100 to-zinc-200">
-                  <span className="text-9xl font-bold text-zinc-400">
+                <div className="flex h-full items-center justify-center bg-gradient-to-br from-[#cbc5bd] to-[#9aadb6]">
+                  <span className="text-9xl font-bold text-[#2a332a] opacity-20">
                     {book.title[lang].charAt(0)}
                   </span>
                 </div>
@@ -89,26 +95,26 @@ export default async function BookPage({ params }: PageProps) {
 
             {/* Book details */}
             <div className="flex flex-col">
-              <div className="mb-4 flex flex-wrap gap-2">
+              <div className="mb-6 flex flex-wrap gap-3">
                 {book.formats.map((format) => (
                   <span
                     key={format}
-                    className="inline-flex items-center rounded-full bg-zinc-100 px-3 py-1 text-sm font-medium text-zinc-600"
+                    className="px-4 py-2 bg-white text-[#2a332a] text-sm font-medium shadow-sm"
                   >
                     {dict.books.formats[format]}
                   </span>
                 ))}
               </div>
 
-              <h1 className="text-4xl font-bold tracking-tight text-zinc-900 sm:text-5xl">
+              <h1 className="text-4xl font-bold text-[#2a332a] sm:text-5xl">
                 {book.title[lang]}
               </h1>
 
               {book.subtitle?.[lang] && (
-                <p className="mt-2 text-xl text-zinc-600">{book.subtitle[lang]}</p>
+                <p className="mt-4 text-xl text-[#667c8b] font-light italic">{book.subtitle[lang]}</p>
               )}
 
-              <p className="mt-6 text-lg leading-8 text-zinc-600">
+              <p className="mt-6 text-lg leading-relaxed text-[#2a332a] font-light">
                 {book.description[lang]}
               </p>
 
@@ -116,7 +122,7 @@ export default async function BookPage({ params }: PageProps) {
               <div className="mt-8 space-y-6">
                 {ebookLinks.length > 0 && (
                   <div>
-                    <h3 className="mb-3 text-sm font-semibold text-zinc-900">
+                    <h3 className="mb-3 text-lg font-bold text-[#2a332a]">
                       {dict.books.formats.ebook}
                     </h3>
                     <div className="flex flex-wrap gap-3">
@@ -126,7 +132,7 @@ export default async function BookPage({ params }: PageProps) {
                           href={link.url}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-flex items-center rounded-lg bg-zinc-900 px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-zinc-700"
+                          className="inline-flex items-center bg-[#191919] px-6 py-3 text-sm font-semibold text-white transition-all hover:bg-[#ffbd59]"
                         >
                           {link.displayName || link.platform}
                           {link.price && ` - ${link.price}`}
@@ -138,7 +144,7 @@ export default async function BookPage({ params }: PageProps) {
 
                 {printLinks.length > 0 && (
                   <div>
-                    <h3 className="mb-3 text-sm font-semibold text-zinc-900">
+                    <h3 className="mb-3 text-lg font-bold text-[#2a332a]">
                       {dict.books.formats.print}
                     </h3>
                     <div className="flex flex-wrap gap-3">
@@ -148,7 +154,7 @@ export default async function BookPage({ params }: PageProps) {
                           href={link.url}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-flex items-center rounded-lg border border-zinc-300 bg-white px-5 py-2.5 text-sm font-medium text-zinc-900 transition-colors hover:bg-zinc-50"
+                          className="inline-flex items-center border-2 border-[#191919] bg-white px-6 py-3 text-sm font-semibold text-[#191919] transition-all hover:bg-[#191919] hover:text-white"
                         >
                           {link.displayName || link.platform}
                           {link.price && ` - ${link.price}`}
@@ -162,7 +168,7 @@ export default async function BookPage({ params }: PageProps) {
               {/* Testimonials */}
               {book.testimonials && book.testimonials.length > 0 && (
                 <div className="mt-12">
-                  <h3 className="mb-6 text-2xl font-semibold text-zinc-900">
+                  <h3 className="mb-6 text-2xl font-bold text-[#2a332a]">
                     {lang === 'pl' ? 'Opinie czytelników' : 'Reader Reviews'}
                   </h3>
                   <div className="space-y-4">
@@ -171,11 +177,11 @@ export default async function BookPage({ params }: PageProps) {
                       .map((testimonial, index) => (
                         <blockquote
                           key={index}
-                          className="border-l-4 border-zinc-200 pl-4 italic text-zinc-600"
+                          className="border-l-4 border-[#ffbd59] pl-4 italic text-[#2a332a] font-light"
                         >
                           "{testimonial.quote}"
                           {testimonial.author && (
-                            <footer className="mt-2 text-sm font-medium text-zinc-900">
+                            <footer className="mt-2 text-sm font-semibold text-[#2a332a]">
                               — {testimonial.author}
                             </footer>
                           )}
@@ -190,7 +196,7 @@ export default async function BookPage({ params }: PageProps) {
           <div className="mt-16">
             <Link
               href={`/${lang}/books`}
-              className="inline-flex items-center text-sm font-medium text-zinc-600 hover:text-zinc-900 transition-colors"
+              className="inline-flex items-center text-sm font-semibold text-[#2a332a] hover:text-[#ffbd59] transition-colors"
             >
               ← {dict.common.backToHome}
             </Link>

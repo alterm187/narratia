@@ -12,14 +12,14 @@ interface BookCardProps {
 export default function BookCard({ book, dict, lang }: BookCardProps) {
   return (
     <div className="group flex flex-col overflow-hidden rounded-lg border border-zinc-200 bg-white transition-all hover:shadow-lg">
-      <Link href={`/${lang}/books/${book.slug[lang]}`} className="relative aspect-[2/3] overflow-hidden bg-zinc-100">
+      <Link href={`/${lang}/books/${book.slug[lang]}`} className="relative aspect-[2/3] overflow-hidden bg-white max-h-[400px]">
         {book.coverImage ? (
           <Image
             src={book.coverImage}
             alt={book.title[lang]}
             fill
-            className="object-cover transition-transform group-hover:scale-105"
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            className="object-contain transition-transform group-hover:scale-105"
+            sizes="(max-width: 768px) 80vw, (max-width: 1200px) 40vw, 300px"
           />
         ) : (
           <div className="flex h-full items-center justify-center bg-gradient-to-br from-zinc-100 to-zinc-200">
