@@ -12,7 +12,7 @@ export default function Hero({ dict, lang }: HeroProps) {
       {/* Background pattern - more visible */}
       <div className="absolute inset-0 opacity-20">
         <img
-          src="/books/hero_background2.png"
+          src="/books/hero_background1.png"
           alt=""
           className="w-full h-full object-cover object-right"
         />
