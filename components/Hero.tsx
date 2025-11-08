@@ -8,96 +8,94 @@ interface HeroProps {
 
 export default function Hero({ dict, lang }: HeroProps) {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-[#1a1a1a] via-[#191919] to-[#23190e] py-20 sm:py-32">
-      {/* Background pattern - more visible */}
-      <div className="absolute inset-0 opacity-20">
+    <section className="relative overflow-hidden bg-gradient-to-br from-[#1a1a1a] via-[#191919] to-[#23190e] py-16 sm:py-20 lg:py-24 min-h-[75vh] flex items-center">
+      {/* Background pattern */}
+      <div className="absolute inset-0 opacity-50">
         <img
-          src="/books/hero_background1.png"
+          src="/books/hero_background2.png"
           alt=""
-          className="w-full h-full object-cover object-right"
+          className="w-full h-full object-cover object-right-bottom"
         />
       </div>
 
-      {/* Lighter radial gradient overlay for depth */}
+      {/* Radial gradient overlay */}
       <div className="absolute inset-0 bg-gradient-radial from-transparent via-transparent to-[#191919]/30" />
 
-      <div className="container relative z-10 mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          {/* Text Content - Left Side */}
+      <div className="container relative z-10 mx-auto max-w-7xl px-6 lg:px-8 w-full">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+          {/* Text Content */}
           <div className="text-left order-2 lg:order-1">
-            <div className="decorative-text text-[#ffbd59] text-2xl mb-4 font-light tracking-wide">
+            <div className="decorative-text text-[#ffbd59] text-xl mb-3 font-light tracking-wide">
               Narratia
             </div>
 
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight mb-4">
               {dict.home.hero.title}
             </h1>
 
-            <p className="text-xl sm:text-2xl text-[#f1ede9] font-light leading-relaxed mb-10 max-w-2xl">
+            <p className="text-lg sm:text-xl text-[#f1ede9] font-light leading-relaxed mb-8 max-w-2xl">
               {dict.home.hero.subtitle}
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
               <Link
                 href={`/${lang}/books`}
-                className="inline-block bg-white text-[#191919] px-8 py-4 text-lg font-semibold hover:bg-[#ffbd59] hover:text-white transition-all duration-300 text-center shadow-lg hover:shadow-xl"
+                className="inline-block bg-white text-[#191919] px-6 py-3 text-base font-semibold hover:bg-[#ffbd59] hover:text-white transition-all duration-300 text-center shadow-lg hover:shadow-xl"
               >
                 {dict.home.hero.cta.allBooks}
               </Link>
 
               <Link
                 href={`/${lang}/about`}
-                className="inline-block border-2 border-white text-white px-8 py-4 text-lg font-semibold hover:bg-white hover:text-[#191919] transition-all duration-300 text-center"
+                className="inline-block border-2 border-white text-white px-6 py-3 text-base font-semibold hover:bg-white hover:text-[#191919] transition-all duration-300 text-center"
               >
                 {dict.about.title}
               </Link>
             </div>
           </div>
 
-          {/* Circular Author Portrait - Right Side with Merge Effect */}
+          {/* Author Portrait - Subtle & Elegant */}
           <div className="relative order-1 lg:order-2 flex justify-center lg:justify-end">
             <div className="relative">
-              {/* Glowing halo effect behind portrait */}
-              <div className="absolute inset-0 rounded-full bg-gradient-to-br from-[#ffbd59]/30 via-[#ffbd59]/10 to-transparent blur-3xl scale-110" />
+              {/* Subtle glow - single layer */}
+              <div className="absolute inset-0 rounded-full bg-gradient-to-br from-[#ffbd59]/15 via-[#ffbd59]/5 to-transparent blur-3xl scale-110" />
 
-              {/* Secondary glow for depth */}
-              <div className="absolute inset-0 rounded-full bg-[#ffbd59]/20 blur-2xl scale-105 animate-pulse"
-                   style={{ animationDuration: '3s' }} />
-
-              {/* Main circular portrait container */}
-              <div className="relative w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96">
-                {/* Decorative ring - outer */}
+              {/* Portrait container */}
+              <div className="relative w-56 h-56 sm:w-64 sm:h-64 lg:w-80 lg:h-80">
                 <div className="absolute inset-0 rounded-full bg-gradient-to-br from-[#ffbd59] via-[#f1ede9] to-[#cbc5bd] p-1 shadow-2xl">
-                  {/* Inner ring */}
                   <div className="absolute inset-1 rounded-full bg-gradient-to-br from-[#191919] to-[#23190e] p-1">
-                    {/* Image container */}
                     <div className="relative w-full h-full rounded-full overflow-hidden bg-white shadow-inner">
                       <img
                         src="/author/author.png"
                         alt="Sebastian Proba"
-                        className="w-full h-full object-cover object-center scale-110 grayscale-0 hover:scale-115 transition-transform duration-700"
+                        className="w-full h-full object-cover object-center scale-110 hover:scale-115 transition-transform duration-700"
                       />
-
-                      {/* Subtle overlay gradient for better blending */}
                       <div className="absolute inset-0 bg-gradient-to-t from-[#191919]/20 via-transparent to-transparent" />
                     </div>
                   </div>
                 </div>
-
-                {/* Accent dots/sparkles around the portrait */}
-                <div className="absolute -top-2 -right-2 w-3 h-3 bg-[#ffbd59] rounded-full animate-pulse"
-                     style={{ animationDelay: '0s', animationDuration: '2s' }} />
-                <div className="absolute top-8 -right-4 w-2 h-2 bg-[#f1ede9] rounded-full animate-pulse"
-                     style={{ animationDelay: '0.5s', animationDuration: '2.5s' }} />
-                <div className="absolute -bottom-2 right-12 w-2.5 h-2.5 bg-[#ffbd59]/60 rounded-full animate-pulse"
-                     style={{ animationDelay: '1s', animationDuration: '3s' }} />
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Decorative bottom border with gradient */}
+      {/* Scroll indicator */}
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+        <svg
+          className="w-6 h-6 text-[#ffbd59] opacity-70"
+          fill="none"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="2"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+        </svg>
+      </div>
+
+      {/* Bottom border */}
       <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[#ffbd59] to-transparent opacity-30" />
     </section>
   );
