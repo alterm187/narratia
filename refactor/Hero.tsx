@@ -9,17 +9,17 @@ interface HeroProps {
 export default function Hero({ dict, lang }: HeroProps) {
   return (
     <section className="relative overflow-hidden bg-gradient-to-br from-[#1a1a1a] via-[#191919] to-[#23190e] py-20 sm:py-32">
-      {/* Background pattern - more visible */}
-      <div className="absolute inset-0 opacity-20">
+      {/* Subtle background pattern - much more muted */}
+      <div className="absolute inset-0 opacity-5">
         <img
-          src="/books/hero_background2.png"
+          src="/books/hero_background1.png"
           alt=""
           className="w-full h-full object-cover object-right"
         />
       </div>
 
-      {/* Lighter radial gradient overlay for depth */}
-      <div className="absolute inset-0 bg-gradient-radial from-transparent via-transparent to-[#191919]/30" />
+      {/* Radial gradient overlay for depth */}
+      <div className="absolute inset-0 bg-gradient-radial from-transparent via-transparent to-[#191919]/50" />
 
       <div className="container relative z-10 mx-auto max-w-7xl px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
@@ -59,9 +59,9 @@ export default function Hero({ dict, lang }: HeroProps) {
             <div className="relative">
               {/* Glowing halo effect behind portrait */}
               <div className="absolute inset-0 rounded-full bg-gradient-to-br from-[#ffbd59]/30 via-[#ffbd59]/10 to-transparent blur-3xl scale-110" />
-
+              
               {/* Secondary glow for depth */}
-              <div className="absolute inset-0 rounded-full bg-[#ffbd59]/20 blur-2xl scale-105 animate-pulse"
+              <div className="absolute inset-0 rounded-full bg-[#ffbd59]/20 blur-2xl scale-105 animate-pulse" 
                    style={{ animationDuration: '3s' }} />
 
               {/* Main circular portrait container */}
@@ -77,7 +77,7 @@ export default function Hero({ dict, lang }: HeroProps) {
                         alt="Sebastian Proba"
                         className="w-full h-full object-cover object-center scale-110 grayscale-0 hover:scale-115 transition-transform duration-700"
                       />
-
+                      
                       {/* Subtle overlay gradient for better blending */}
                       <div className="absolute inset-0 bg-gradient-to-t from-[#191919]/20 via-transparent to-transparent" />
                     </div>
@@ -85,11 +85,11 @@ export default function Hero({ dict, lang }: HeroProps) {
                 </div>
 
                 {/* Accent dots/sparkles around the portrait */}
-                <div className="absolute -top-2 -right-2 w-3 h-3 bg-[#ffbd59] rounded-full animate-pulse"
+                <div className="absolute -top-2 -right-2 w-3 h-3 bg-[#ffbd59] rounded-full animate-pulse" 
                      style={{ animationDelay: '0s', animationDuration: '2s' }} />
-                <div className="absolute top-8 -right-4 w-2 h-2 bg-[#f1ede9] rounded-full animate-pulse"
+                <div className="absolute top-8 -right-4 w-2 h-2 bg-[#f1ede9] rounded-full animate-pulse" 
                      style={{ animationDelay: '0.5s', animationDuration: '2.5s' }} />
-                <div className="absolute -bottom-2 right-12 w-2.5 h-2.5 bg-[#ffbd59]/60 rounded-full animate-pulse"
+                <div className="absolute -bottom-2 right-12 w-2.5 h-2.5 bg-[#ffbd59]/60 rounded-full animate-pulse" 
                      style={{ animationDelay: '1s', animationDuration: '3s' }} />
               </div>
             </div>
