@@ -56,17 +56,23 @@ export default async function HomePage({ params }: PageProps) {
                   key={book.id}
                   className="group relative"
                 >
-                  <div className={`grid lg:grid-cols-2 gap-12 items-center ${
+                  <div className={`grid lg:grid-cols-2 gap-9 items-center ${
                     index % 2 === 1 ? 'lg:grid-flow-dense' : ''
                   }`}>
-                    {/* Book Cover - Floating with Shadow */}
+                    {/* Book Cover - Simple Display */}
                     <div className={`relative ${index % 2 === 1 ? 'lg:col-start-2' : ''}`}>
-                      <div className="relative max-w-[192px] mx-auto transform transition-all duration-500 group-hover:-translate-y-2 group-hover:scale-105">
-                        {/* Shadow effect */}
-                        <div className="absolute inset-0 bg-gradient-to-br from-[#2a332a]/20 to-transparent blur-xl scale-95 translate-y-4 opacity-50 group-hover:opacity-70 transition-opacity" />
-
+                      <div
+                        className="relative max-w-[230px] mx-auto"
+                        style={{
+                          transform: book.id === 'stick-and-carrot'
+                            ? 'translateX(-20%)'
+                            : book.id === 'lustra-ktorych-nie-mamy'
+                            ? 'translateY(-20%)'
+                            : undefined
+                        }}
+                      >
                         {/* Book cover */}
-                        <div className="relative aspect-[2/3] shadow-2xl overflow-hidden">
+                        <div className="relative aspect-[2/3]">
                           {book.coverImage ? (
                             <img
                               src={book.coverImage}
@@ -80,14 +86,7 @@ export default async function HomePage({ params }: PageProps) {
                               </span>
                             </div>
                           )}
-
-                          {/* Overlay on hover */}
-                          <div className="absolute inset-0 bg-gradient-to-t from-[#191919]/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                         </div>
-
-                        {/* Decorative corner accent */}
-                        <div className="absolute -top-3 -right-3 w-16 h-16 bg-[#ffbd59] opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                             style={{ clipPath: 'polygon(100% 0, 0 0, 100% 100%)' }} />
                       </div>
                     </div>
 
@@ -147,7 +146,7 @@ export default async function HomePage({ params }: PageProps) {
             </div>
 
             <div className="container relative z-10 mx-auto max-w-[800px] px-6">
-              <div className="grid lg:grid-cols-5 gap-12 items-center">
+              <div className="grid lg:grid-cols-5 gap-9 items-center">
                 {/* Book Cover - Spotlight Effect */}
                 <div className="lg:col-span-2">
                   <div className="relative max-w-[160px] mx-auto">

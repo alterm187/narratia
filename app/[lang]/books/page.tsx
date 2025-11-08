@@ -125,7 +125,9 @@ export default async function BooksPage({ params }: PageProps) {
                         <div className="absolute inset-0 bg-gradient-to-br from-[#2a332a]/20 to-transparent blur-xl scale-95 translate-y-4 opacity-40 group-hover:opacity-60 transition-opacity" />
 
                         {/* Book Cover */}
-                        <div className="relative aspect-[2/3] bg-white shadow-xl overflow-hidden transform transition-all duration-500 group-hover:-translate-y-2 group-hover:shadow-2xl">
+                        <div className={`relative aspect-[2/3] shadow-xl overflow-hidden transform transition-all duration-500 group-hover:-translate-y-2 group-hover:shadow-2xl ${
+                          book.id !== 'stick-and-carrot' && book.id !== 'lustra-ktorych-nie-mamy' ? 'bg-white' : ''
+                        }`}>
                           {book.coverImage ? (
                             <img
                               src={book.coverImage}

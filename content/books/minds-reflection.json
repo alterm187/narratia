@@ -5,16 +5,16 @@
     "pl": "odbicie-umyslu"
   },
   "title": {
-    "en": "Mind's Reflection",
+    "en": "Reflection of the Mind",
     "pl": "Odbicie umysłu"
   },
   "subtitle": {
-    "en": "An Essay on Human-AI Collaboration",
-    "pl": "Esej o współpracy człowieka i AI"
+    "en": "How human and AI Translated Wordsworth's Poem",
+    "pl": "Jak człowiek i AI przetłumaczyli razem wiersz Wordswortha"
   },
   "description": {
-    "en": "A short essay exploring creative collaboration between humans and artificial intelligence through translating William Wordsworth's 'Ode on Intimations of Immortality.' An insightful look into the future of creative partnership.",
-    "pl": "Krótki esej badający kreatywną współpracę między ludźmi a sztuczną inteligencją poprzez tłumaczenie 'Ody na przeczucia nieśmiertelności' Williama Wordswortha. Wnikliwe spojrzenie na przyszłość kreatywnej współpracy."
+    "en": "Can a person with limited language skills translate English Romantic poetry? And can AI do it? This short essay chronicles my journey translating William Wordsworth's 'Ode: Intimations of Immortality'. If you're interested in the topic of creative collaboration between AI and humans, this might intrigue you.",
+    "pl": "Czy człowiek z niewystarczającą znajomością języka może przetłumaczyć angielską poezję romantyczną? A czy AI może to zrobić? Ten krótki esej pokazuje moją drogę przez tłumaczenie “Ody o przeczuciach nieśmiertelności” Williama Wordsworth’a. Jeśli interesuje Cię kwestia twórczej współpracy AI i człowieka to może cię on zaciekawić."
   },
   "coverImage": "/books/Odbicie - ebook cover.png",
   "formats": ["ebook"],
