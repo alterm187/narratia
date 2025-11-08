@@ -15,13 +15,13 @@
       }
     },
     "featuredBooks": {
-      "title": "Wybrane dzieła",
+      "title": "Zapraszam do czytania",
       "viewAll": "Zobacz wszystkie książki"
     }
   },
   "books": {
     "title": "Książki",
-    "subtitle": "Poznaj moje opublikowane dzieła",
+    "subtitle": "Poznaj moje opublikowane książki",
     "formats": {
       "ebook": "E-book",
       "print": "Druk",
