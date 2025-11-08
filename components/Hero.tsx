@@ -8,58 +8,54 @@ interface HeroProps {
 
 export default function Hero({ dict, lang }: HeroProps) {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-amber-50 via-stone-50 to-white py-24 sm:py-32">
-      <div className="container mx-auto max-w-6xl px-4">
-        <div className="mx-auto max-w-3xl text-center">
-          {/* Decorative accent */}
-          <div className="mx-auto mb-6 h-1 w-20 bg-gradient-to-r from-amber-500 to-orange-600 rounded-full" />
+    <section className="relative overflow-hidden bg-[#191919] py-20 sm:py-32">
+      <div className="container mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          {/* Text Content - Left Side */}
+          <div className="text-left">
+            <div className="decorative-text text-[#ffbd59] text-xl mb-4">
+              Narratia
+            </div>
 
-          <h1 className="text-5xl font-bold tracking-tight text-stone-900 sm:text-7xl bg-clip-text">
-            {dict.home.hero.title}
-          </h1>
+            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white leading-tight mb-6">
+              {dict.home.hero.title}
+            </h1>
 
-          <p className="mt-8 text-xl leading-8 text-stone-600 font-light">
-            {dict.home.hero.subtitle}
-          </p>
+            <p className="text-xl sm:text-2xl text-[#f1ede9] font-light leading-relaxed mb-10 max-w-2xl">
+              {dict.home.hero.subtitle}
+            </p>
 
-          <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link
-              href={`/${lang}/books`}
-              className="group w-full sm:w-auto rounded-xl bg-gradient-to-r from-amber-600 to-orange-600 px-8 py-4 text-base font-semibold text-white shadow-lg hover:shadow-xl hover:from-amber-700 hover:to-orange-700 transition-all duration-300 transform hover:scale-105"
-            >
-              <span className="flex items-center justify-center gap-2">
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Link
+                href={`/${lang}/books`}
+                className="inline-block bg-white text-[#191919] px-8 py-4 text-lg font-semibold hover:bg-[#ffbd59] hover:text-white transition-all duration-300 text-center"
+              >
                 {dict.home.hero.cta.allBooks}
-                <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                </svg>
-              </span>
-            </Link>
+              </Link>
 
-            <Link
-              href={`/${lang}/about`}
-              className="w-full sm:w-auto rounded-xl border-2 border-stone-300 bg-white/80 backdrop-blur-sm px-8 py-4 text-base font-semibold text-stone-900 shadow-md hover:bg-white hover:border-amber-500 hover:shadow-lg transition-all duration-300"
-            >
-              {dict.about.title}
-            </Link>
+              <Link
+                href={`/${lang}/about`}
+                className="inline-block border-2 border-white text-white px-8 py-4 text-lg font-semibold hover:bg-white hover:text-[#191919] transition-all duration-300 text-center"
+              >
+                {dict.about.title}
+              </Link>
+            </div>
+          </div>
+
+          {/* Image Placeholder - Right Side */}
+          <div className="relative hidden lg:block">
+            <div className="aspect-[3/4] bg-gradient-to-br from-[#667c8b] to-[#9aadb6] rounded-lg shadow-2xl">
+              {/* This is where a hero image or book cover collage would go */}
+              <div className="flex items-center justify-center h-full">
+                <span className="text-[#f1ede9] text-9xl font-bold opacity-20">N</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
 
-      {/* Decorative background elements */}
-      <div className="absolute inset-0 -z-10 overflow-hidden">
-        <div className="absolute left-1/2 top-0 -translate-x-1/2 blur-3xl opacity-20">
-          <div
-            className="aspect-[1155/678] w-[72rem] bg-gradient-to-tr from-amber-300 via-orange-300 to-amber-200"
-            style={{
-              clipPath:
-                'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)',
-            }}
-          />
-        </div>
-
-        {/* Subtle pattern overlay */}
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiM5OTk5OTkiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PHBhdGggZD0iTTM2IDE0YzAtMy4zMTQtMi42ODYtNi02LTZzLTYgMi42ODYtNiA2IDIuNjg2IDYgNiA2IDYtMi42ODYgNi02ek0zNiA0NGMwLTMuMzE0LTIuNjg2LTYtNi02cy02IDIuNjg2LTYgNiAyLjY4NiA2IDYgNiA2LTIuNjg2IDYtNnoiLz48L2c+PC9nPjwvc3ZnPg==')] opacity-30" />
-      </div>
+      {/* Decorative bottom border */}
+      <div className="absolute bottom-0 left-0 right-0 h-1 bg-[#23190e] opacity-30" />
     </section>
   );
 }
