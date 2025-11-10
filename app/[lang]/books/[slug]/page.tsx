@@ -7,6 +7,9 @@ import { getAllBooks, getBookBySlug } from '@/lib/books';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { generateMetaTags, generateBookSchema } from '@/lib/seo';
+import ExpandableSection from '@/components/ExpandableSection';
+import ReviewsSection from '@/components/ReviewsSection';
+import BookEmailSignup from '@/components/BookEmailSignup';
 
 interface PageProps {
   params: Promise<{ lang: Locale; slug: string }>;
@@ -191,6 +194,45 @@ export default async function BookPage({ params }: PageProps) {
                 </div>
               )}
             </div>
+          </div>
+
+          {/* Chapter Sample Section */}
+          {book.chapterSample && (
+            <div className="mt-16">
+              <ExpandableSection
+                title={dict.books.chapterSample.title}
+                defaultExpanded={false}
+              >
+                <div className="prose prose-lg max-w-none">
+                  <h4 className="text-xl font-bold text-[#2a332a] mb-4">
+                    {book.chapterSample.title[lang]}
+                  </h4>
+                  <div className="text-[#2a332a] leading-relaxed whitespace-pre-line">
+                    {book.chapterSample.content[lang]}
+                  </div>
+                </div>
+              </ExpandableSection>
+            </div>
+          )}
+
+          {/* Reviews Section */}
+          <div className="mt-16">
+            <ExpandableSection
+              title={dict.books.reviews.title}
+              defaultExpanded={false}
+            >
+              <ReviewsSection bookId={book.id} lang={lang} dict={dict} />
+            </ExpandableSection>
+          </div>
+
+          {/* Email Signup Section */}
+          <div className="mt-16">
+            <BookEmailSignup
+              bookId={book.id}
+              bookTitle={book.title[lang]}
+              lang={lang}
+              dict={dict}
+            />
           </div>
 
           <div className="mt-16">

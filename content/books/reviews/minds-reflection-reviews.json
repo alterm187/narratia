@@ -1,0 +1,73 @@
+{
+  "bookId": "minds-reflection",
+  "reviews": [
+    {
+      "id": "review-1",
+      "rating": 5,
+      "author": {
+        "pl": "Dr Maria W.",
+        "en": "Dr Maria W."
+      },
+      "date": "2024-11-01",
+      "verified": true,
+      "title": {
+        "pl": "Przełomowe podejście do tłumaczenia poezji",
+        "en": "Groundbreaking approach to poetry translation"
+      },
+      "content": {
+        "pl": "Jako tłumaczka poezji byłam sceptyczna wobec użycia AI w procesie twórczym. Ten esej całkowicie zmienił moje spojrzenie. Autor pokazuje, że współpraca z AI może być formą dialogu, który wzbogaca proces twórczy zamiast go zastępować.",
+        "en": "As a poetry translator, I was skeptical about using AI in the creative process. This essay completely changed my perspective. The author shows that collaboration with AI can be a form of dialogue that enriches the creative process instead of replacing it."
+      },
+      "helpful": 22
+    },
+    {
+      "id": "review-2",
+      "rating": 5,
+      "author": {
+        "pl": "Jakub N.",
+        "en": "Jakub N."
+      },
+      "date": "2024-10-25",
+      "verified": true,
+      "title": {
+        "pl": "Fascynujący eksperyment",
+        "en": "Fascinating experiment"
+      },
+      "content": {
+        "pl": "Nie tylko esej teoretyczny, ale rzeczywisty eksperyment pokazujący proces współpracy człowiek-AI. Szczególnie interesujące są fragmenty pokazujące iteracyjny proces i to, jak AI pomaga zobaczyć tekst z nowej perspektywy.",
+        "en": "Not just a theoretical essay, but a real experiment showing the human-AI collaboration process. Particularly interesting are the parts showing the iterative process and how AI helps see the text from a new perspective."
+      },
+      "helpful": 16
+    },
+    {
+      "id": "review-3",
+      "rating": 4,
+      "author": {
+        "pl": "Anna P.",
+        "en": "Anna P."
+      },
+      "date": "2024-10-18",
+      "verified": true,
+      "title": {
+        "pl": "Ważny głos w dyskusji o AI",
+        "en": "Important voice in AI discussion"
+      },
+      "content": {
+        "pl": "Esej porusza ważne tematy dotyczące przyszłości kreatywności i roli technologii w procesie twórczym. Niektóre fragmenty są dość techniczne, ale ogólnie dostępny dla szerokiej publiczności.",
+        "en": "The essay addresses important topics about the future of creativity and the role of technology in the creative process. Some parts are quite technical, but overall accessible to a wide audience."
+      },
+      "helpful": 8
+    }
+  ],
+  "summary": {
+    "averageRating": 4.67,
+    "totalReviews": 3,
+    "ratingDistribution": {
+      "5": 2,
+      "4": 1,
+      "3": 0,
+      "2": 0,
+      "1": 0
+    }
+  }
+}

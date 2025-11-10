@@ -31,7 +31,29 @@
     },
     "buyNow": "Buy Now",
     "readSample": "Read Sample",
-    "availableFormats": "Available Formats"
+    "availableFormats": "Available Formats",
+    "reviews": {
+      "title": "Reader Reviews",
+      "viewAll": "View all reviews",
+      "averageRating": "Average rating",
+      "basedOn": "Based on",
+      "review": "review",
+      "reviews": "reviews",
+      "verified": "Verified Purchase",
+      "helpful": "Helpful"
+    },
+    "chapterSample": {
+      "title": "Read a Sample",
+      "readMore": "Read more"
+    },
+    "emailSignup": {
+      "title": "Want to learn more?",
+      "description": "Sign up for the newsletter to receive updates about new books and promotions",
+      "placeholder": "Your email address",
+      "button": "Sign up",
+      "success": "Thank you for signing up!",
+      "error": "An error occurred. Please try again."
+    }
   },
   "about": {
     "title": "About the Author",

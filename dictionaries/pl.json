@@ -31,7 +31,29 @@
     },
     "buyNow": "Kup teraz",
     "readSample": "Przeczytaj fragment",
-    "availableFormats": "Dostępne formaty"
+    "availableFormats": "Dostępne formaty",
+    "reviews": {
+      "title": "Opinie czytelników",
+      "viewAll": "Zobacz wszystkie opinie",
+      "averageRating": "Średnia ocena",
+      "basedOn": "Na podstawie",
+      "review": "opinia",
+      "reviews": "opinii",
+      "verified": "Zweryfikowany zakup",
+      "helpful": "Pomocne"
+    },
+    "chapterSample": {
+      "title": "Przeczytaj fragment",
+      "readMore": "Czytaj dalej"
+    },
+    "emailSignup": {
+      "title": "Chcesz dowiedzieć się więcej?",
+      "description": "Zapisz się na newsletter, aby otrzymywać informacje o nowych książkach i promocjach",
+      "placeholder": "Twój adres email",
+      "button": "Zapisz się",
+      "success": "Dziękujemy za zapisanie się!",
+      "error": "Wystąpił błąd. Spróbuj ponownie."
+    }
   },
   "about": {
     "title": "O autorze",

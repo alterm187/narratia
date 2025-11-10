@@ -41,6 +41,16 @@ export interface Book {
     average: number;
     count: number;
   };
+  chapterSample?: {
+    title: {
+      pl: string;
+      en: string;
+    };
+    content: {
+      pl: string;
+      en: string;
+    };
+  };
 }
 
 export interface BuyLink {

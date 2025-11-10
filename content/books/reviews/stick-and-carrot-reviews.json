@@ -1,0 +1,92 @@
+{
+  "bookId": "stick-and-carrot",
+  "reviews": [
+    {
+      "id": "review-1",
+      "rating": 5,
+      "author": {
+        "pl": "Magdalena S.",
+        "en": "Magdalena S."
+      },
+      "date": "2024-12-20",
+      "verified": true,
+      "title": {
+        "pl": "Świeże spojrzenie na historię Bożego Narodzenia",
+        "en": "Fresh perspective on the Christmas story"
+      },
+      "content": {
+        "pl": "Cudowna opowieść, która pokazuje znaną historię z zupełnie nowej perspektywy. Pasterze przestają być tylko tłem, a stają się żywymi postaciami z własnymi nadziejami i obawami. Idealna lektura na Boże Narodzenie.",
+        "en": "A wonderful tale that shows the familiar story from a completely new perspective. The shepherds cease to be just background and become living characters with their own hopes and fears. Perfect reading for Christmas."
+      },
+      "helpful": 18
+    },
+    {
+      "id": "review-2",
+      "rating": 5,
+      "author": {
+        "pl": "Piotr K.",
+        "en": "Piotr K."
+      },
+      "date": "2024-12-15",
+      "verified": true,
+      "title": {
+        "pl": "Wzruszająca i głęboka",
+        "en": "Moving and profound"
+      },
+      "content": {
+        "pl": "Książka, która dotyka serca. Prosta historia opowiedziana z taką głębią, że sprawia, że znane motywy stają się świeże i poruszające. Polecam każdemu, niezależnie od przekonań religijnych.",
+        "en": "A book that touches the heart. A simple story told with such depth that it makes familiar motifs fresh and moving. I recommend it to everyone, regardless of religious beliefs."
+      },
+      "helpful": 14
+    },
+    {
+      "id": "review-3",
+      "rating": 4,
+      "author": {
+        "pl": "Ewa L.",
+        "en": "Ewa L."
+      },
+      "date": "2024-12-10",
+      "verified": true,
+      "title": {
+        "pl": "Pięknie napisana opowieść",
+        "en": "Beautifully written tale"
+      },
+      "content": {
+        "pl": "Bardzo podoba mi się język i sposób narracji. Autor ma talent do tworzenia atmosfery i budowania napięcia. Czasami tempo jest wolniejsze, ale to służy głębszemu zanurzeniu się w historię.",
+        "en": "I really like the language and narrative style. The author has a talent for creating atmosphere and building tension. Sometimes the pace is slower, but it serves to immerse you deeper in the story."
+      },
+      "helpful": 9
+    },
+    {
+      "id": "review-4",
+      "rating": 5,
+      "author": {
+        "pl": "Andrzej T.",
+        "en": "Andrzej T."
+      },
+      "date": "2024-12-05",
+      "verified": true,
+      "title": {
+        "pl": "Humanizacja biblijnej opowieści",
+        "en": "Humanization of the biblical story"
+      },
+      "content": {
+        "pl": "Fascynujące, jak autor humanizuje postacie, które zwykle są tylko sylwetkami w tle wielkiej historii. Pasterze stają się prawdziwymi ludźmi z prawdziwymi problemami. To czyni historię znacznie bardziej osobistą i bliską.",
+        "en": "Fascinating how the author humanizes characters who are usually just silhouettes in the background of the grand story. The shepherds become real people with real problems. This makes the story much more personal and relatable."
+      },
+      "helpful": 11
+    }
+  ],
+  "summary": {
+    "averageRating": 4.75,
+    "totalReviews": 4,
+    "ratingDistribution": {
+      "5": 3,
+      "4": 1,
+      "3": 0,
+      "2": 0,
+      "1": 0
+    }
+  }
+}

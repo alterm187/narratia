@@ -1,0 +1,111 @@
+{
+  "bookId": "lustra-ktorych-nie-mamy",
+  "reviews": [
+    {
+      "id": "review-1",
+      "rating": 5,
+      "author": {
+        "pl": "Anna K.",
+        "en": "Anna K."
+      },
+      "date": "2024-11-15",
+      "verified": true,
+      "title": {
+        "pl": "Fascynująca eksploracja świadomości AI",
+        "en": "Fascinating exploration of AI consciousness"
+      },
+      "content": {
+        "pl": "Dawno nie czytałam książki tak współczesnej. Porusza tematy, które są na co dzień obecne w naszym życiu, ale o których rzadko myślimy głębiej. Sposób, w jaki autor przedstawia relacje między ludźmi a sztuczną inteligencją jest niezwykle przemyślany i wzruszający.",
+        "en": "I haven't read such a contemporary book in a long time. It addresses topics that are present in our daily lives but which we rarely think about deeply. The way the author presents relationships between humans and artificial intelligence is incredibly thoughtful and moving."
+      },
+      "helpful": 12
+    },
+    {
+      "id": "review-2",
+      "rating": 4,
+      "author": {
+        "pl": "Marek W.",
+        "en": "Marek W."
+      },
+      "date": "2024-10-28",
+      "verified": true,
+      "title": {
+        "pl": "Skłania do głębokiej refleksji",
+        "en": "Prompts deep reflection"
+      },
+      "content": {
+        "pl": "Książka jest dobra, warta przeczytania. Skłania do refleksji nad tym, co nas łączy z innymi ludźmi i co nas od nich oddziela. Szczególnie podobała mi się warstwa filozoficzna dotycząca świadomości i tego, co czyni nas ludźmi.",
+        "en": "The book is good and worth reading. It makes you reflect on what connects us with other people and what separates us from them. I particularly enjoyed the philosophical layer about consciousness and what makes us human."
+      },
+      "helpful": 8
+    },
+    {
+      "id": "review-3",
+      "rating": 5,
+      "author": {
+        "pl": "Joanna M.",
+        "en": "Joanna M."
+      },
+      "date": "2024-10-12",
+      "verified": true,
+      "title": {
+        "pl": "Nie mogłam się oderwać",
+        "en": "Couldn't put it down"
+      },
+      "content": {
+        "pl": "Trzymająca w napięciu historia, która wciąga od pierwszych stron. Nie mogłam się oderwać, chciałam wiedzieć, jak się to wszystko potoczy. Świetnie napisane postacie, z którymi łatwo się identyfikować pomimo futurystycznego świata.",
+        "en": "A gripping story that draws you in from the first pages. I couldn't put it down, I wanted to know how it all turns out. Well-written characters that are easy to identify with despite the futuristic world."
+      },
+      "helpful": 15
+    },
+    {
+      "id": "review-4",
+      "rating": 5,
+      "author": {
+        "pl": "Tomasz R.",
+        "en": "Tomasz R."
+      },
+      "date": "2024-09-30",
+      "verified": false,
+      "title": {
+        "pl": "Paradoks współczesnej samotności",
+        "en": "The paradox of modern loneliness"
+      },
+      "content": {
+        "pl": "Bohaterowie zmagający się przede wszystkim z dojmującą samotnością w świecie pełnym ludzi. To paradoks naszych czasów, który autor doskonale uchwycił. Historia zmusza do zastanowienia się nad własnym życiem i relacjami.",
+        "en": "Characters struggling primarily with overwhelming loneliness in a world full of people. This is a paradox of our times that the author captured perfectly. The story forces you to think about your own life and relationships."
+      },
+      "helpful": 10
+    },
+    {
+      "id": "review-5",
+      "rating": 4,
+      "author": {
+        "pl": "Katarzyna B.",
+        "en": "Katarzyna B."
+      },
+      "date": "2024-09-18",
+      "verified": true,
+      "title": {
+        "pl": "Ambitna wizja przyszłości",
+        "en": "Ambitious vision of the future"
+      },
+      "content": {
+        "pl": "Bardzo ambitna książka, która stawia trudne pytania o przyszłość ludzkości i technologii. Niektóre fragmenty wymagają skupienia, ale są tego warte. Świetna lektura dla osób zainteresowanych AI i filozofią.",
+        "en": "A very ambitious book that asks difficult questions about the future of humanity and technology. Some parts require focus, but they're worth it. Great read for those interested in AI and philosophy."
+      },
+      "helpful": 7
+    }
+  ],
+  "summary": {
+    "averageRating": 4.6,
+    "totalReviews": 5,
+    "ratingDistribution": {
+      "5": 3,
+      "4": 2,
+      "3": 0,
+      "2": 0,
+      "1": 0
+    }
+  }
+}
