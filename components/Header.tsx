@@ -11,6 +11,8 @@ export default function Header({ dict, lang }: HeaderProps) {
   const navItems = [
     { href: `/${lang}`, label: dict.nav.home },
     { href: `/${lang}/books`, label: dict.nav.books },
+    { href: `/${lang}/blog`, label: dict.nav.blog },
+    { href: `/${lang}/fragmenty`, label: dict.nav.fragmenty },
     { href: `/${lang}/about`, label: dict.nav.about },
     { href: `/${lang}/contact`, label: dict.nav.contact },
   ];

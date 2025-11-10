@@ -4,6 +4,8 @@ export interface Dictionary {
   nav: {
     home: string;
     books: string;
+    blog: string;
+    fragmenty: string;
     about: string;
     contact: string;
   };

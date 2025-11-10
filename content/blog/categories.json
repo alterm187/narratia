@@ -1,0 +1,44 @@
+[
+  {
+    "id": "writing",
+    "name": {
+      "pl": "Pisanie",
+      "en": "Writing"
+    }
+  },
+  {
+    "id": "books",
+    "name": {
+      "pl": "Książki",
+      "en": "Books"
+    }
+  },
+  {
+    "id": "ai",
+    "name": {
+      "pl": "Sztuczna inteligencja",
+      "en": "Artificial Intelligence"
+    }
+  },
+  {
+    "id": "philosophy",
+    "name": {
+      "pl": "Filozofia",
+      "en": "Philosophy"
+    }
+  },
+  {
+    "id": "stories",
+    "name": {
+      "pl": "Opowieści",
+      "en": "Stories"
+    }
+  },
+  {
+    "id": "updates",
+    "name": {
+      "pl": "Aktualności",
+      "en": "Updates"
+    }
+  }
+]

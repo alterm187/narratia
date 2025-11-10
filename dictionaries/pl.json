@@ -2,6 +2,8 @@
   "nav": {
     "home": "Strona główna",
     "books": "Książki",
+    "blog": "Blog",
+    "fragmenty": "Fragmenty",
     "about": "O autorze",
     "contact": "Kontakt"
   },
