@@ -184,7 +184,7 @@ export default async function BooksPage({ params }: PageProps) {
         </section>
       </main>
 
-      <Footer dict={dict} />
+      <Footer dict={dict} lang={lang} />
     </>
   );
 }

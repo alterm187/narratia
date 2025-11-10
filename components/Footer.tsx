@@ -1,10 +1,12 @@
-import { Dictionary } from '@/types/i18n';
+import { Dictionary, Locale } from '@/types/i18n';
+import EmailSignupForm from './EmailSignupForm';
 
 interface FooterProps {
   dict: Dictionary;
+  lang?: Locale;
 }
 
-export default function Footer({ dict }: FooterProps) {
+export default function Footer({ dict, lang = 'pl' }: FooterProps) {
   return (
     <footer className="border-t bg-zinc-50">
       <div className="container mx-auto max-w-6xl px-4 py-12">
@@ -53,6 +55,25 @@ export default function Footer({ dict }: FooterProps) {
             <p className="text-sm text-zinc-600">
               sebastian.narratia@gmail.com
             </p>
+          </div>
+        </div>
+
+        {/* Email Newsletter Signup */}
+        <div className="border-t border-zinc-200 pt-12 mt-12">
+          <div className="max-w-md mx-auto">
+            <h3 className="text-xl font-bold text-[#2a332a] mb-2 text-center">
+              {lang === 'pl' ? 'Dołącz do społeczności' : 'Join the Community'}
+            </h3>
+            <p className="text-sm text-[#2a332a]/70 mb-6 text-center">
+              {lang === 'pl'
+                ? 'Otrzymuj wiadomości o nowych książkach, ekskluzywne treści i specjalne oferty.'
+                : 'Get updates about new books, exclusive content, and special offers.'}
+            </p>
+            <EmailSignupForm
+              variant="inline"
+              language={lang}
+              leadMagnet="newsletter"
+            />
           </div>
         </div>
 

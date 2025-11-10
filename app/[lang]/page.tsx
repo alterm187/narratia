@@ -235,7 +235,7 @@ export default async function HomePage({ params }: PageProps) {
         </section>
       </main>
 
-      <Footer dict={dict} />
+      <Footer dict={dict} lang={lang} />
     </>
   );
 }

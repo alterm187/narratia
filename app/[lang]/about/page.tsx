@@ -145,7 +145,7 @@ export default async function AboutPage({ params }: PageProps) {
         </div>
       </main>
 
-      <Footer dict={dict} />
+      <Footer dict={dict} lang={lang} />
     </>
   );
 }

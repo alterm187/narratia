@@ -76,7 +76,7 @@ export default async function ContactPage({ params }: PageProps) {
         </div>
       </main>
 
-      <Footer dict={dict} />
+      <Footer dict={dict} lang={lang} />
     </>
   );
 }
