@@ -64,10 +64,10 @@ export async function sendWelcomeEmail(
   const name = firstName || (language === 'pl' ? 'Czytelnik' : 'Reader');
   const isPl = language === 'pl';
 
-  // Determine download link based on lead magnet type
+  // Link to download pages (not direct PDFs)
   const downloadLink = leadMagnet === 'essay'
-    ? 'https://narratia.pl/downloads/Odbicie-umyslu.pdf'
-    : 'https://narratia.pl/downloads/chapter-samples.pdf';
+    ? `https://narratia.pl/${language}/download/essay`
+    : `https://narratia.pl/${language}/download/chapters`;
 
   const subject = isPl
     ? `${leadMagnet === 'essay' ? 'Twój esej "Odbicie umysłu"' : 'Twoje fragmenty książek'} - dziękuję za zapis!`
@@ -108,7 +108,7 @@ export async function sendWelcomeEmail(
     <div style="text-align: center; margin: 30px 0;">
       <a href="${downloadLink}"
          style="display: inline-block; background: #ffbd59; color: #191919; padding: 15px 40px; text-decoration: none; font-weight: bold; border-radius: 4px; font-size: 18px;">
-        ${isPl ? '📥 Pobierz PDF' : '📥 Download PDF'}
+        ${isPl ? '📥 Pobierz materiały' : '📥 Download Materials'}
       </a>
     </div>
     <p style="font-size: 14px; color: #666; text-align: center;">
@@ -117,6 +117,15 @@ export async function sendWelcomeEmail(
         : 'Can\'t see the button? Click here:'}
       <br>
       <a href="${downloadLink}" style="color: #ffbd59; word-break: break-all;">${downloadLink}</a>
+    </p>
+  </div>
+
+  <div style="background: #fffbf0; border-left: 4px solid #ffbd59; padding: 20px; margin-bottom: 20px;">
+    <p style="color: #2a332a; margin: 0; font-size: 15px;">
+      <strong>${isPl ? '📬 O newsletterze:' : '📬 About the newsletter:'}</strong><br>
+      ${isPl
+        ? 'Wyślę Ci aktualizacje kilka razy w roku o promocjach i nowych treściach. Żadnego spamu, obiecuję!'
+        : 'I\'ll send you updates a few times a year about promotions and new content. No spam, I promise!'}
     </p>
   </div>
 
