@@ -72,6 +72,18 @@
       "error": "Failed to send message. Please try again."
     }
   },
+  "newsletter": {
+    "modal": {
+      "title": "Not to be pushy...",
+      "description": "but if you sign up for the mailing list, you'll get access to download free chapters and other materials...",
+      "button": "Subscribe",
+      "success": "Thank you! You will be redirected to the download page shortly."
+    },
+    "cta": {
+      "footer": "Join the fans even if you're not a fan yet :) Sign up for the mailing list and you'll get additional perks...",
+      "general": "Join the fans even if you're not a fan yet :) Sign up for the mailing list and you'll get additional perks..."
+    }
+  },
   "footer": {
     "copyright": "© 2025 Sebastian Proba. All rights reserved.",
     "social": "Follow me"

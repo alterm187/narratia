@@ -52,6 +52,18 @@ export interface Dictionary {
       error: string;
     };
   };
+  newsletter?: {
+    modal?: {
+      title: string;
+      description: string;
+      button: string;
+      success: string;
+    };
+    cta?: {
+      footer: string;
+      general: string;
+    };
+  };
   footer: {
     copyright: string;
     social: string;

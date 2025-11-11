@@ -65,9 +65,9 @@ export default function Footer({ dict, lang = 'pl' }: FooterProps) {
               {lang === 'pl' ? 'Dołącz do społeczności' : 'Join the Community'}
             </h3>
             <p className="text-sm text-[#2a332a]/70 mb-6 text-center">
-              {lang === 'pl'
-                ? 'Otrzymuj wiadomości o nowych książkach, ekskluzywne treści i specjalne oferty.'
-                : 'Get updates about new books, exclusive content, and special offers.'}
+              {dict.newsletter?.cta?.footer || (lang === 'pl'
+                ? 'Dołącz do fanów nawet jeśli jeszcze nie jesteś fanem :) Zapisz się na listę mailową a otrzymasz dodatkowe możliwości...'
+                : 'Join the fans even if you\'re not a fan yet :) Sign up for the mailing list and you\'ll get additional perks...')}
             </p>
             <EmailSignupForm
               variant="inline"

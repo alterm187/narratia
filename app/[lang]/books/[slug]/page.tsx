@@ -8,6 +8,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { generateMetaTags, generateBookSchema } from '@/lib/seo';
 import BookEmailSignup from '@/components/BookEmailSignup';
+import BookPageWrapper from '@/components/BookPageWrapper';
 
 interface PageProps {
   params: Promise<{ lang: Locale; slug: string }>;
@@ -56,8 +57,11 @@ export default async function BookPage({ params }: PageProps) {
   const ebookLinks = book.buyLinks.ebook;
   const printLinks = book.buyLinks.print;
 
+  // Don't show modal for lead magnet (free essay)
+  const showModal = book.id !== 'minds-reflection';
+
   return (
-    <>
+    <BookPageWrapper dict={dict} lang={lang} showModal={showModal}>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(bookSchema) }}
@@ -116,18 +120,29 @@ export default async function BookPage({ params }: PageProps) {
                       {dict.books.formats.ebook}
                     </h3>
                     <div className="flex flex-wrap gap-3">
-                      {ebookLinks.map((link, index) => (
-                        <a
-                          key={index}
-                          href={link.url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-flex items-center bg-[#191919] px-6 py-3 text-sm font-semibold text-white transition-all hover:bg-[#ffbd59]"
+                      {book.id === 'minds-reflection' ? (
+                        // For the essay, redirect to signup page
+                        <Link
+                          href={`/${lang}/download/essay`}
+                          className="inline-flex items-center bg-[#ffbd59] px-6 py-3 text-sm font-semibold text-[#191919] transition-all hover:bg-[#191919] hover:text-white"
                         >
-                          {link.displayName || link.platform}
-                          {link.price && ` - ${link.price}`}
-                        </a>
-                      ))}
+                          {lang === 'pl' ? 'Pobierz za darmo' : 'Download for Free'}
+                        </Link>
+                      ) : (
+                        // For regular books, show external links
+                        ebookLinks.map((link, index) => (
+                          <a
+                            key={index}
+                            href={link.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center bg-[#191919] px-6 py-3 text-sm font-semibold text-white transition-all hover:bg-[#ffbd59]"
+                          >
+                            {link.displayName || link.platform}
+                            {link.price && ` - ${link.price}`}
+                          </a>
+                        ))
+                      )}
                     </div>
                   </div>
                 )}
@@ -208,6 +223,6 @@ export default async function BookPage({ params }: PageProps) {
       </main>
 
       <Footer dict={dict} lang={lang} />
-    </>
+    </BookPageWrapper>
   );
 }

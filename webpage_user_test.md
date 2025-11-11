@@ -1,9 +1,9 @@
-1. Main page
-    - the button 'czytaj więcej' should be 1/3 vertically closer to buttons 'ebook' and 'druk'
-    - yellow box with 'LEAD MAGNET' over the essay must be removed
-2. Books page - the whole page is not necessary; I have only three books, including the essay: "Lustra, których nie mamy", "Mirrors We Don't Have" (English translation of Lustra), "Laska i kij". All of them can be displayed on the main page with no need to repeat it in Books. UNLESS this is needed for SEO.
-3. books subpages for particular books
-    - cover is on a tile, should be as on the first page and smaller
-    - when browser window is rescaled to be more narrow, the cover disappears
-    - remove the dropdown with readers opinions and the other with read free chapter (question is: is it good from marketing perspective to make free chapters a way of getting email subscribers? not for newsletter but for sending the free chapter but later also for other things?)
-    - the list of readers' opinions need to be arrange better visually and in more hand-written font
+1. Books page - bring it back so it is visible and also on nav bar
+2. About sining up to the newsletter:
+    - I want it to be a bit more invasive; let's plan that it pops up as an overlayer with background visible but blurred; let it happen when moving from main page to details of a book; but it should pop up only once for the user (can we avoid cookies?)
+    - the message should say "Nie żebym się narzucał... ale jeśli zapiszesz się na listę mailową to dostaniesz możliwość pobrania darmowych rozdziałów i innych materiałów..."
+    - the message about newsletter in other places should be "Dołącz do fanów nawet jeśli jeszcze nie jesteś fanem :) Zapisz się na listę mailową a otrzymasz dodatkowe możliwości..."
+    - signup should redirect to a hidden page with content downloads and information that I will send updates couple of times a year about promotions and new content
+3. Need to be considered - regarding point 2: should I redirect to download page or rather send the content via email?
+4. When someone clicks download on the free essay he should be redirected to email signup right?
+5. I need sendgrid to send emails only if answer in point 3 is email an if I want to sell ebooks via this page, correct?

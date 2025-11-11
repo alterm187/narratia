@@ -72,6 +72,18 @@
       "error": "Nie udało się wysłać wiadomości. Spróbuj ponownie."
     }
   },
+  "newsletter": {
+    "modal": {
+      "title": "Nie żebym się narzucał...",
+      "description": "ale jeśli zapiszesz się na listę mailową to dostaniesz możliwość pobrania darmowych rozdziałów i innych materiałów...",
+      "button": "Zapisz się",
+      "success": "Dziękujemy! Za chwilę zostaniesz przekierowany do strony z materiałami."
+    },
+    "cta": {
+      "footer": "Dołącz do fanów nawet jeśli jeszcze nie jesteś fanem :) Zapisz się na listę mailową a otrzymasz dodatkowe możliwości...",
+      "general": "Dołącz do fanów nawet jeśli jeszcze nie jesteś fanem :) Zapisz się na listę mailową a otrzymasz dodatkowe możliwości..."
+    }
+  },
   "footer": {
     "copyright": "© 2025 Sebastian Proba. Wszelkie prawa zastrzeżone.",
     "social": "Śledź mnie"

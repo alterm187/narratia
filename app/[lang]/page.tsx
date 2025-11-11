@@ -188,7 +188,7 @@ export default async function HomePage({ params }: PageProps) {
 
                   <div className="flex flex-col sm:flex-row gap-2.5">
                     <Link
-                      href={`/${lang}/books/${leadMagnet.slug[lang]}`}
+                      href={`/${lang}/download/essay`}
                       className="inline-flex items-center justify-center gap-2 bg-[#ffbd59] text-[#191919] px-8 py-4 font-bold hover:bg-white transition-all duration-300 shadow-lg hover:shadow-xl group"
                     >
                       {lang === 'pl' ? 'Pobierz za darmo' : 'Download for Free'}
