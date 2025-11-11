@@ -92,7 +92,7 @@
 ### ✅ Environment Already Configured
 
 ```env
-# .env.local
+# .env.local (already configured in your project)
 MAILCHIMP_API_KEY=your_mailchimp_api_key
 MAILCHIMP_SERVER_PREFIX=us10
 MAILCHIMP_AUDIENCE_ID=your_audience_id
