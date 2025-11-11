@@ -1,3 +1,8 @@
+// NOTE: This page is currently disabled as all books are displayed on the main page.
+// The page is kept for potential SEO benefits - to be decided.
+// If re-enabled, uncomment the code below.
+
+/*
 import Link from 'next/link';
 import { getDictionary } from '@/lib/i18n';
 import { Locale } from '@/types/i18n';
@@ -37,7 +42,7 @@ export default async function BooksPage({ params }: PageProps) {
       <Header dict={dict} lang={lang} />
 
       <main className="min-h-screen">
-        {/* Hero Section */}
+        {/* Hero Section *\/}
         <section className="bg-gradient-to-br from-[#191919] to-[#2a332a] py-16 sm:py-20">
           <div className="container mx-auto max-w-[800px] px-6">
             <div className="max-w-3xl">
@@ -51,7 +56,7 @@ export default async function BooksPage({ params }: PageProps) {
           </div>
         </section>
 
-        {/* Lead Magnet - Featured Prominently */}
+        {/* Lead Magnet - Featured Prominently *\/}
         {leadMagnet && (
           <section className="bg-[#ffbd59] py-16">
             <div className="container mx-auto max-w-[800px] px-6">
@@ -101,7 +106,7 @@ export default async function BooksPage({ params }: PageProps) {
           </section>
         )}
 
-        {/* Regular Books - Grid Layout */}
+        {/* Regular Books - Grid Layout *\/}
         <section className="bg-gradient-to-b from-[#f1ede9] to-[#e5dfd7] py-20">
           <div className="container mx-auto max-w-[800px] px-6">
             {regularBooks.length > 0 && (
@@ -121,10 +126,10 @@ export default async function BooksPage({ params }: PageProps) {
                       className="group block max-w-[213px] mx-auto"
                     >
                       <div className="relative">
-                        {/* Shadow */}
+                        {/* Shadow *\/}
                         <div className="absolute inset-0 bg-gradient-to-br from-[#2a332a]/20 to-transparent blur-xl scale-95 translate-y-4 opacity-40 group-hover:opacity-60 transition-opacity" />
 
-                        {/* Book Cover */}
+                        {/* Book Cover *\/}
                         <div className={`relative aspect-[2/3] shadow-xl overflow-hidden transform transition-all duration-500 group-hover:-translate-y-2 group-hover:shadow-2xl ${
                           book.id !== 'stick-and-carrot' && book.id !== 'lustra-ktorych-nie-mamy' ? 'bg-white' : ''
                         }`}>
@@ -142,7 +147,7 @@ export default async function BooksPage({ params }: PageProps) {
                             </div>
                           )}
 
-                          {/* Overlay */}
+                          {/* Overlay *\/}
                           <div className="absolute inset-0 bg-gradient-to-t from-[#191919]/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
                             <span className="text-white font-semibold text-sm flex items-center gap-2">
                               {dict.common.readMore}
@@ -154,7 +159,7 @@ export default async function BooksPage({ params }: PageProps) {
                         </div>
                       </div>
 
-                      {/* Book Info */}
+                      {/* Book Info *\/}
                       <div className="mt-4">
                         <h3 className="text-xl font-bold text-[#2a332a] mb-2 group-hover:text-[#ffbd59] transition-colors">
                           {book.title[lang]}
@@ -187,4 +192,18 @@ export default async function BooksPage({ params }: PageProps) {
       <Footer dict={dict} lang={lang} />
     </>
   );
+}
+*/
+
+// Temporary placeholder - redirect to home
+import { redirect } from 'next/navigation';
+import { Locale } from '@/types/i18n';
+
+interface PageProps {
+  params: Promise<{ lang: Locale }>;
+}
+
+export default async function BooksPage({ params }: PageProps) {
+  const { lang } = await params;
+  redirect(`/${lang}`);
 }

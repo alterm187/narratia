@@ -7,8 +7,6 @@ import { getAllBooks, getBookBySlug } from '@/lib/books';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { generateMetaTags, generateBookSchema } from '@/lib/seo';
-import ExpandableSection from '@/components/ExpandableSection';
-import ReviewsSection from '@/components/ReviewsSection';
 import BookEmailSignup from '@/components/BookEmailSignup';
 
 interface PageProps {
@@ -75,17 +73,17 @@ export default async function BookPage({ params }: PageProps) {
         />
 
         <div className="container mx-auto max-w-6xl px-6 py-20 relative z-10">
-          <div className="grid gap-12 lg:grid-cols-[400px_1fr]">
-            {/* Book cover */}
-            <div className="relative aspect-[2/3] overflow-hidden shadow-2xl bg-white max-w-[400px] mx-auto lg:mx-0">
+          <div className="grid gap-12 lg:grid-cols-[280px_1fr]">
+            {/* Book cover - visible on all screen sizes */}
+            <div className="relative aspect-[2/3] w-full max-w-[280px] mx-auto lg:mx-0">
               {book.coverImage ? (
                 <Image
                   src={book.coverImage}
                   alt={book.title[lang]}
                   fill
-                  className="object-contain"
+                  className="object-cover"
                   priority
-                  sizes="(max-width: 1024px) 80vw, 400px"
+                  sizes="(max-width: 640px) 60vw, (max-width: 1024px) 280px, 280px"
                 />
               ) : (
                 <div className="flex h-full items-center justify-center bg-gradient-to-br from-[#cbc5bd] to-[#9aadb6]">
@@ -98,17 +96,6 @@ export default async function BookPage({ params }: PageProps) {
 
             {/* Book details */}
             <div className="flex flex-col">
-              <div className="mb-6 flex flex-wrap gap-3">
-                {book.formats.map((format) => (
-                  <span
-                    key={format}
-                    className="px-4 py-2 bg-white text-[#2a332a] text-sm font-medium shadow-sm"
-                  >
-                    {dict.books.formats[format]}
-                  </span>
-                ))}
-              </div>
-
               <h1 className="text-4xl font-bold text-[#2a332a] sm:text-5xl">
                 {book.title[lang]}
               </h1>
@@ -171,20 +158,23 @@ export default async function BookPage({ params }: PageProps) {
               {/* Testimonials */}
               {book.testimonials && book.testimonials.length > 0 && (
                 <div className="mt-12">
-                  <h3 className="mb-6 text-2xl font-bold text-[#2a332a]">
+                  <h3 className="mb-6 text-2xl font-bold text-[#2a332a] handwritten">
                     {lang === 'pl' ? 'Opinie czytelników' : 'Reader Reviews'}
                   </h3>
-                  <div className="space-y-4">
+                  <div className="space-y-6">
                     {book.testimonials
                       .filter((t) => t.language === lang)
                       .map((testimonial, index) => (
                         <blockquote
                           key={index}
-                          className="border-l-4 border-[#ffbd59] pl-4 italic text-[#2a332a] font-light"
+                          className="bg-white/70 p-6 shadow-sm relative handwritten"
                         >
-                          "{testimonial.quote}"
+                          <div className="absolute top-4 left-4 text-6xl text-[#ffbd59] opacity-30 leading-none">"</div>
+                          <p className="text-xl text-[#2a332a] leading-relaxed ml-8">
+                            {testimonial.quote}
+                          </p>
                           {testimonial.author && (
-                            <footer className="mt-2 text-sm font-semibold text-[#2a332a]">
+                            <footer className="mt-4 text-lg text-[#2a332a] text-right">
                               — {testimonial.author}
                             </footer>
                           )}
@@ -194,35 +184,6 @@ export default async function BookPage({ params }: PageProps) {
                 </div>
               )}
             </div>
-          </div>
-
-          {/* Chapter Sample Section */}
-          {book.chapterSample && (
-            <div className="mt-16">
-              <ExpandableSection
-                title={dict.books.chapterSample.title}
-                defaultExpanded={false}
-              >
-                <div className="prose prose-lg max-w-none">
-                  <h4 className="text-xl font-bold text-[#2a332a] mb-4">
-                    {book.chapterSample.title[lang]}
-                  </h4>
-                  <div className="text-[#2a332a] leading-relaxed whitespace-pre-line">
-                    {book.chapterSample.content[lang]}
-                  </div>
-                </div>
-              </ExpandableSection>
-            </div>
-          )}
-
-          {/* Reviews Section */}
-          <div className="mt-16">
-            <ExpandableSection
-              title={dict.books.reviews.title}
-              defaultExpanded={false}
-            >
-              <ReviewsSection bookId={book.id} lang={lang} dict={dict} />
-            </ExpandableSection>
           </div>
 
           {/* Email Signup Section */}

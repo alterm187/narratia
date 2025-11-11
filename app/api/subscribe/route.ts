@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { addSubscriber, getSubscriberInfo } from '@/lib/mailchimp';
+import { sendWelcomeEmail } from '@/lib/sendgrid';
 
 export async function POST(request: NextRequest) {
   try {
@@ -50,6 +51,21 @@ export async function POST(request: NextRequest) {
     });
 
     if (result.success) {
+      // Send welcome email with download link if it's a lead magnet
+      if (leadMagnet === 'essay' || leadMagnet === 'chapters') {
+        const emailResult = await sendWelcomeEmail(
+          email,
+          firstName,
+          language as 'pl' | 'en',
+          leadMagnet as 'essay' | 'chapters'
+        );
+
+        if (!emailResult.success) {
+          console.error('Failed to send welcome email:', emailResult.error);
+          // Don't fail the entire request, just log the error
+        }
+      }
+
       return NextResponse.json({
         success: true,
         message: result.alreadySubscribed

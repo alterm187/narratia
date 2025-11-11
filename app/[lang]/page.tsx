@@ -172,10 +172,6 @@ export default async function HomePage({ params }: PageProps) {
 
                 {/* Content */}
                 <div className="lg:col-span-3 text-white">
-                  <div className="inline-block bg-[#ffbd59] text-[#191919] px-3 py-1 text-xs font-bold uppercase tracking-wide mb-4">
-                    {lang === 'pl' ? 'Lead Magnet' : 'Lead Magnet'}
-                  </div>
-
                   <h2 className="text-3xl sm:text-4xl font-bold mb-4">
                     {leadMagnet.title[lang]}
                   </h2>
@@ -190,7 +186,7 @@ export default async function HomePage({ params }: PageProps) {
                     {leadMagnet.description[lang]}
                   </p>
 
-                  <div className="flex flex-col sm:flex-row gap-4">
+                  <div className="flex flex-col sm:flex-row gap-2.5">
                     <Link
                       href={`/${lang}/books/${leadMagnet.slug[lang]}`}
                       className="inline-flex items-center justify-center gap-2 bg-[#ffbd59] text-[#191919] px-8 py-4 font-bold hover:bg-white transition-all duration-300 shadow-lg hover:shadow-xl group"
