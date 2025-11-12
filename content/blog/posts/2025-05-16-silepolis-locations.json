@@ -1,21 +1,20 @@
 {
-  "slug": "silepolis-locations",
+  "slug": "silepolis-locations-16-maja",
   "title": {
-    "pl": "Wszystkie miejsca z Luster",
-    "en": "All Locations from Mirrors"
+    "pl": "Miejsca w książce - Silepolis",
+    "en": "Miejsca w książce - Silepolis"
   },
   "excerpt": {
-    "pl": "Lista miejsc obecnych w powieści 'Lustra, których nie mamy' - od Chorzowa po Katowice. Czy to spoiler?",
-    "en": "A list of places featured in the novel 'Mirrors We Don't Have' - from Chorzów to Katowice. Is this a spoiler?"
+    "pl": "A może by tak wymienić w jednym poście wszystkie miejsca jakoś obecne w tej książce? Czy to będzie spoiler?",
+    "en": "A może by tak wymienić w jednym poście wszystkie miejsca jakoś obecne w tej książce? Czy to będzie spoiler?"
   },
   "content": {
-    "pl": "# Wszystkie miejsca z Luster\n\nA może by tak wymienić w jednym poście wszystkie miejsca jakoś obecne w tej książce? Czy to będzie spoiler?\n\n## Miejsca akcji\n\n- Miasto Chorzów\n- II LO w Chorzowie\n- Świętochłowice\n- Katowice\n- Klub Wysoki Zamek\n\n## Dlaczego te miejsca?\n\nTego typu powieść dziejąca się w miejscach, po których wielu z was porusza się na codzień może się wydawać dziwnym pomysłem. Ale tak właśnie miało być.\n\nChodziło o pokazanie że poruszone w niej tematy dotyczą nas już teraz i tutaj. Tak, żeby przygotować się na przyszłość.\n\nKto czytał ten wie o czym mowa. Kto nie czytał, tego zapraszam na [narratia.pl](http://narratia.pl) 😉",
-    "en": "# All Locations from Mirrors\n\nMaybe list all the places somehow present in this book in one post? Will this be a spoiler?\n\n## Action Locations\n\n- City of Chorzów\n- II LO in Chorzów\n- Świętochłowice\n- Katowice\n- Wysoki Zamek Club\n\n## Why These Places?\n\nThis type of novel taking place in places where many of you move around on a daily basis may seem like a strange idea. But that's exactly how it was supposed to be.\n\nThe point was to show that the topics raised in it concern us already now and here. So as to prepare for the future.\n\nWho has read it knows what it's about. Who hasn't read it, I invite you to [narratia.pl](http://narratia.pl) 😉"
+    "pl": "A może by tak wymienić w jednym poście wszystkie miejsca jakoś obecne w tej książce? Czy to będzie spoiler?\n\nMiasto Chorzów II LO w Chorzowie Kocham Świętochłowice W KATOWICACH.eu Klub Wysoki Zamek\n\nTego typu powieść dziejąca się w miejscach, po których wielu z was porusza się na codzień może się wydawać dziwnym pomysłem. Ale tak właśnie miało być. Chodziło o pokazanie że poruszone w niej tematy dotyczą nas już teraz i tutaj. Tak, żeby przygotować się na przyszłość.",
+    "en": "A może by tak wymienić w jednym poście wszystkie miejsca jakoś obecne w tej książce? Czy to będzie spoiler?\n\nMiasto Chorzów II LO w Chorzowie Kocham Świętochłowice W KATOWICACH.eu Klub Wysoki Zamek\n\nTego typu powieść dziejąca się w miejscach, po których wielu z was porusza się na codzień może się wydawać dziwnym pomysłem. Ale tak właśnie miało być. Chodziło o pokazanie że poruszone w niej tematy dotyczą nas już teraz i tutaj. Tak, żeby przygotować się na przyszłość."
   },
   "date": "2025-05-16",
-  "category": "books",
-  "tags": ["lustra-ktorych-nie-mamy", "locations", "silesia"],
-  "coverImage": "/books/lustra-cover.png",
+  "category": "writing",
+  "tags": ["lustra", "locations"],
   "author": "Sebastian Proba",
   "featured": false
 }
