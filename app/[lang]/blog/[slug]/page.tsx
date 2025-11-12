@@ -111,8 +111,8 @@ export default async function BlogPostPage({ params }: PageProps) {
         <article className="container mx-auto px-6 max-w-4xl">
           <div className={`${post.coverImage ? '-mt-32' : 'pt-20'} relative z-10`}>
             {/* Article Header */}
-            <header className="bg-white/95 backdrop-blur-sm p-8 md:p-12 shadow-xl mb-8">
-              <div className="flex items-center gap-3 text-sm text-[#2a332a]/60 mb-4">
+            <header className="bg-white p-8 md:p-12 shadow-xl mb-8 rounded-lg">
+              <div className="flex items-center gap-3 text-sm text-[#2a332a]/70 font-medium mb-4">
                 <time dateTime={post.date}>{formattedDate}</time>
                 <span>•</span>
                 <span>
@@ -120,7 +120,7 @@ export default async function BlogPostPage({ params }: PageProps) {
                 </span>
               </div>
 
-              <h1 className="text-4xl md:text-5xl font-bold text-[#2a332a] mb-6 leading-tight">
+              <h1 className="text-4xl md:text-5xl font-bold text-[#191919] mb-6 leading-tight">
                 {title}
               </h1>
 
@@ -129,7 +129,7 @@ export default async function BlogPostPage({ params }: PageProps) {
                   {post.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="text-sm px-3 py-1 bg-[#ffbd59]/20 text-[#2a332a] rounded-full"
+                      className="text-sm px-3 py-1 bg-[#ffbd59]/30 text-[#2a332a] font-medium rounded-full hover:bg-[#ffbd59]/50 transition-colors"
                     >
                       #{tag}
                     </span>
@@ -139,14 +139,25 @@ export default async function BlogPostPage({ params }: PageProps) {
             </header>
 
             {/* Article Body */}
-            <div className="bg-white/80 backdrop-blur-sm p-8 md:p-12 shadow-lg mb-12">
-              <div className="prose prose-lg max-w-none prose-headings:text-[#2a332a] prose-p:text-[#2a332a]/80 prose-a:text-[#ffbd59] prose-a:no-underline hover:prose-a:underline prose-strong:text-[#2a332a] prose-ul:text-[#2a332a]/80 prose-ol:text-[#2a332a]/80">
+            <div className="bg-white p-8 md:p-12 shadow-lg mb-12 rounded-lg">
+              <div className="prose prose-lg max-w-none !text-[#191919]
+                [&_h1]:!text-[#191919] [&_h1]:!font-bold
+                [&_h2]:!text-[#2a332a] [&_h2]:!font-bold
+                [&_h3]:!text-[#2a332a] [&_h3]:!font-bold
+                [&_p]:!text-[#191919] [&_p]:!leading-relaxed
+                [&_a]:!text-[#ffbd59] [&_a]:!font-semibold [&_a]:!no-underline hover:[&_a]:!underline
+                [&_strong]:!text-[#191919] [&_strong]:!font-bold
+                [&_ul]:!text-[#191919] [&_ol]:!text-[#191919]
+                [&_li]:!text-[#191919] [&_li]:!leading-relaxed
+                [&_blockquote]:!border-l-4 [&_blockquote]:!border-[#ffbd59] [&_blockquote]:!bg-[#f1ede9]/50 [&_blockquote]:!py-2 [&_blockquote]:!px-4 [&_blockquote]:!text-[#191919]
+                [&_code]:!text-[#2a332a] [&_code]:!bg-[#f1ede9] [&_code]:!px-2 [&_code]:!py-1 [&_code]:!rounded
+                [&_pre]:!bg-[#2a332a] [&_pre]:!text-white [&_pre_code]:!text-white">
                 <ReactMarkdown remarkPlugins={[remarkGfm]}>{content}</ReactMarkdown>
               </div>
             </div>
 
             {/* Share & Back to Blog */}
-            <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mb-12 p-6 bg-white/60 backdrop-blur-sm border border-[#2a332a]/10">
+            <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mb-12 p-6 bg-white rounded-lg border border-[#2a332a]/10 shadow-sm">
               <Link
                 href={`/${lang}/blog`}
                 className="flex items-center gap-2 text-[#2a332a] hover:text-[#ffbd59] font-semibold transition-colors"
@@ -167,7 +178,7 @@ export default async function BlogPostPage({ params }: PageProps) {
                 {lang === 'pl' ? 'Wróć do bloga' : 'Back to Blog'}
               </Link>
 
-              <div className="text-sm text-[#2a332a]/60">
+              <div className="text-sm text-[#2a332a]/70">
                 {lang === 'pl'
                   ? 'Udostępnij ten wpis swoim znajomym'
                   : 'Share this post with your friends'}

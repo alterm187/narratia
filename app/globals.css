@@ -25,18 +25,11 @@
   --font-handwritten: var(--font-caveat);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #191919;
-    --foreground: #f1ede9;
-  }
-}
-
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: 'Open Sans', var(--font-sans), system-ui, sans-serif;
-  font-weight: 300;
+  font-weight: 400;
 }
 
 /* Smooth scrolling */
