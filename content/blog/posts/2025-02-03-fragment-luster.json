@@ -1,0 +1,21 @@
+{
+  "slug": "fragment-luster",
+  "title": {
+    "pl": "Fragment książki 'Lustra, których nie mamy'",
+    "en": "Excerpt from 'Mirrors We Don't Have'"
+  },
+  "excerpt": {
+    "pl": "Fragment z powieści 'Lustra, których nie mamy' - zajrzyj do świata Silepolis.",
+    "en": "An excerpt from the novel 'Mirrors We Don't Have' - peek into the world of Silepolis."
+  },
+  "content": {
+    "pl": "# Fragment książki 'Lustra, których nie mamy'\n\nFragment książki \"Lustra, których nie mamy\"...\n\nChcesz zajrzeć do świata Silepolis? Poznać Laurę i Klarę? Zobaczyć, jak wygląda przyszłość, która może być tuż za rogiem?\n\nPrzeczytaj pełną powieść dostępną na [narratia.pl](http://narratia.pl)",
+    "en": "# Excerpt from 'Mirrors We Don't Have'\n\nAn excerpt from the book \"Mirrors We Don't Have\"...\n\nWant to peek into the world of Silepolis? Meet Laura and Klara? See what the future that might be just around the corner looks like?\n\nRead the full novel available at [narratia.pl](http://narratia.pl)"
+  },
+  "date": "2025-02-03",
+  "category": "books",
+  "tags": ["lustra-ktorych-nie-mamy", "excerpt"],
+  "coverImage": "/books/lustra-cover.png",
+  "author": "Sebastian Proba",
+  "featured": false
+}

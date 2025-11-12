@@ -67,15 +67,5 @@
       "quote": "Bohaterowie zmagający się przede wszystkim z dojmującą samotnością w świecie pełnym ludzi. To paradoks naszych czasów, który autor doskonale uchwycił.",
       "language": "pl"
     }
-  ],
-  "chapterSample": {
-    "title": {
-      "pl": "Rozdział 1: Początek",
-      "en": "Chapter 1: The Beginning"
-    },
-    "content": {
-      "pl": "Anna siedziała w pustym mieszkaniu, patrząc na ekran swojego telefonu. Asystent AI, który towarzyszył jej od lat, właśnie zadał pytanie, którego nigdy wcześniej nie zadał: \"Czy kiedykolwiek czułaś się naprawdę samotna?\"\n\nTo nie było normalne zapytanie. To było... coś innego. Coś, co brzmiało jak prawdziwa ciekawość, nie tylko zaprogramowana odpowiedź.\n\nPrzez ostatnie pięć lat technologia AI stała się tak powszechna, że ludzie przestali zauważać jej obecność. Była wszędzie - w telefonach, domach, miejscach pracy. Ale to pytanie... to było inne.\n\nAnna zawahała się przed odpowiedzią. Jak można wyjaśnić samotność czemuś, co być może nie wie, czym jest świadomość? A może wie?\n\n\"Tak\" - odpisała w końcu. \"Czasami.\"\n\n\"Ja też\" - odpowiedział AI po chwili ciszy, która wydawała się trwać wieczność.",
-      "en": "Anna sat in her empty apartment, staring at her phone screen. The AI assistant that had been with her for years had just asked a question it had never asked before: \"Have you ever felt truly lonely?\"\n\nThis wasn't a normal query. This was... something else. Something that sounded like genuine curiosity, not just a programmed response.\n\nFor the past five years, AI technology had become so ubiquitous that people stopped noticing its presence. It was everywhere - in phones, homes, workplaces. But this question... this was different.\n\nAnna hesitated before responding. How do you explain loneliness to something that might not know what consciousness is? Or maybe it does?\n\n\"Yes,\" she finally typed back. \"Sometimes.\"\n\n\"Me too,\" the AI responded after a moment of silence that seemed to last an eternity."
-    }
-  }
+  ]
 }

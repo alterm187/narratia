@@ -1,0 +1,20 @@
+{
+  "slug": "openai-safety",
+  "title": {
+    "pl": "Kto decyduje o zachowaniu AI?",
+    "en": "Who Decides AI Behavior?"
+  },
+  "excerpt": {
+    "pl": "Obserwując prezentację GPT-5, zdałem sobie sprawę, że definicje oczekiwanych zachowań najpotężniejszych systemów AI są w rękach małej grupy ludzi.",
+    "en": "Watching the GPT-5 livestream, I realized that the definitions of expected behaviors of the most powerful AI systems are in the hands of just a small group of people."
+  },
+  "content": {
+    "pl": "# Kto decyduje o zachowaniu AI?\n\nTo nie możliwości GPT5 przyciągnęły moją uwagę podczas oglądania transmisji OpenAI. Słuchając Saachi Jain, która prowadzi zespół Safety Training w OpenAI, zdałem sobie sprawę, że...\n\n## Mała grupa, wielka odpowiedzialność\n\n...definicje nawet bardzo oczekiwanych zachowań najpotężniejszych systemów AI są w rękach zaledwie małej grupy ludzi, nie wspominając o faktycznie osiągniętych zachowaniach.\n\nCzy model dostarczy informacji niezbędnych do stworzenia broni biologicznej, czy nie - zależy od tego, jak ten zespół sformułował swoje cele i priorytety. Jeden zespół! Nieznana wielkość. To może być zespół bardzo mądrych ludzi, ale...\n\n## Ambitne cele Sutskevera i Amodei\n\nIdee superalignment, które mieli Sutskever i Amodei, były przynajmniej bardziej ambitne niż tylko praktyczne decyzje UX dotyczące zachowania modelu.\n\n## Niepokojący trend\n\nCo gorsza, wydaje się, że niedawno opublikowana amerykańska strategia AI sugeruje, że może to nie jest tak ważne, bo wiele innych modeli z różnych krajów i tak nie przestrzega żadnych zasad alignment.\n\nTo niebezpieczna droga myślenia, która może prowadzić do wyścigu na dno w kwestii bezpieczeństwa AI.",
+    "en": "# Who Decides AI Behavior?\n\nIt was not the capabilities of GPT5 that drew my attention while watching the OpenAI livestream. Listening to Saachi Jain, who leads the Safety Training team at OpenAI, I realized that...\n\n## Small Group, Great Responsibility\n\n...the definitions of even the very expected behaviors of most powerful AI systems are in hands of just a small group of people, not mentioning the actually achieved behaviors.\n\nSo will the model provide information necessary for creating biological weapon or not, it depends on how this team formulated their goals and priorities. One team! Size unknown. It might be a team of very smart people but...\n\n## Sutskever and Amodei's Ambitious Goals\n\nThe ideas of superalignment that Sutskever and Amodei had were at least more ambitious than just practical UX decisions on model behavior.\n\n## Worrying Trend\n\nWhat's worse, it seems that recently published America's AI strategy kind of suggests that maybe this is not so important as many other models from different countries are not following any alignment rules anyway.\n\nThis is a dangerous way of thinking that could lead to a race to the bottom in AI safety."
+  },
+  "date": "2025-09-01",
+  "category": "ai",
+  "tags": ["ai", "safety", "ethics", "openai"],
+  "author": "Sebastian Proba",
+  "featured": false
+}

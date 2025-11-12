@@ -1,0 +1,20 @@
+{
+  "slug": "pedestrian-detection",
+  "title": {
+    "pl": "Detekcja pieszych i upór przemysłu",
+    "en": "Pedestrian Detection and Industry Stubbornness"
+  },
+  "excerpt": {
+    "pl": "Dlaczego przemysł wciąż wykorzystuje CNN do detekcji pieszych, mimo że badania pokazują pogorszenie wykrywania dzieci?",
+    "en": "Why does the industry still use CNNs for pedestrian detection, even though research shows worsening child detection?"
+  },
+  "content": {
+    "pl": "# Detekcja pieszych i upór przemysłu\n\nOd jakiegoś czasu nie śledzę zbyt uważnie rozwoju autonomicznej jazdy i wizji komputerowej. Dlatego jestem zdumiony, że wciąż uderzamy głową w mur.\n\nMogę nie być fanem autonomicznej jazdy zakłócającej branże (choć chciałbym mieć opcję oddania kierownicy na autostradzie ;) ). Jednocześnie, nawet poza autonomiczną jazdą, technologia wykrywania pieszych ma wartość dla inteligentnego transportu. Rozczarowujące jest odkrycie, że przemysł uparcie wykorzystuje CNN do tego celu.\n\n## Problem z wykrywaniem dzieci\n\nW 2024 roku Uniwersytet Pekiński i University College London przeprowadziły badania pokazujące, że choć ogólna dokładność wykrywania pieszych przez najnowsze modele wzrosła, zdolność do wykrywania dzieci się pogarsza. To nie jest tylko problem zbiorów danych. Ludzie potrafią rozpoznać osobę w każdym kontekście, ponieważ nasze mózgi nie opierają się na brutalnym treningu danych jak konwolucyjne sieci neuronowe.\n\n## Kierunek w nikąd\n\nWlewamy pieniądze w udoskonalanie systemów, które nigdy nie dorównają poziomowi bezpieczeństwa ludzkiego, ponieważ uczą się w fundamentalnie inny sposób. W sposób, który z definicji jest podatny na wzmacnianie uprzedzeń danych zarówno w przypadku nadreprezentacji, jak i niedoreprezentacji.\n\nCo by było, gdybyśmy zainwestowali w zrozumienie i naśladowanie tego, jak ludzki mózg faktycznie się uczy i adaptuje? Wydaje się jednak, że przemysł nie jest w stanie zmienić kursu.\n\n## Większe problemy\n\nI to dotyczy tylko wykrywania. Nie możemy zapomnieć, że wciąż możliwość ataków adversarialnych na wizję komputerową jest ogromnym problemem. Nawet Geoffrey Hinton przyznał, że się mylił mówiąc, że głębokie uczenie będzie w stanie zrobić wszystko.",
+    "en": "# Pedestrian Detection and Industry Stubbornness\n\nI've been not following autonomous driving and computer vision for some time already. So I am astonished that we are still banging our heads against the wall.\n\nI might not be a fan of autonomous driving disrupting industries (though I'd like to have an option to give away the wheel on a highway ;) ). At the same time even beyond autonomous driving, pedestrians detection technology holds value for intelligent transportation. It's disappointing to discover that the industry is stubborn to use CNNs for this purpose.\n\n## The Child Detection Problem\n\nIn 2024 Peking University and University College London conducted research that shows that while overall detection accuracy of pedestrian detection by the newest models is up, the ability to detect children is getting worse. This isn't just a dataset problem. Humans can spot a person in any context because our brains don't rely on brute-force data training like convolutional neural networks.\n\n## A Dead End\n\nWe're pouring money into refining systems that will never match human-level safety because they learn in a fundamentally different way. In a way that is by definition prone to amplifying data biases both in over-representation and under-representation.\n\nWhat if we invested in understanding and mimicking how the human brain actually learns and adapts? It seems that the industry is not capable of changing course, though.\n\n## Bigger Problems\n\nAnd this is only about detection. We must not forget that still the possibility of adversarial attacks on computer vision is a huge problem. Even Geoffrey Hinton admitted he was wrong saying deep learning will be able to do everything."
+  },
+  "date": "2025-09-03",
+  "category": "ai",
+  "tags": ["ai", "computer-vision", "safety", "autonomous-driving"],
+  "author": "Sebastian Proba",
+  "featured": false
+}

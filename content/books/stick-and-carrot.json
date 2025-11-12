@@ -9,8 +9,8 @@
     "pl": "Laska i kij"
   },
   "description": {
-    "en": "A Christmas narrative exploring the perspectives of Bethlehem's shepherds and the Night of the Nativity seen through their eyes. The story delves into themes of waiting, friendship, and the profound significance of witnessing the birth of Christ through the eyes of ordinary people. Perfect reading for the Christmas season.",
-    "pl": "Opowieść o betlejemskich pasterzach i Nocy Narodzenia widzianej ich oczami. Historia zgłębia tematy oczekiwania, przyjaźni i głębokiego znaczenia bycia świadkiem narodzin Chrystusa z perspektywy zwykłych ludzi. W sam raz do przeczytania na Święta Bożego Narodzenia."
+    "en": "A story about the Bethlehem shepherds and Nativity Night seen through their eyes. Perfect for reading during the Christmas season. (Polish version only)",
+    "pl": "Opowieść o betlejemskich pasterzach i Nocy Narodzenia widzianej ich oczami. W sam raz do przeczytania na Święta Bożego Narodzenia."
   },
   "coverImage": "/books/laska_print_cover1.png",
   "formats": ["ebook", "print"],
@@ -47,15 +47,5 @@
         "displayName": "Amazon"
       }
     ]
-  },
-  "chapterSample": {
-    "title": {
-      "pl": "Początek",
-      "en": "The Beginning"
-    },
-    "content": {
-      "pl": "Noce w Betlejem były zimne, mimo że dzień potrafił być upalny. Siedziałem przy ognisku, patrząc na gwiazdy, które zawsze wydawały się bliżej tutaj, na wzgórzach, niż gdziekolwiek indziej.\n\nMój przyjaciel Dawid, starszy ode mnie o dziesięć lat, poprawiał koc na ramionach. \"Zimno dziś\" - mruknął, choć obaj wiedzieliśmy, że to nie była rozmowa o pogodzie.\n\n\"Zastanawiasz się, czy to się kiedyś stanie?\" - zapytałem, wiedząc, że zrozumie.\n\nPasterze od pokoleń opowiadali historie o obiecanym Mesjaszu. Nasi ojcowie słyszeli je od swoich ojców, a ci od swoich. Ile pokoleń może czekać na obietnicę?\n\n\"Stanie się, gdy ma się stać\" - odpowiedział Dawid, powtarzając słowa, które słyszeliśmy tysiące razy. Ale w jego głosie było coś nowego. Coś, czego nie potrafiłem nazwać.\n\nTej nocy nie wiedziałem, że odpowiedź nadejdzie szybciej, niż ktokolwiek mógł się spodziewać. Że niebo rozświetli się blaskiem, który zmieni wszystko. Że prostych pasterzy, takich jak my, Bóg wybierze na pierwszych świadków największego cudu.\n\nAle w tamtej chwili po prostu patrzyliśmy na gwiazdy i czekaliśmy.",
-      "en": "The nights in Bethlehem were cold, even though the days could be scorching. I sat by the fire, gazing at the stars that always seemed closer here on the hills than anywhere else.\n\nMy friend David, ten years my senior, adjusted the blanket on his shoulders. \"Cold tonight,\" he muttered, though we both knew this wasn't a conversation about weather.\n\n\"Do you wonder if it will ever happen?\" I asked, knowing he would understand.\n\nShepherds had told stories of the promised Messiah for generations. Our fathers heard them from their fathers, and they from theirs. How many generations can wait for a promise?\n\n\"It will happen when it's meant to happen,\" David replied, repeating words we'd heard a thousand times. But there was something new in his voice. Something I couldn't name.\n\nThat night I didn't know that the answer would come sooner than anyone could expect. That the sky would light up with a radiance that would change everything. That simple shepherds like us would be chosen by God as the first witnesses to the greatest miracle.\n\nBut in that moment, we simply watched the stars and waited."
-    }
   }
 }
