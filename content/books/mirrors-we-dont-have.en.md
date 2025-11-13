@@ -2,9 +2,10 @@
 id: mirrors-we-dont-have
 slug: mirrors-we-dont-have
 title: "Mirrors We Don't Have"
-coverImage: /books/Mirrors - ebook cover.png
+coverImage: /books/Mirrors - print cover.png
 formats:
   - ebook
+  - print
 publishedDate: "2025-03-12"
 genre:
   - Fiction
