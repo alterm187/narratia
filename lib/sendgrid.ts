@@ -26,7 +26,7 @@ export async function sendEmail(params: EmailParams) {
       },
       from: {
         email: 'seba@narratia.pl',
-        name: 'Sebastian Żurkowski - Narratia',
+        name: 'Sebastian Proba - Narratia',
       },
       subject: params.subject,
       text: params.text,
