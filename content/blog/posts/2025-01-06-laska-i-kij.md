@@ -19,4 +19,4 @@ Powieść "Laska i kij" mojego autorstwa została po raz pierwszy wydana w zesz�
 
 Nasz współczesny bożonarodzeniowy folklor bardzo często umiejscawia pokłon Trójki Mędrców w Stajence Betlejemskiej. Mimo to trzeba pamiętać, że już sama Ewangelia mówi, że weszli do domu a nie do szopy. Druga sprawa to czas ich przybycia. Gdyby mieli przybyć gdzieś z bliska, na przykład z ówczesnego królestwa Persów, jak sobie to wyobrażał Jan Dobraczyński w "Cieniu Ojca", to podróż zajęłaby im około dwóch lub trzech miesięcy. Można jednak przypuszczać, że wówczas nie byliby aż tak zagadkowi, ponieważ Persowie jako naród byli znani w Izraelu. Ta ich narodowa nieokreśloność pozwala na pisarską spekulację - może byli z krain tak odległych, że dla Izraela nieznanych? Może byli innych ras?
 
-Jeśli chcecie wiedzieć jak ich przybycie wyglądało to zapraszam do czytania 😊(info: [narratia.pl](http://narratia.pl))
+Jeśli chcecie wiedzieć jak ich przybycie wyglądało to zapraszam do czytania 😊(info: [Laska i kij](/pl/books/laska-i-kij))

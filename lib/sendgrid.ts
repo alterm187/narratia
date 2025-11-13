@@ -25,7 +25,7 @@ export async function sendEmail(params: EmailParams) {
         name: params.toName,
       },
       from: {
-        email: 'seba@narratia.pl',
+        email: 'sebastian(at)narratia.pl',
         name: 'Sebastian Proba - Narratia',
       },
       subject: params.subject,
@@ -70,8 +70,8 @@ export async function sendWelcomeEmail(
     : `https://narratia.pl/${language}/download/chapters`;
 
   const subject = isPl
-    ? `${leadMagnet === 'essay' ? 'Twój esej "Odbicie umysłu"' : 'Twoje fragmenty książek'} - dziękuję za zapis!`
-    : `Your ${leadMagnet === 'essay' ? 'Essay "Reflection of the Mind"' : 'Chapter Samples'} - Thank You!`;
+    ? `${leadMagnet === 'essay' ? 'Dla Ciebie: esej "Odbicie umysłu"' : 'Dla Ciebie: fragmenty książek'} - dziękuję za zainteresowanie! Przyjemnego czytania 😉`
+    : `Your ${leadMagnet === 'essay' ? 'Essay "Reflection of the Mind"' : 'Chapter Samples'} - Thank You! Happy Reading 😉`;
 
   const htmlContent = `
 <!DOCTYPE html>
