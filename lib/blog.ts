@@ -1,5 +1,6 @@
 import fs from 'fs';
 import path from 'path';
+import matter from 'gray-matter';
 import { Locale } from '@/types/i18n';
 
 export interface BlogPost {
@@ -49,7 +50,31 @@ export function getAllBlogPosts(): BlogPost[] {
     const posts: BlogPost[] = [];
 
     for (const file of files) {
-      if (file.endsWith('.json')) {
+      if (file.endsWith('.md')) {
+        const filePath = path.join(BLOG_POSTS_DIR, file);
+        const fileContent = fs.readFileSync(filePath, 'utf8');
+        const { data, content } = matter(fileContent);
+
+        // For markdown files, content is the main text
+        // We can store content in both languages or just one
+        const post: BlogPost = {
+          slug: data.slug,
+          title: data.title || { pl: '', en: '' },
+          excerpt: data.excerpt || { pl: '', en: '' },
+          content: {
+            pl: content.trim(),
+            en: content.trim(),
+          },
+          date: data.date,
+          category: data.category,
+          tags: data.tags,
+          coverImage: data.coverImage,
+          author: data.author,
+          featured: data.featured,
+        };
+        posts.push(post);
+      } else if (file.endsWith('.json')) {
+        // Keep backward compatibility with JSON files
         const filePath = path.join(BLOG_POSTS_DIR, file);
         const fileContent = fs.readFileSync(filePath, 'utf8');
         const post = JSON.parse(fileContent) as BlogPost;

@@ -1,0 +1,22 @@
+---
+slug: wordsworth-tlumaczenie-20-lutego
+title:
+  pl: "Tłumaczenie Ody Wordswortha - nietypowa współpraca"
+  en: "Tłumaczenie Ody Wordswortha - nietypowa współpraca"
+excerpt:
+  pl: "Jedyne takie tłumaczenie Ody Wordswortha... nie uwierzycie owocem jakiej szczególnie nietypowej współpracy ono jest..."
+  en: "Jedyne takie tłumaczenie Ody Wordswortha... nie uwierzycie owocem jakiej szczególnie nietypowej współpracy ono jest..."
+date: "2025-02-20"
+category: writing
+tags:
+  - translation
+  - poetry
+author: Sebastian Proba
+featured: false
+---
+
+Jedyne takie tłumaczenie Ody Wordswortha...
+
+nie uwierzycie owocem jakiej szczególnie nietypowej współpracy ono jest... nie jest idealne bo i ten kawałek poezji jest bardzo trudny ale... cóż, jest to przygoda...
+
+Oda o przeczuciach nieśmiertelności... tytuł chyba jeszcze za Stanisławem Barańczakiem ale lepszy byłby chyba "Przebłyski Pamięci Nieśmiertelności ze wspomnień wczesnego dzieciństwa"

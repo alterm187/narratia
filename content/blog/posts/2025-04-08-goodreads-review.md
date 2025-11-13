@@ -1,0 +1,18 @@
+---
+slug: goodreads-review-8-kwietnia
+title:
+  pl: "Pierwsza recenzja Luster na Goodreads"
+  en: "Pierwsza recenzja Luster na Goodreads"
+excerpt:
+  pl: "Pierwsza recenzja angielskojęzycznej wersji \"Luster\" pojawiła się na goodreads.com!"
+  en: "Pierwsza recenzja angielskojęzycznej wersji \"Luster\" pojawiła się na goodreads.com!"
+date: "2025-04-08"
+category: writing
+tags:
+  - lustra
+  - reviews
+author: Sebastian Proba
+featured: false
+---
+
+Pierwsza recenzja angielskojęzycznej wersji "Luster" pojawiła się na goodreads.com!

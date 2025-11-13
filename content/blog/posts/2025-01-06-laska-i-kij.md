@@ -1,0 +1,22 @@
+---
+slug: laska-i-kij-6-stycznia
+title:
+  pl: '"Laska i kij" - wypełnianie luk historycznych'
+  en: '"Laska i kij" - wypełnianie luk historycznych'
+excerpt:
+  pl: Powieść "Laska i kij" mojego autorstwa została po raz pierwszy wydana w zeszłym roku. Dziś święto Trzech Króli więc dobra okazja...
+  en: Powieść "Laska i kij" mojego autorstwa została po raz pierwszy wydana w zeszłym roku. Dziś święto Trzech Króli więc dobra okazja...
+date: "2025-01-06"
+category: writing
+tags:
+  - laska-i-kij
+  - history
+author: Sebastian Proba
+featured: false
+---
+
+Powieść "Laska i kij" mojego autorstwa została po raz pierwszy wydana w zeszłym roku. Dziś święto Trzech Króli więc dobra okazja, żeby wspomnieć jak ciekawym wyzwaniem przy jej pisaniu było wypełnienie luk historycznych związanych z tą zagadkową trójką.
+
+Nasz współczesny bożonarodzeniowy folklor bardzo często umiejscawia pokłon Trójki Mędrców w Stajence Betlejemskiej. Mimo to trzeba pamiętać, że już sama Ewangelia mówi, że weszli do domu a nie do szopy. Druga sprawa to czas ich przybycia. Gdyby mieli przybyć gdzieś z bliska, na przykład z ówczesnego królestwa Persów, jak sobie to wyobrażał Jan Dobraczyński w "Cieniu Ojca", to podróż zajęłaby im około dwóch lub trzech miesięcy. Można jednak przypuszczać, że wówczas nie byliby aż tak zagadkowi, ponieważ Persowie jako naród byli znani w Izraelu. Ta ich narodowa nieokreśloność pozwala na pisarską spekulację - może byli z krain tak odległych, że dla Izraela nieznanych? Może byli innych ras?
+
+Jeśli chcecie wiedzieć jak ich przybycie wyglądało to zapraszam do czytania 😊(info: [narratia.pl](http://narratia.pl))

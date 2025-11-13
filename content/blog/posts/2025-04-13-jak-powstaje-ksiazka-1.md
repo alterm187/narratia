@@ -1,0 +1,28 @@
+---
+slug: jak-powstaje-ksiazka-1-13-kwietnia
+title:
+  pl: "Jak powstaje książka? Odcinek 1 - Pomysł"
+  en: "Jak powstaje książka? Odcinek 1 - Pomysł"
+excerpt:
+  pl: "Zastanawialiście się kiedyś jak powstaje książka? Odcinek 1 – Pomysł i jego przeż(u|y)wanie."
+  en: "Zastanawialiście się kiedyś jak powstaje książka? Odcinek 1 – Pomysł i jego przeż(u|y)wanie."
+date: "2025-04-13"
+category: writing
+tags:
+  - writing
+  - craft
+author: Sebastian Proba
+featured: false
+---
+
+Zastanawialiście się kiedyś jak powstaje książka?
+
+Odcinek 1 – Pomysł i jego przeż(u|y)wanie.
+
+Oczywiste? No pewnie. Jak się nie wie o czym by tu napisać to się nie pisze 😎znaczy się można, jasne... pisanie jak się człowiekowi wydaje że umie, a nawet nie wie co chce powiedzieć nazywa się grafomanią. Ja przez jakiś czas myślałem, że może to mam, ale na szczęście poszedłem z moim tekstem na diagnostykę beta-readerską do specjalistki. Dostałem orzeczenie o braku objawów grafomanii i parę zachęt (może na wszelki wypadek zasięgnę drugiej opinii).
+
+Wracając do książki. Pomysł jest potrzebny żeby słowa, które puścimy w ruch miały coś do roboty. Tyle, że na słowie "pomysł" kończą się chyba podobieństwa między podejściami różnych autorów. Jedni autorzy lubią bardziej opowiadać historie i wzbudzać emocje, innym najbardziej zależy żeby czytelnik musiał pogłówkować, na przykład kto zabił. Są też tacy, którzy chcą pokazać jakieś tło historyczne albo ważne wydarzenia. W wielu przypadkach jest to pewnie mieszanka różnych takich elementów jeśli chodzi o motywację autora. Podejście do pomysłu zależy jednak od tego, który element dominuje. Jeśli ktoś pisze kryminał albo romans to główny motyw książki, choć ważny, jest zwykle podporządkowany celowi gatunkowemu: konkretnym emocjom, napięciu, spojrzeniu na relacje, zagadce. W innych gatunkach może zdominować konkretna historia. Wyobrażam sobie na przykład, że Jakub Małecki planując "Horyzont" pomyślał sobie (czyli innymi słowy "miał pomysł"): "a gdyby tak napisać historię weterana, który wraca do domu po kilku turach w Afganistanie". Albo Joseph Conrad, gdy przyszło mu do głowy, że będzie pisał, pomyślał sobie pewnie "w moim drugim życiu, tym na morzu, przeżyłem tyle przygód, spotkałem tylu ludzi, że warto byłoby to pospisywać". Z kolei taki Graham Masterton... hmm... może pomyślał "Co by tu jeszcze napisać, żeby przez całą książkę czytelnik bał się ciemności w mieszkaniu ale jednak nie mógł się oderwać? Czego jeszcze ludzie się boją?". Dukaj czy Proba mogą sobie myśleć "jak będzie wyglądała przyszłość pod tym czy innym względem?" (fajnie tak postawić swoje nazwisko obok nazwiska jednego z mistrzów 😊) Inną grupą autorów, tak mi się przynajmniej wydaje, są ci dla których dana historia jest bardziej ilustracją jakichś konkretnych tematów, które chcą poruszyć. Małecki mógł równie dobrze pomyśleć "Jak to jest mieć PTS? Jak to jest nie umieć się odnaleźć w zwykłym życiu gdy się tyle miało do czynienia ze śmiercią? Napiszę historię weterana." W tej grupie pomysł dotyczy tego czegoś ważnego co autor chce powiedzieć i opowiedzieć.
+
+Gdy myślałem o tym, co potem stało się książką "Lustra, których nie mamy", chciałem poruszyć temat samotności, która jest coraz większym problemem społecznym, a która wynika z bardzo wielu różnych kwestii. Technologia ten problem pogłębia, a nawet często jest jego przyczyną, jednocześnie udając, że potrafi być dla niego lekarstwem. Tytuł tej książki był dość oczywisty jak już opowiedziałem sam sobie co chcę opowiedzieć. Temat AI był w niej również potrzebny, a jeśli chcecie wiedzieć dlaczego to zapraszam do czytania.
+
+Autor musi przetrawić swój pomysł, poczuć tą opowieść, nawet jeśli jeszcze nie wie (a często tak bywa) jak się dokładnie potoczy. Pomysł nie zawsze oznacza, że wiadomo wszystko od początku do końca. Powieść powstaje w trakcie powstawania, jakkolwiek dziwnie to brzmi. Przeżuwanie pomysłu może oczywiście oznaczać, że autor najpierw wszystko wymyśla, a potem dopiero siada do pisania. W większości przypadków jednakże tak nie jest. Ja w każdym razie nie wiem gdzie dokładnie zaprowadzą mnie moi bohaterowie, okazuje się to dopiero jak puszczę ich w ruch. Pisząc "Lustra" wiedziałem jakie będą postacie i co z opowiadania o nich ma wynikać, ale nie znałem zakończenia. Gdy pisałem "Laskę i kij" wiedziałem jakie będą główne wydarzenia (to w końcu powieść historyczna) i jakie będzie zakończenie. W innych projektach mam również opracowaną główną linię fabuły, ale powieść tworzą jej bohaterowie. I to o nich będzie odcinek drugi tej serii.

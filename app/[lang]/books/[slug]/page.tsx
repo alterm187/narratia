@@ -9,6 +9,7 @@ import Footer from '@/components/Footer';
 import { generateMetaTags, generateBookSchema } from '@/lib/seo';
 import BookEmailSignup from '@/components/BookEmailSignup';
 import BookPageWrapper from '@/components/BookPageWrapper';
+import MarkdownContent from '@/components/MarkdownContent';
 
 interface PageProps {
   params: Promise<{ lang: Locale; slug: string }>;
@@ -108,9 +109,12 @@ export default async function BookPage({ params }: PageProps) {
                 <p className="mt-4 text-xl text-[#667c8b] font-light italic">{book.subtitle[lang]}</p>
               )}
 
-              <p className="mt-6 text-lg leading-relaxed text-[#2a332a] font-light">
-                {book.description[lang]}
-              </p>
+              <div className="mt-6">
+                <MarkdownContent
+                  content={book.description[lang]}
+                  className="text-lg leading-relaxed text-[#2a332a] font-light [&_p]:mb-4"
+                />
+              </div>
 
               {/* Buy Links */}
               <div className="mt-8 space-y-6">

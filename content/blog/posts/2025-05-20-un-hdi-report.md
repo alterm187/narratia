@@ -1,0 +1,27 @@
+---
+slug: un-hdi-report-20-maja
+title:
+  pl: "UN Human Development Report 2025 - A Matter of Choice"
+  en: "UN Human Development Report 2025 - A Matter of Choice"
+excerpt:
+  pl: "I am now reading \"Human Development Report 2025; A matter of choice: People and possibilities in the age of AI\" by United Nations Development Programme."
+  en: "I am now reading \"Human Development Report 2025; A matter of choice: People and possibilities in the age of AI\" by United Nations Development Programme."
+date: "2025-05-20"
+category: thoughts
+tags:
+  - AI
+  - society
+  - economics
+author: Sebastian Proba
+featured: false
+---
+
+I am now reading "Human Development Report 2025; A matter of choice: People and possibilities in the age of AI" by United Nations Development Programme. It will be a long journey and I am on the beginning. However already at the beginning this report is not optimistic while showing charts of Human Development Index and how it was impacted by geopolitics and pandemic. And at the same time it takes optimistic assumption that I pasted here.
+
+What if these spaces are too narrow? Not so many of them?
+
+Though, I agree: for the whole humanity this is a matter of choice. The thing is if we are able to make it right. Still the techno-utopia based on commonly applied UBI is on the other side of the choice with strong gravity well pulling us all into a post-labor economics which is impossible to work for overall HDI rise.
+
+If you ask me what is the right choice, I don't know. I am reading this report to see what UN is proposing.
+
+> ...Whatever new algorithmic feats are in store, there will always be spaces, however in flux, where humans shine—where humans do things that machines cannot do or are bad at, where societies value people rather than machines doing things and where people and machines go farther and faster together than separately.

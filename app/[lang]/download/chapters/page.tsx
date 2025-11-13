@@ -1,42 +1,19 @@
-'use client';
-
-import { useEffect, useState } from 'react';
-import { Locale, Dictionary } from '@/types/i18n';
-import { Book } from '@/types/book';
+import { Locale } from '@/types/i18n';
+import { getDictionary } from '@/lib/i18n';
+import { getAllBooks } from '@/lib/books';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import EmailSignupForm from '@/components/EmailSignupForm';
+import ChaptersEmailForm from '@/components/ChaptersEmailForm';
 
 interface PageProps {
   params: Promise<{ lang: Locale }>;
 }
 
-export default function ChaptersDownloadPage({ params }: PageProps) {
-  const [lang, setLang] = useState<Locale>('pl');
-  const [dict, setDict] = useState<Dictionary | null>(null);
-  const [books, setBooks] = useState<Book[]>([]);
-
-  useEffect(() => {
-    params.then(async (p) => {
-      setLang(p.lang);
-      const { getDictionary } = await import('@/lib/i18n-client');
-      const { getAllBooks } = await import('@/lib/books');
-      const dictionary = await getDictionary(p.lang);
-      const allBooks = await getAllBooks();
-      setDict(dictionary);
-      setBooks(allBooks.filter(book => book.id !== 'minds-reflection'));
-    });
-  }, [params]);
-
-  if (!dict) {
-    return (
-      <div className="min-h-screen bg-gradient-to-b from-[#f1ede9] to-white flex items-center justify-center">
-        <div className="text-[#2a332a]">Loading...</div>
-      </div>
-    );
-  }
-
-  const regularBooks = books;
+export default async function ChaptersDownloadPage({ params }: PageProps) {
+  const { lang } = await params;
+  const dict = await getDictionary(lang);
+  const allBooks = await getAllBooks();
+  const regularBooks = allBooks.filter(book => book.id !== 'minds-reflection');
 
   return (
     <>
@@ -121,16 +98,7 @@ export default function ChaptersDownloadPage({ params }: PageProps) {
                     ? 'Zapisz się, aby otrzymać fragmenty bezpośrednio na swój email. Żadnego spamu, tylko wartościowe treści.'
                     : 'Subscribe to receive the samples directly to your inbox. No spam, only valuable content.'}
                 </p>
-                <EmailSignupForm
-                  variant="lead-magnet"
-                  language={lang}
-                  leadMagnet="chapters"
-                  onSuccess={() => {
-                    if (typeof window !== 'undefined') {
-                      window.location.href = `/${lang}/download/thank-you?type=chapters`;
-                    }
-                  }}
-                />
+                <ChaptersEmailForm lang={lang} />
               </div>
             </div>
           </div>
