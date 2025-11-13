@@ -6,6 +6,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Hero from '@/components/Hero';
 import { generateMetaTags } from '@/lib/seo';
+import MarkdownContent from '@/components/MarkdownContent';
 
 interface PageProps {
   params: Promise<{ lang: Locale }>;
@@ -102,9 +103,7 @@ export default async function HomePage({ params }: PageProps) {
                         </p>
                       )}
 
-                      <p className="text-lg text-[#2a332a] leading-relaxed mb-6 font-light">
-                        {book.description[lang]}
-                      </p>
+                      <MarkdownContent content={book.description[lang]} className="text-lg text-[#2a332a] leading-relaxed mb-6 font-light" />
 
                       <div className="flex flex-wrap gap-2 mb-8">
                         {book.formats.map((format) => (
@@ -182,10 +181,8 @@ export default async function HomePage({ params }: PageProps) {
                     </p>
                   )}
 
-                  <p className="text-lg text-[#f1ede9] leading-relaxed mb-8 font-light">
-                    {leadMagnet.description[lang]}
-                  </p>
-
+                  <MarkdownContent content={leadMagnet.description[lang]} className="text-lg text-[#f1ede9] leading-relaxed mb-8 font-light" />
+                  
                   <div className="flex flex-col sm:flex-row gap-2.5">
                     <Link
                       href={`/${lang}/download/essay`}
