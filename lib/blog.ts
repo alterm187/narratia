@@ -73,12 +73,6 @@ export function getAllBlogPosts(): BlogPost[] {
           featured: data.featured,
         };
         posts.push(post);
-      } else if (file.endsWith('.json')) {
-        // Keep backward compatibility with JSON files
-        const filePath = path.join(BLOG_POSTS_DIR, file);
-        const fileContent = fs.readFileSync(filePath, 'utf8');
-        const post = JSON.parse(fileContent) as BlogPost;
-        posts.push(post);
       }
     }
 
