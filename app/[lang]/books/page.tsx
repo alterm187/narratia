@@ -5,6 +5,7 @@ import { getAllBooks } from '@/lib/books';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { generateMetaTags } from '@/lib/seo';
+import MarkdownContent from '@/components/MarkdownContent';
 
 interface PageProps {
   params: Promise<{ lang: Locale }>;
@@ -83,16 +84,14 @@ export default async function BooksPage({ params }: PageProps) {
                       {leadMagnet.subtitle[lang]}
                     </p>
                   )}
-                  <p className="text-lg leading-relaxed mb-6 font-light">
-                    {leadMagnet.description[lang]}
-                  </p>
+                  <MarkdownContent content={leadMagnet.description[lang]} className="text-lg leading-relaxed mb-6 font-light" />
                   <div className="flex flex-wrap gap-3">
                     <Link
                       href={`/${lang}/download/essay`}
                       className="inline-flex items-center gap-2 bg-[#ffbd59] text-[#191919] px-6 py-3 font-bold hover:bg-white transition-all duration-300 shadow-lg group"
                     >
                       {lang === 'pl' ? 'Pobierz za darmo' : 'Download for Free'}
-                      <svg className="w-5 h-5 transform group-hover:translate-y-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <svg className="w-5 h-5 transform group-hover:translate-y-1 transition-transform" fill="none" stroke="currentColor" viewBox="ब 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M9 19l3 3m0 0l3-3m-3 3V10" />
                       </svg>
                     </Link>
