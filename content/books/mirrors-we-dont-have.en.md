@@ -1,5 +1,5 @@
 ---
-id: mirrors-we-dont-have-en
+id: mirrors-we-dont-have
 slug: mirrors-we-dont-have
 title: "Mirrors We Don't Have"
 coverImage: /books/Mirrors - ebook cover.png

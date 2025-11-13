@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Book } from '@/types/book';
 import { Dictionary, Locale } from '@/types/i18n';
+import MarkdownContent from '@/components/MarkdownContent';
 
 interface BookCardProps {
   book: Book;
@@ -41,9 +42,9 @@ export default function BookCard({ book, dict, lang }: BookCardProps) {
           <p className="mt-1 text-sm text-zinc-500">{book.subtitle[lang]}</p>
         )}
 
-        <p className="mt-3 line-clamp-3 text-sm text-zinc-600">
-          {book.description[lang]}
-        </p>
+        <div className="mt-3 line-clamp-3 text-sm text-zinc-600">
+          <MarkdownContent content={book.description[lang]} />
+        </div>
 
         <div className="mt-4 flex flex-wrap gap-2">
           {book.formats.map((format) => (
