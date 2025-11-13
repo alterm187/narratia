@@ -44,7 +44,7 @@ export default async function HomePage({ params }: PageProps) {
         <section className="bg-gradient-to-b from-[#f1ede9] to-[#e5dfd7] py-20">
           <div className="container mx-auto max-w-[800px] px-6">
             <div className="mb-16 text-center">
-              <h2 className="text-4xl sm:text-5xl font-bold text-[#2a332a] mb-4">
+              <h2 className="text-3xl sm:text-4xl font-bold text-[#2a332a] mb-4">
                 {dict.home.featuredBooks.title}
               </h2>
               <div className="w-20 h-1 bg-[#ffbd59] mx-auto" />

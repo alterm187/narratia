@@ -16,7 +16,7 @@ export async function generateMetadata({ params }: PageProps) {
   return generateMetaTags({
     title: lang === 'pl' ? 'Blog - Narratia' : 'Blog - Narratia',
     description: lang === 'pl'
-      ? 'Myśli o pisaniu, książkach, filozofii i sztucznej inteligencji.'
+      ? '... czyli to co zdarza mi się wrzucić do sieci.'
       : 'Thoughts on writing, books, philosophy, and artificial intelligence.',
     locale: lang,
     pathname: '/blog',
@@ -44,7 +44,7 @@ export default async function BlogPage({ params }: PageProps) {
             </h1>
             <p className="text-xl md:text-2xl text-[#2a332a]/80 max-w-3xl mx-auto leading-relaxed">
               {lang === 'pl'
-                ? 'Myśli o pisaniu, książkach, filozofii i sztucznej inteligencji'
+                ? '... czyli to co zdarza mi się wrzucić do sieci.'
                 : 'Thoughts on writing, books, philosophy, and artificial intelligence'}
             </p>
           </div>

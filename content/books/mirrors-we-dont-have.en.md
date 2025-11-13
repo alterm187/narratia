@@ -1,46 +1,35 @@
 ---
-id: lustra-ktorych-nie-mamy
-slug: lustra-ktorych-nie-mamy
-title: "Lustra, których nie mamy"
-coverImage: /books/lustra_picture_noback.png
+id: mirrors-we-dont-have-en
+slug: mirrors-we-dont-have
+title: "Mirrors We Don't Have"
+coverImage: /books/Mirrors - ebook cover.png
 formats:
   - ebook
-  - print
-publishedDate: "2024"
+publishedDate: "2025-03-12"
 genre:
   - Fiction
   - Science Fiction
-  - Philosophical
+  - Psychological
+  - AI Ethics
 featured: true
+isbn:
+  asin: B0F1BXRRX9
+pageCount: 296
 buyLinks:
   ebook:
-    - platform: naffy
-      url: https://www.naffy.io/sebastian-96YlQ/lustra-ktorych-nie-mamy-UBf
-      price: 18 PLN
-      region: PL
-      displayName: Naffy.io (E-book)
-  print:
-    - platform: bonito
-      url: https://bonito.pl/produkt/lustra-ktorych-nie-mamy
-      region: PL
-      displayName: Bonito
-    - platform: taniaksiazka
-      url: https://www.taniaksiazka.pl/lustra-ktorych-nie-mamy-p-2178635.html
-      region: PL
-      displayName: Tania Książka
-    - platform: tantis
-      url: https://tantis.pl/lustra-ktorych-nie-mamy-p3593566
-      region: PL
-      displayName: Tantis
+    - platform: amazon
+      url: https://www.amazon.com/dp/B0F1BXRRX9
+      region: global
+      displayName: Amazon Kindle
+  print: []
 testimonials:
-  - quote: Dawno nie czytałam książki tak współczesnej. Porusza tematy, które są na co dzień obecne w naszym życiu, ale o których rzadko myślimy głębiej.
-    language: pl
-  - quote: Książka jest dobra, warta przeczytania. Skłania do refleksji nad tym, co nas łączy z innymi ludźmi i co nas od nich oddziela.
-    language: pl
-  - quote: Trzymająca w napięciu historia, która wciąga od pierwszych stron. Nie mogłam się oderwać, chciałam wiedzieć, jak się to wszystko potoczy.
-    language: pl
-  - quote: Bohaterowie zmagający się przede wszystkim z dojmującą samotnością w świecie pełnym ludzi. To paradoks naszych czasów, który autor doskonale uchwycił.
-    language: pl
+  - quote: Well written with a thought provoking concept. This is high-concept science fiction that requires intellectual engagement. Recommended for fans of works like Speak and We Are Legion.
+    language: en
+    source: Goodreads Reader
+goodreadsUrl: https://www.goodreads.com/book/show/229076478-mirrors-we-don-t-have
+rating:
+  average: 5.0
+  count: 3
 ---
 
 Four people, four different stories marked by loneliness: isolation, rejection, loss, and emptiness. Living near each other, yet unaware of one another's existence, they are adrift in a world that has lost its meaning.

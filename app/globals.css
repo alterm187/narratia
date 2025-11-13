@@ -23,6 +23,21 @@
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
   --font-handwritten: var(--font-caveat);
+
+  /* Font sizes reduced by 10% */
+  --font-size-xs: 0.675rem;
+  --font-size-sm: 0.7875rem;
+  --font-size-base: 0.9rem;
+  --font-size-lg: 1.0125rem;
+  --font-size-xl: 1.125rem;
+  --font-size-2xl: 1.35rem;
+  --font-size-3xl: 1.6875rem;
+  --font-size-4xl: 2.025rem;
+  --font-size-5xl: 2.7rem;
+  --font-size-6xl: 3.375rem;
+  --font-size-7xl: 4.05rem;
+  --font-size-8xl: 5.4rem;
+  --font-size-9xl: 7.2rem;
 }
 
 body {

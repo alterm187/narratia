@@ -25,7 +25,7 @@ export default function Hero({ dict, lang }: HeroProps) {
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Text Content */}
           <div className="text-left order-2 lg:order-1">
-            <div className="decorative-text text-[#ffbd59] text-xl mb-3 font-light tracking-wide">
+            <div className="decorative-text text-[#ffbd59] text-2xl mb-3 font-light tracking-wide">
               Narratia
             </div>
 
