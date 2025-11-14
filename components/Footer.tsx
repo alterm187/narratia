@@ -53,7 +53,7 @@ export default function Footer({ dict, lang = 'pl' }: FooterProps) {
           <div className="space-y-4">
             <h4 className="text-sm font-semibold text-zinc-900">{dict.about.contact}</h4>
             <p className="text-sm text-zinc-600">
-              sebastian.narratia@gmail.com
+              sebastian@narratia.pl
             </p>
           </div>
         </div>

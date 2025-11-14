@@ -99,7 +99,7 @@ export default async function AboutPage({ params }: PageProps) {
                     <p className="text-[#2a332a] font-light">
                       <strong className="font-semibold">Email:</strong>{' '}
                       <a
-                        href="mailto:sebastian.narratia@gmail.com"
+                        href="mailto:sebastian@narratia.pl"
                         className="text-[#191919] hover:text-[#ffbd59] transition-colors"
                       >
                         sebastian@narratia.pl
