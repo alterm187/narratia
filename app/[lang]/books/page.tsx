@@ -73,9 +73,7 @@ export default async function BooksPage({ params }: PageProps) {
                 </div>
 
                 <div className="text-[#191919]">
-                  <div className="inline-block bg-[#191919] text-white px-3 py-1 text-xs font-bold uppercase mb-4">
-                    {lang === 'pl' ? 'Lead Magnet' : 'Lead Magnet'}
-                  </div>
+                  
                   <h2 className="text-3xl sm:text-4xl font-bold mb-3">
                     {leadMagnet.title[lang]}
                   </h2>
