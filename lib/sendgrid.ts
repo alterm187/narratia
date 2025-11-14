@@ -25,7 +25,7 @@ export async function sendEmail(params: EmailParams) {
         name: params.toName,
       },
       from: {
-        email: 'sebastian(at)narratia.pl',
+        email: 'sebastian@narratia.pl',
         name: 'Sebastian Proba - Narratia',
       },
       subject: params.subject,
@@ -124,37 +124,15 @@ export async function sendWelcomeEmail(
     <p style="color: #2a332a; margin: 0; font-size: 15px;">
       <strong>${isPl ? '📬 O newsletterze:' : '📬 About the newsletter:'}</strong><br>
       ${isPl
-        ? 'Wyślę Ci aktualizacje kilka razy w roku o promocjach i nowych treściach. Żadnego spamu, obiecuję!'
+        ? 'Maksymalnie kilka razy w roku wyślę Ci informacje o promocjach i nowych treściach. Żadnego spamu, obiecuję!'
         : 'I\'ll send you updates a few times a year about promotions and new content. No spam, I promise!'}
     </p>
   </div>
 
-  <div style="background: #f1ede9; padding: 20px; border-radius: 8px; margin-bottom: 20px;">
-    <h3 style="color: #2a332a; margin-top: 0;">
-      ${isPl ? 'Co dalej?' : 'What\'s Next?'}
-    </h3>
-    <ul style="color: #2a332a; padding-left: 20px;">
-      <li style="margin-bottom: 10px;">
-        ${isPl
-          ? 'Będę wysyłać Ci informacje o nowych książkach i projektach'
-          : 'I\'ll send you updates about new books and projects'}
-      </li>
-      <li style="margin-bottom: 10px;">
-        ${isPl
-          ? 'Otrzymasz ekskluzywne oferty dostępne tylko dla czytelników'
-          : 'You\'ll receive exclusive offers available only to readers'}
-      </li>
-      <li style="margin-bottom: 10px;">
-        ${isPl
-          ? 'Możesz odpowiedzieć na ten email - chętnie porozmawiam!'
-          : 'You can reply to this email - I\'d love to chat!'}
-      </li>
-    </ul>
-  </div>
-
+  
   <div style="padding: 20px; text-align: center; color: #666; font-size: 14px;">
     <p style="margin-bottom: 10px;">
-      Sebastian Żurkowski - Narratia
+      Sebastian Proba - Narratia
     </p>
     <p style="margin-bottom: 20px;">
       <a href="https://narratia.pl/${language}/books" style="color: #ffbd59; text-decoration: none;">

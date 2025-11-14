@@ -41,6 +41,7 @@ export async function POST(request: NextRequest) {
     }
 
     // Add to Mailchimp
+    console.log('Adding subscriber to Mailchimp:', { email, firstName, tags });
     const result = await addSubscriber({
       email,
       firstName,
@@ -49,6 +50,7 @@ export async function POST(request: NextRequest) {
       leadMagnet,
       tags,
     });
+    console.log('Mailchimp result:', { success: result.success, alreadySubscribed: result.alreadySubscribed });
 
     if (result.success) {
       // Send welcome email with download link if it's a lead magnet
