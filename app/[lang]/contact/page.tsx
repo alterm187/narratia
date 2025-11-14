@@ -53,21 +53,10 @@ export default async function ContactPage({ params }: PageProps) {
                 <p className="text-[#2a332a] font-light">
                   <strong className="font-semibold">Email:</strong>{' '}
                   <a
-                    href="mailto:sebastian.narratia@gmail.com"
+                    href="mailto:sebastian@narratia.pl"
                     className="text-[#191919] hover:text-[#ffbd59] transition-colors"
                   >
-                    sebastian.narratia@gmail.com
-                  </a>
-                </p>
-                <p className="text-[#2a332a] font-light">
-                  <strong className="font-semibold">Facebook:</strong>{' '}
-                  <a
-                    href="https://www.facebook.com/profile.php?id=61571652627363"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-[#191919] hover:text-[#ffbd59] transition-colors"
-                  >
-                    Sebastian Proba - Narratia
+                    sebastian@narratia.pl
                   </a>
                 </p>
               </div>

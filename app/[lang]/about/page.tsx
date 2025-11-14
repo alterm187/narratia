@@ -30,9 +30,8 @@ export default async function AboutPage({ params }: PageProps) {
     pl: {
       question: "Kiedy człowiek może o sobie powiedzieć, że jest pisarzem?",
       content: [
-        "Pisanie to nie zawód, to wewnętrzna potrzeba. Kiedy historia domaga się, by została opowiedziana, kiedy bohaterowie zaczynają żyć własnym życiem, wtedy wiesz, że musisz pisać.",
-        "Publikacja to moment pożegnania się z utworem. Od tego momentu książka należy do czytelników. To oni decydują o jej prawdziwym znaczeniu i wpływie.",
-        "W moich książkach eksploruję granice między tym, co ludzkie, a co sztuczne. Pytam o świadomość, samotność i połączenie. To pytania, które fascynują mnie jako pisarza i człowieka.",
+        "Może wtedy, gdy pisanie jest dla niego sposobem na życie albo pracą? Na pewno musi się najpierw przekonać, że nie jest po prostu grafomanem.",
+        "Miałem silną wewnętrzną potrzebę opowiadania o tym, co ważne i to stało się dla mnie swego rodzaju pasją. Przekonałem się też, nie bez zdziwienia, że publikacja powieści jest w pewnym sensie pożegnaniem autora z tym co wytworzył. Resztę tworzą czytelnicy. To w nich książka może wywołać reakcję: ziewanie, oburzenie, fascynację, zaciekawienie. To oni mogą dać się wciągnąć przez dobrze napisaną historię albo dać się rozczarować przez tą kiepską. To czytelnicy tworzą pisarza.",
       ],
     },
     en: {
@@ -103,41 +102,10 @@ export default async function AboutPage({ params }: PageProps) {
                         href="mailto:sebastian.narratia@gmail.com"
                         className="text-[#191919] hover:text-[#ffbd59] transition-colors"
                       >
-                        sebastian.narratia@gmail.com
-                      </a>
-                    </p>
-                    <p className="text-[#2a332a] font-light">
-                      <strong className="font-semibold">Facebook:</strong>{' '}
-                      <a
-                        href="https://www.facebook.com/profile.php?id=61571652627363"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-[#191919] hover:text-[#ffbd59] transition-colors"
-                      >
-                        Sebastian Proba - Narratia
+                        sebastian@narratia.pl
                       </a>
                     </p>
                   </div>
-                </div>
-
-                <div className="mt-12 bg-white p-6 shadow-sm">
-                  <h3 className="text-2xl font-bold text-[#2a332a] mb-4">
-                    {lang === 'pl' ? 'Opublikowane dzieła' : 'Published Works'}
-                  </h3>
-                  <ul className="space-y-2 text-[#2a332a] font-light">
-                    <li>
-                      {lang === 'pl'
-                        ? 'Lustra, których nie mamy'
-                        : 'Mirrors We Don\'t Have'}{' '}
-                      (2024)
-                    </li>
-                    <li>
-                      {lang === 'pl' ? 'Łaska i kij' : 'The Stick and the Carrot'} (2024)
-                    </li>
-                    <li>
-                      {lang === 'pl' ? 'Odbicie umysłu' : 'Mind\'s Reflection'} (2024)
-                    </li>
-                  </ul>
                 </div>
               </div>
             </div>

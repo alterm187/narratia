@@ -24,6 +24,7 @@
       * sprawdzenie wszystkich tytułów, napisów i nagłówków - czy są takie jak chcę
       * sprawdzenie formatowania tekstu na wszystkich podstronach
       * sprawdzenie wszystkich grafik na wszystkich podstronach
+      * poprawienie angielskiej wersji bio na stronie about
       * sprawdzenie responsive design na różnych typach urządzeńu i są dostosowane do responsive design
     **Dlaczego:**
       * strona ma być gotowa do publikacji
