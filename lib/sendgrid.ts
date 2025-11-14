@@ -184,7 +184,7 @@ ${isPl ? 'Co dalej?' : 'What\'s Next?'}
   ? 'Możesz odpowiedzieć na ten email - chętnie porozmawiam!'
   : 'You can reply to this email - I\'d love to chat!'}
 
-Sebastian Żurkowski - Narratia
+Sebastian Proba - Narratia
 https://narratia.pl/${language}/books
 
 ---
