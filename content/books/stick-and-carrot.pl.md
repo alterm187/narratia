@@ -32,6 +32,13 @@ buyLinks:
       displayName: Amazon
 ---
 
-Opowieść o betlejemskich pasterzach i Nocy Narodzenia widzianej ich oczami.
+Opowieść o betlejemskich pasterzach i Nocy Narodzenia widzianej ich oczami. W sam raz do przeczytania na Święta Bożego Narodzenia.
 
-W sam raz do przeczytania na Święta Bożego Narodzenia.
+Teraz są już elementem bożonarodzeniowego folkloru i być może niektórzy powiedzą, że jeśli ta stara historia sprzed dwóch tysięcy lat w ogóle ma być brana na poważnie to oni na pewno byli najgorszym sortem wiejskich prostaków.
+
+A może nie? Betlejem było miastem króla Dawida, który przecież był pasterzem zanim został królem Izraela. Betlejem leżało w Judei, w której przecież o wiele bardziej
+dbano o edukację, nawet prostaków, do tego stopnia, że judejczycy uważali się za lepszych od innnych izraelitów.
+
+Jedno jest pewne: w ówczesnym Izraelu oczekiwanie na Mesjasza było tak bardzo obecne w społeczeństwie, że mogło być tęsknotą nawet pasterzy.
+
+O tych konkretnych pasterzach nie wiemy nic więc możemy sobie wyobrazić wszystko. Może to być opowieść o oczekiwaniu, przyjaźni, wchodzeniu w życie, pułapce nienawiści i w końcu o tym jednym, najważniejszym wydarzeniu.

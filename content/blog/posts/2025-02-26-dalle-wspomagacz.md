@@ -13,7 +13,8 @@ tags:
   - writing
   - creativity
 author: Sebastian Proba
-featured: false
+coverImage: '/books/Senk Klary.png'
+featured: true
 ---
 
 no dobra... muszę się do czegoś przyznać jako autor...

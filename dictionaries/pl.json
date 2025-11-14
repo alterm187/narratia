@@ -47,11 +47,11 @@
       "readMore": "Czytaj dalej"
     },
     "emailSignup": {
-      "title": "Chcesz dowiedzieć się więcej?",
-      "description": "Zapisz się na newsletter, aby otrzymywać informacje o nowych książkach i promocjach",
+      "title": "Chcesz być na bieżąco?",
+      "description": "Zapisz się na listę mailową. Obiecuję nie spamować. Czasem tylko podeślę jakieś ciekawe informacje albo promocje",
       "placeholder": "Twój adres email",
       "button": "Zapisz się",
-      "success": "Dziękujemy za zapisanie się!",
+      "success": "Fajnie! Dzięki za zapisanie się.",
       "error": "Wystąpił błąd. Spróbuj ponownie."
     }
   },
@@ -77,7 +77,7 @@
       "title": "Nie żebym się narzucał...",
       "description": "ale jeśli zapiszesz się na listę mailową to dostaniesz możliwość pobrania darmowych rozdziałów i innych materiałów...",
       "button": "Zapisz się",
-      "success": "Dziękujemy! Za chwilę zostaniesz przekierowany do strony z materiałami."
+      "success": "Fajnie! Dzięki za zapisanie się."
     },
     "cta": {
       "footer": "Dołącz do fanów nawet jeśli jeszcze nie jesteś fanem :) Zapisz się na listę mailową a otrzymasz dodatkowe możliwości...",

@@ -10,7 +10,7 @@
   "home": {
     "hero": {
       "title": "Sebastian Proba",
-      "subtitle": "Author of philosophical fiction exploring the boundaries between human and artificial consciousness",
+      "subtitle": "Author of psychological and science fiction exploring topics important for humanity.",
       "cta": {
         "latestBook": "Latest Book",
         "allBooks": "View All Books"
@@ -47,11 +47,11 @@
       "readMore": "Read more"
     },
     "emailSignup": {
-      "title": "Want to learn more?",
-      "description": "Sign up for the newsletter to receive updates about new books and promotions",
+      "title": "Want to stay updated?",
+      "description": "Sign up to the mailing list. I promise - no spam, just updates about new releases and exclusive content.",
       "placeholder": "Your email address",
       "button": "Sign up",
-      "success": "Thank you for signing up!",
+      "success": "Thanks! You're now subscribed.",
       "error": "An error occurred. Please try again."
     }
   },
