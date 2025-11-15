@@ -106,7 +106,26 @@ export default async function HomePage({ params }: PageProps) {
                           </p>
                         )}
 
-                        <MarkdownContent content={book.description[lang]} className="text-lg text-[#2a332a] leading-relaxed mb-6 font-light" />
+                        <div className="relative mb-6">
+                          <div
+                            className="text-lg text-[#2a332a] leading-relaxed font-light line-clamp-4 text-left pr-4"
+                            style={{
+                              display: '-webkit-box',
+                              WebkitLineClamp: 4,
+                              WebkitBoxOrient: 'vertical',
+                              overflow: 'hidden',
+                              position: 'relative',
+                            }}
+                          >
+                            <MarkdownContent content={book.description[lang]} />
+                          </div>
+                          <div
+                            className="pointer-events-none absolute bottom-0 left-0 w-full h-10 bg-gradient-to-t from-[#e5dfd7] to-transparent flex items-end justify-end pr-4"
+                            style={{
+                              zIndex: 1,
+                            }}
+                          />
+                        </div>
 
                         <div className="flex flex-wrap gap-2 mb-8 justify-center">
                           {book.formats.map((format) => (
@@ -176,7 +195,28 @@ export default async function HomePage({ params }: PageProps) {
                         </p>
                       )}
 
-                      <MarkdownContent content={book.description[lang]} className="text-lg text-[#2a332a] leading-relaxed mb-6 font-light" />
+                      <div className="relative mb-6">
+                        <div
+                          className="text-lg text-[#2a332a] leading-relaxed font-light line-clamp-4 text-left pr-4"
+                          style={{
+                            display: '-webkit-box',
+                            WebkitLineClamp: 4,
+                            WebkitBoxOrient: 'vertical',
+                            overflow: 'hidden',
+                            position: 'relative',
+                          }}
+                        >
+                          <MarkdownContent content={book.description[lang]} />
+                        </div>
+                        <div
+                          className="pointer-events-none absolute bottom-0 left-0 w-full h-10 bg-gradient-to-t from-[#e5dfd7] to-transparent flex items-end justify-end pr-4"
+                          style={{
+                            zIndex: 1,
+                          }}
+                        >
+                          {/* Gradient bez dodatkowego wielokropka */}
+                        </div>
+                      </div>
 
                       <div className="flex flex-wrap gap-2 mb-8">
                         {book.formats.map((format) => (
