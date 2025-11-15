@@ -3,6 +3,7 @@ id: lustra-ktorych-nie-mamy
 slug: lustra-ktorych-nie-mamy
 title: "Lustra, których nie mamy"
 coverImage: /books/lustra_picture_noback.png
+dualLanguageDisplay: true
 formats:
   - ebook
   - print

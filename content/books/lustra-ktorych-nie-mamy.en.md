@@ -2,7 +2,8 @@
 id: lustra-ktorych-nie-mamy
 slug: mirrors-we-dont-have
 title: "Mirrors We Don't Have"
-coverImage: /books/lustra_picture_noback.png
+coverImage: /books/Mirrors - print cover.png
+dualLanguageDisplay: true
 formats:
   - ebook
   - print

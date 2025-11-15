@@ -42,6 +42,7 @@ interface BookFrontmatter {
     average: number;
     count: number;
   };
+  dualLanguageDisplay?: boolean;
 }
 
 function getBookMarkdownFiles(): Map<string, { en?: string; pl?: string }> {
@@ -118,7 +119,16 @@ export async function getAllBooks(): Promise<Book[]> {
         goodreadsUrl: baseFrontmatter.goodreadsUrl,
         rating: baseFrontmatter.rating,
         isbn: baseFrontmatter.isbn,
+        dualLanguageDisplay: baseFrontmatter.dualLanguageDisplay,
       };
+
+      // If dual language display, add separate cover images for each language
+      if (baseFrontmatter.dualLanguageDisplay && enData && plData) {
+        book.dualLanguage = {
+          plCoverImage: plData.frontmatter.coverImage,
+          enCoverImage: enData.frontmatter.coverImage,
+        };
+      }
 
       // Handle subtitle if present
       if (enData?.frontmatter.subtitle || plData?.frontmatter.subtitle) {

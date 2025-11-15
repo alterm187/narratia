@@ -79,25 +79,66 @@ export default async function BookPage({ params }: PageProps) {
 
         <div className="container mx-auto max-w-6xl px-6 py-20 relative z-10">
           <div className="grid gap-12 lg:grid-cols-[280px_1fr]">
-            {/* Book cover - visible on all screen sizes */}
-            <div className="relative aspect-[2/3] w-full max-w-[280px] mx-auto lg:mx-0">
-              {book.coverImage ? (
-                <Image
-                  src={book.coverImage}
-                  alt={book.title[lang]}
-                  fill
-                  className="object-cover"
-                  priority
-                  sizes="(max-width: 640px) 60vw, (max-width: 1024px) 280px, 280px"
-                />
-              ) : (
-                <div className="flex h-full items-center justify-center bg-gradient-to-br from-[#cbc5bd] to-[#9aadb6]">
-                  <span className="text-9xl font-bold text-[#2a332a] opacity-20">
-                    {book.title[lang].charAt(0)}
-                  </span>
+            {/* Book cover(s) - single or dual language */}
+            {book.dualLanguageDisplay && book.dualLanguage ? (
+              // Dual language - show both covers side by side
+              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center lg:flex-col lg:items-start">
+                <div className="relative w-full max-w-[200px] sm:max-w-[140px] lg:max-w-[280px]">
+                  <Link href={`/${lang}/books/${book.slug.pl}`}>
+                    <div className="relative aspect-[2/3] w-full">
+                      <Image
+                        src={book.dualLanguage.plCoverImage}
+                        alt={`${book.title.pl} (PL)`}
+                        fill
+                        className="object-cover"
+                        priority
+                        sizes="(max-width: 640px) 50vw, (max-width: 1024px) 140px, 280px"
+                      />
+                    </div>
+                  </Link>
+                  <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 bg-[#2a332a] text-white px-3 py-1 text-xs font-bold">
+                    PL
+                  </div>
                 </div>
-              )}
-            </div>
+                <div className="relative w-full max-w-[200px] sm:max-w-[140px] lg:max-w-[280px]">
+                  <Link href={`/${lang}/books/${book.slug.en}`}>
+                    <div className="relative aspect-[2/3] w-full">
+                      <Image
+                        src={book.dualLanguage.enCoverImage}
+                        alt={`${book.title.en} (EN)`}
+                        fill
+                        className="object-cover"
+                        priority
+                        sizes="(max-width: 640px) 50vw, (max-width: 1024px) 140px, 280px"
+                      />
+                    </div>
+                  </Link>
+                  <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 bg-[#2a332a] text-white px-3 py-1 text-xs font-bold">
+                    EN
+                  </div>
+                </div>
+              </div>
+            ) : (
+              // Single language book - standard cover
+              <div className="relative aspect-[2/3] w-full max-w-[280px] mx-auto lg:mx-0">
+                {book.coverImage ? (
+                  <Image
+                    src={book.coverImage}
+                    alt={book.title[lang]}
+                    fill
+                    className="object-cover"
+                    priority
+                    sizes="(max-width: 640px) 60vw, (max-width: 1024px) 280px, 280px"
+                  />
+                ) : (
+                  <div className="flex h-full items-center justify-center bg-gradient-to-br from-[#cbc5bd] to-[#9aadb6]">
+                    <span className="text-9xl font-bold text-[#2a332a] opacity-20">
+                      {book.title[lang].charAt(0)}
+                    </span>
+                  </div>
+                )}
+              </div>
+            )}
 
             {/* Book details */}
             <div className="flex flex-col">

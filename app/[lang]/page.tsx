@@ -57,18 +57,91 @@ export default async function HomePage({ params }: PageProps) {
                   key={book.id}
                   className="group relative"
                 >
+                  {book.dualLanguageDisplay ? (
+                    // Dual language book - special layout with covers side by side and text below
+                    <div className="space-y-8">
+                      {/* Two covers side by side */}
+                      <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+                        <div className="relative w-[60%] sm:w-[35%] max-w-[200px]">
+                          <Link href={`/${lang}/books/${book.slug.pl}`}>
+                            <div className="relative aspect-[2/3] transition-transform duration-700 hover:scale-105"
+                              style={{ transform: 'translateY(-10%)' }}>
+                              <img
+                                src={book.dualLanguage?.plCoverImage || book.coverImage}
+                                alt={book.title.pl}
+                                className="w-full h-full object-cover"
+                              />
+                            </div>
+                          </Link>
+                          <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 bg-[#2a332a] text-white px-3 py-1 text-xs font-bold">
+                            PL
+                          </div>
+                        </div>
+                        <div className="relative w-[60%] sm:w-[35%] max-w-[200px]">
+                          <Link href={`/${lang}/books/${book.slug.en}`}>
+                            <div className="relative aspect-[2/3] transition-transform duration-700 hover:scale-105"
+                              style={{ transform: 'translateY(-10%)' }}>
+                              <img
+                                src={book.dualLanguage?.enCoverImage || book.coverImage}
+                                alt={book.title.en}
+                                className="w-full h-full object-cover"
+                              />
+                            </div>
+                          </Link>
+                          <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 bg-[#2a332a] text-white px-3 py-1 text-xs font-bold">
+                            EN
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Text content below covers */}
+                      <div className="text-center max-w-[600px] mx-auto">
+                        <h3 className="text-3xl sm:text-4xl font-bold text-[#2a332a] mb-3 group-hover:text-[#ffbd59] transition-colors duration-300">
+                          {book.title[lang]}
+                        </h3>
+
+                        {book.subtitle?.[lang] && (
+                          <p className="text-xl text-[#667c8b] mb-6 font-light italic">
+                            {book.subtitle[lang]}
+                          </p>
+                        )}
+
+                        <MarkdownContent content={book.description[lang]} className="text-lg text-[#2a332a] leading-relaxed mb-6 font-light" />
+
+                        <div className="flex flex-wrap gap-2 mb-8 justify-center">
+                          {book.formats.map((format) => (
+                            <span
+                              key={format}
+                              className="px-4 py-1.5 bg-white/60 backdrop-blur-sm text-[#2a332a] text-sm font-medium border border-[#2a332a]/10 transition-all duration-300 hover:bg-white hover:border-[#ffbd59]"
+                            >
+                              {dict.books.formats[format]}
+                            </span>
+                          ))}
+                        </div>
+
+                        <Link
+                          href={`/${lang}/books/${book.slug[lang]}`}
+                          className="inline-flex items-center gap-2 bg-[#191919] text-white px-6 py-3 font-semibold hover:bg-[#ffbd59] transition-all duration-300 group/btn"
+                        >
+                          {dict.common.readMore}
+                          <svg className="w-5 h-5 transform group-hover/btn:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                          </svg>
+                        </Link>
+                      </div>
+                    </div>
+                  ) : (
+                    // Standard single-cover layout
                   <div className={`grid lg:grid-cols-2 gap-9 items-center ${
                     index % 2 === 1 ? 'lg:grid-flow-dense' : ''
                   }`}>
-                    {/* Book Cover - Simple Display */}
+                    {/* Book Cover - Single */}
                     <div className={`relative ${index % 2 === 1 ? 'lg:col-start-2' : ''}`}>
                       <div
                         className="relative max-w-[230px] mx-auto"
                         style={{
                           transform: book.id === 'stick-and-carrot'
                             ? 'translateX(-20%)'
-                            : book.id === 'lustra-ktorych-nie-mamy'
-                            ? 'translateY(-20%)'
                             : undefined
                         }}
                       >
@@ -127,6 +200,7 @@ export default async function HomePage({ params }: PageProps) {
                       </Link>
                     </div>
                   </div>
+                  )}
                 </div>
               ))}
             </div>

@@ -51,6 +51,7 @@ export interface Book {
       en: string;
     };
   };
+  dualLanguageDisplay?: boolean;
 }
 
 export interface BuyLink {
