@@ -17,8 +17,8 @@ export async function generateMetadata({ params }: PageProps) {
   return generateMetaTags({
     title: lang === 'pl' ? 'Fragmenty - Narratia' : 'Excerpts - Narratia',
     description: lang === 'pl'
-      ? 'Odkryj najpiękniejsze fragmenty z moich książek. Cytaty o życiu, świadomości, wierze i naturze człowieczeństwa.'
-      : 'Discover the most beautiful excerpts from my books. Quotes about life, consciousness, faith, and the nature of humanity.',
+      ? '... po prostu'
+      : '... simply',
     locale: lang,
     pathname: '/fragmenty',
   });
