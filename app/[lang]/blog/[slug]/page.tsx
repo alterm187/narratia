@@ -10,10 +10,9 @@ import {
   getRecentBlogPosts,
 } from '@/lib/blog';
 import { generateMetaTags } from '@/lib/seo';
-import ReactMarkdown from 'react-markdown';
-import remarkGfm from 'remark-gfm';
 import Link from 'next/link';
 import BlogPostCard from '@/components/BlogPostCard';
+import MarkdownContent from '@/components/MarkdownContent';
 
 interface PageProps {
   params: Promise<{ lang: Locale; slug: string }>;
@@ -140,7 +139,7 @@ export default async function BlogPostPage({ params }: PageProps) {
 
             {/* Article Body */}
             <div className="bg-white p-8 md:p-12 shadow-lg mb-12 rounded-lg">
-              <div className="prose prose-lg max-w-none !text-[#191919]
+              <div className="!text-[#191919]
                 [&_h1]:!text-[#191919] [&_h1]:!font-bold
                 [&_h2]:!text-[#2a332a] [&_h2]:!font-bold
                 [&_h3]:!text-[#2a332a] [&_h3]:!font-bold
@@ -152,7 +151,7 @@ export default async function BlogPostPage({ params }: PageProps) {
                 [&_blockquote]:!border-l-4 [&_blockquote]:!border-[#ffbd59] [&_blockquote]:!bg-[#f1ede9]/50 [&_blockquote]:!py-2 [&_blockquote]:!px-4 [&_blockquote]:!text-[#191919]
                 [&_code]:!text-[#2a332a] [&_code]:!bg-[#f1ede9] [&_code]:!px-2 [&_code]:!py-1 [&_code]:!rounded
                 [&_pre]:!bg-[#2a332a] [&_pre]:!text-white [&_pre_code]:!text-white">
-                <ReactMarkdown remarkPlugins={[remarkGfm]}>{content}</ReactMarkdown>
+                <MarkdownContent content={content} />
               </div>
             </div>
 
