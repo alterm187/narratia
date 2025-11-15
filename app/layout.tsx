@@ -20,7 +20,7 @@ const caveat = Caveat({
 
 export const metadata: Metadata = {
   title: "Narratia - Sebastian Proba",
-  description: "Author of psychological and science fiction novels exploring topics important for humanity.",
+  description: "Author Sebastian Proba's official website.",
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://narratia.pl'),
 };
 
