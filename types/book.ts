@@ -57,7 +57,6 @@ export interface Book {
     };
   };
 }
-}
 
 export interface BuyLink {
   platform: string;
