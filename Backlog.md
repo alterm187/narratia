@@ -1,21 +1,3 @@
-**User Story 1:** Narratia Main Page Books descriptions
-
-*   **User Story:**
-    **Jako** użytkownik odwiedzający stronę główną Narratia, **chcę** widzieć krótkie, zajawki opisów książek z opcją "czytaj więcej", **abym** mógł szybko zeskanować ofertę i nie czuć się przytłoczony ścianą tekstu.
-
-*   **Kryteria Akceptacji:**
-    *   AC1: Na stronie głównej opisy książek są domyślnie skrócone do jednolitej wielkości bloku tekstu wraz z zakończeniem gradientowym z '... czytaj więcej' na końcu
-    *   AC2: Kliknięcie na tekst lub na okładkę przekierowuje na podstronę ze szczegółami książki
-
-**User Story 3:** Mirrors in both languages presented as one title
-
-*   **User Story:**
-    **Jako** użytkownik odwiedzający stronę główną Narratia, **chcę** widzieć książkę "Lustra, których nie mamy" w obu wersjach językowych jako jedną pozycję, **abym** nie musiał czytać tego samego opisu dwa razy i zastanawiać się czy to jest ta sama książka.
-
-*   **Kryteria Akceptacji:**
-    *   AC1: Design strony głównej w odpowiedni, estetyczny i sensowny sposób pokazuje jedną książkę, dwie okładki, jeden opis tekstowy w wersji zależnej od wybranego języka strony, i oznaczenia że książka jest PL i EN
-    *   AC2: Tekst i okładki zachowują proporcje zajętości ekranu i są dostosowane do responsive design
-
 **Job Story 1:** Narratia Look&Feel
 
 *   **Job Story:**

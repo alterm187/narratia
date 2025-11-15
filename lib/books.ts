@@ -124,9 +124,21 @@ export async function getAllBooks(): Promise<Book[]> {
 
       // If dual language display, add separate cover images for each language
       if (baseFrontmatter.dualLanguageDisplay && enData && plData) {
+        // Merge buy links from both language versions
+        const mergedEbookLinks = [...(plData.frontmatter.buyLinks.ebook || []), ...(enData.frontmatter.buyLinks.ebook || [])];
+        const mergedPrintLinks = [...(plData.frontmatter.buyLinks.print || []), ...(enData.frontmatter.buyLinks.print || [])];
+        
+        // Remove duplicates based on URL
+        const uniqueEbookLinks = Array.from(new Map(mergedEbookLinks.map(link => [link.url, link])).values());
+        const uniquePrintLinks = Array.from(new Map(mergedPrintLinks.map(link => [link.url, link])).values());
+
         book.dualLanguage = {
           plCoverImage: plData.frontmatter.coverImage,
           enCoverImage: enData.frontmatter.coverImage,
+          buyLinks: {
+            ebook: uniqueEbookLinks,
+            print: uniquePrintLinks,
+          },
         };
       }
 

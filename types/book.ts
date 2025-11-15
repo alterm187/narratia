@@ -46,12 +46,17 @@ export interface Book {
       pl: string;
       en: string;
     };
-    content: {
-      pl: string;
-      en: string;
-    };
   };
   dualLanguageDisplay?: boolean;
+  dualLanguage?: {
+    plCoverImage: string;
+    enCoverImage: string;
+    buyLinks?: {
+      ebook: BuyLink[];
+      print: BuyLink[];
+    };
+  };
+}
 }
 
 export interface BuyLink {

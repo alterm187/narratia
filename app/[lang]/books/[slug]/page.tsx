@@ -55,8 +55,13 @@ export default async function BookPage({ params }: PageProps) {
   }
 
   const bookSchema = generateBookSchema(book, lang);
-  const ebookLinks = book.buyLinks.ebook;
-  const printLinks = book.buyLinks.print;
+  // For dual language books, use merged buy links from both versions
+  const ebookLinks = book.dualLanguageDisplay && book.dualLanguage?.buyLinks 
+    ? book.dualLanguage.buyLinks.ebook 
+    : book.buyLinks.ebook;
+  const printLinks = book.dualLanguageDisplay && book.dualLanguage?.buyLinks 
+    ? book.dualLanguage.buyLinks.print 
+    : book.buyLinks.print;
 
   // Don't show modal for lead magnet (free essay)
   const showModal = book.id !== 'minds-reflection';
