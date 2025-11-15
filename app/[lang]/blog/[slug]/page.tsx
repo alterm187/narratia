@@ -9,7 +9,7 @@ import {
   calculateReadingTime,
   getRecentBlogPosts,
 } from '@/lib/blog';
-import { generateMetaTags } from '@/lib/seo';
+import { generateMetaTags, generateArticleSchema } from '@/lib/seo';
 import Link from 'next/link';
 import BlogPostCard from '@/components/BlogPostCard';
 import MarkdownContent from '@/components/MarkdownContent';
@@ -89,8 +89,22 @@ export default async function BlogPostPage({ params }: PageProps) {
   const readingTime = calculateReadingTime(content);
   const recentPosts = getRecentBlogPosts(4).filter((p) => p.slug !== post.slug).slice(0, 3);
 
+  const articleSchema = generateArticleSchema(
+    title,
+    post.excerpt[lang],
+    post.date,
+    lang,
+    `/blog/${slug}`,
+    post.coverImage
+  );
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
+
       <Header dict={dict} lang={lang} />
 
       <main className="min-h-screen bg-gradient-to-b from-[#f1ede9] to-white">

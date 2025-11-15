@@ -30,6 +30,11 @@ function getLocale(request: NextRequest): string {
 export function middleware(request: NextRequest) {
   const pathname = request.nextUrl.pathname;
 
+  // Skip sitemap.xml and robots.txt
+  if (pathname === '/sitemap.xml' || pathname === '/robots.txt') {
+    return NextResponse.next();
+  }
+
   // Check if the pathname is missing a locale
   const pathnameIsMissingLocale = locales.every(
     (locale) => !pathname.startsWith(`/${locale}/`) && pathname !== `/${locale}`

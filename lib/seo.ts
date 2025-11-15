@@ -49,6 +49,28 @@ export interface AuthorSchema {
   };
 }
 
+export interface ArticleSchema {
+  '@context': string;
+  '@type': string;
+  headline: string;
+  description: string;
+  image?: string;
+  datePublished: string;
+  dateModified?: string;
+  author: {
+    '@type': string;
+    name: string;
+    url: string;
+  };
+  publisher: {
+    '@type': string;
+    name: string;
+    url: string;
+  };
+  inLanguage: string;
+  url: string;
+}
+
 export function generateBookSchema(book: Book, locale: Locale): BookSchema {
   const bookUrl = `${siteUrl}/${locale}/books/${book.slug[locale]}`;
 
@@ -122,6 +144,40 @@ export function generateAuthorSchema(): AuthorSchema {
       'https://www.facebook.com/profile.php?id=61571652627363',
       // Add more social profiles as needed
     ],
+  };
+}
+
+export function generateArticleSchema(
+  title: string,
+  description: string,
+  datePublished: string,
+  locale: Locale,
+  pathname: string,
+  image?: string
+): ArticleSchema {
+  const url = `${siteUrl}/${locale}${pathname}`;
+  const imageUrl = image ? `${siteUrl}${image}` : `${siteUrl}/og-image.jpg`;
+
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: title,
+    description: description,
+    image: imageUrl,
+    datePublished: datePublished,
+    dateModified: datePublished, // Can be updated if you track modifications
+    author: {
+      '@type': 'Person',
+      name: 'Sebastian Proba',
+      url: siteUrl,
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: 'Narratia',
+      url: siteUrl,
+    },
+    inLanguage: locale === 'pl' ? 'pl-PL' : 'en-US',
+    url: url,
   };
 }
 
