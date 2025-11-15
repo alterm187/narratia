@@ -30,6 +30,14 @@
 
 *   **See:** `SEO_IMPLEMENTATION_SUMMARY.md` for complete details, testing checklist, and post-deployment recommendations.
 
+**User Story 7:** Mailing list unsubscribe
+
+*   **User Story:**
+    **Jako** użytkownik serwisu Narratia, który zapisał się na listę mailingową, **chcę** mieć możliwość wypisania się z tej listy, **abym** nie otrzymywał już żadnych wiadomości z serwisu narratia.
+
+*   **Kryteria Akceptacji:**
+    *   AC1: Link unsubscribe w każdym mailu z serwisu narratia
+    *   AC2: Zarówno mailchimp jak i same maile ze strony dają możliwość wypisania się
 
 **User Story 5:** Narratia webpage - ARC redirections
 
