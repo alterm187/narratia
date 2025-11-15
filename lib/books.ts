@@ -35,6 +35,12 @@ interface BookFrontmatter {
       displayName?: string;
     }>;
   };
+  testimonials?: Array<{
+    quote: string;
+    author?: string;
+    source?: string;
+    language: 'en' | 'pl';
+  }>;
   featured?: boolean;
   pageCount?: number;
   goodreadsUrl?: string;
@@ -148,6 +154,18 @@ export async function getAllBooks(): Promise<Book[]> {
           en: enData?.frontmatter.subtitle,
           pl: plData?.frontmatter.subtitle,
         };
+      }
+
+      // Handle testimonials - merge from both language versions
+      const allTestimonials = [];
+      if (plData?.frontmatter.testimonials) {
+        allTestimonials.push(...plData.frontmatter.testimonials);
+      }
+      if (enData?.frontmatter.testimonials) {
+        allTestimonials.push(...enData.frontmatter.testimonials);
+      }
+      if (allTestimonials.length > 0) {
+        book.testimonials = allTestimonials;
       }
 
       books.push(book);
