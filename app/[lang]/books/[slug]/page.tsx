@@ -83,11 +83,11 @@ export default async function BookPage({ params }: PageProps) {
         />
 
         <div className="container mx-auto max-w-6xl px-6 py-20 relative z-10">
-          <div className="grid gap-12 lg:grid-cols-[280px_1fr]">
+          <div className="grid gap-12 lg:grid-cols-[280px_1fr] lg:items-start">
             {/* Book cover(s) - single or dual language */}
             {book.dualLanguageDisplay && book.dualLanguage ? (
               // Dual language - show active language cover first, then the other
-              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center lg:flex-col lg:items-start">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center items-start lg:flex-col lg:items-start">
                 {/* Aktywny język */}
                 <div className="relative w-full max-w-[140px] sm:max-w-[98px] lg:max-w-[196px]">
                   <Link href={`/${lang}/books/${book.slug[lang]}`}>
