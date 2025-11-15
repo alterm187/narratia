@@ -165,21 +165,23 @@ export default async function HomePage({ params }: PageProps) {
                         }}
                       >
                         {/* Book cover */}
-                        <div className="relative aspect-[2/3]">
-                          {book.coverImage ? (
-                            <img
-                              src={book.coverImage}
-                              alt={book.title[lang]}
-                              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                            />
-                          ) : (
-                            <div className="flex items-center justify-center h-full bg-gradient-to-br from-[#cbc5bd] to-[#9aadb6]">
-                              <span className="text-9xl font-bold text-[#2a332a] opacity-20">
-                                {book.title[lang].charAt(0)}
-                              </span>
-                            </div>
-                          )}
-                        </div>
+                        <Link href={`/${lang}/books/${book.slug[lang]}`}>
+                          <div className="relative aspect-[2/3]">
+                            {book.coverImage ? (
+                              <img
+                                src={book.coverImage}
+                                alt={book.title[lang]}
+                                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                              />
+                            ) : (
+                              <div className="flex items-center justify-center h-full bg-gradient-to-br from-[#cbc5bd] to-[#9aadb6]">
+                                <span className="text-9xl font-bold text-[#2a332a] opacity-20">
+                                  {book.title[lang].charAt(0)}
+                                </span>
+                              </div>
+                            )}
+                          </div>
+                        </Link>
                       </div>
                     </div>
 
