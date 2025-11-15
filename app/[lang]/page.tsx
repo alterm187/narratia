@@ -62,34 +62,34 @@ export default async function HomePage({ params }: PageProps) {
                     <div className="space-y-8">
                       {/* Two covers side by side */}
                       <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-                        <div className="relative w-[60%] sm:w-[35%] max-w-[200px]">
-                          <Link href={`/${lang}/books/${book.slug.pl}`}>
-                            <div className="relative aspect-[2/3] transition-transform duration-700 hover:scale-105"
-                              style={{ transform: 'translateY(-10%)' }}>
+                        {/* Okładka aktywnego języka po lewej/górze */}
+                        <div className={`relative ${lang === 'pl' ? 'w-[60%] sm:w-[35%] max-w-[200px]' : (book.dualLanguage?.enCoverImage ? 'w-[57%] sm:w-[33.25%] max-w-[190px]' : 'w-[60%] sm:w-[35%] max-w-[200px]')}`}>
+                          <Link href={`/${lang}/books/${book.slug[lang]}`}>
+                            <div className="relative aspect-[2/3] transition-transform duration-700 hover:scale-105" style={{ transform: 'translateY(-10%)' }}>
                               <img
-                                src={book.dualLanguage?.plCoverImage || book.coverImage}
-                                alt={book.title.pl}
+                                src={lang === 'pl' ? book.dualLanguage?.plCoverImage || book.coverImage : book.dualLanguage?.enCoverImage || book.coverImage}
+                                alt={book.title[lang]}
                                 className="w-full h-full object-cover"
                               />
                             </div>
                           </Link>
                           <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 bg-[#2a332a] text-white px-3 py-1 text-xs font-bold">
-                            PL
+                            {lang.toUpperCase()}
                           </div>
                         </div>
-                        <div className="relative w-[60%] sm:w-[35%] max-w-[200px]">
-                          <Link href={`/${lang}/books/${book.slug.en}`}>
-                            <div className="relative aspect-[2/3] transition-transform duration-700 hover:scale-105"
-                              style={{ transform: 'translateY(-10%)' }}>
+                        {/* Okładka drugiego języka po prawej/dole (angielska okładka zawsze 10% mniejsza) */}
+                        <div className={`relative ${lang === 'pl' ? (book.dualLanguage?.enCoverImage ? 'w-[57%] sm:w-[33.25%] max-w-[190px]' : 'w-[60%] sm:w-[35%] max-w-[200px]') : 'w-[60%] sm:w-[35%] max-w-[200px]'}`}>
+                          <Link href={`/${lang}/books/${book.slug[lang]}`}>
+                            <div className="relative aspect-[2/3] transition-transform duration-700 hover:scale-105" style={{ transform: 'translateY(-10%)' }}>
                               <img
-                                src={book.dualLanguage?.enCoverImage || book.coverImage}
-                                alt={book.title.en}
+                                src={lang === 'pl' ? book.dualLanguage?.enCoverImage || book.coverImage : book.dualLanguage?.plCoverImage || book.coverImage}
+                                alt={lang === 'pl' ? book.title.en : book.title.pl}
                                 className="w-full h-full object-cover"
                               />
                             </div>
                           </Link>
                           <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 bg-[#2a332a] text-white px-3 py-1 text-xs font-bold">
-                            EN
+                            {lang === 'pl' ? 'EN' : 'PL'}
                           </div>
                         </div>
                       </div>

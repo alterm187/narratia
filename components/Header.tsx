@@ -5,9 +5,11 @@ import LanguageSwitcher from './LanguageSwitcher';
 interface HeaderProps {
   dict: Dictionary;
   lang: Locale;
+  slugPl?: string;
+  slugEn?: string;
 }
 
-export default function Header({ dict, lang }: HeaderProps) {
+export default function Header({ dict, lang, slugPl, slugEn }: HeaderProps) {
   const navItems = [
     { href: `/${lang}`, label: dict.nav.home },
     { href: `/${lang}/books`, label: dict.nav.books },
@@ -41,7 +43,7 @@ export default function Header({ dict, lang }: HeaderProps) {
             ))}
           </ul>
 
-          <LanguageSwitcher currentLang={lang} />
+          <LanguageSwitcher currentLang={lang} slugPl={slugPl} slugEn={slugEn} />
         </div>
 
         {/* Mobile menu button - will implement later if needed */}

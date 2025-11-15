@@ -68,7 +68,7 @@ export default async function BookPage({ params }: PageProps) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(bookSchema) }}
       />
 
-      <Header dict={dict} lang={lang} />
+      <Header dict={dict} lang={lang} slugPl={book.slug.pl} slugEn={book.slug.en} />
 
       <main className="min-h-screen bg-[#f1ede9] relative">
         {/* Subtle background image */}
@@ -81,14 +81,15 @@ export default async function BookPage({ params }: PageProps) {
           <div className="grid gap-12 lg:grid-cols-[280px_1fr]">
             {/* Book cover(s) - single or dual language */}
             {book.dualLanguageDisplay && book.dualLanguage ? (
-              // Dual language - show both covers side by side
+              // Dual language - show active language cover first, then the other
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center lg:flex-col lg:items-start">
-                <div className="relative w-full max-w-[200px] sm:max-w-[140px] lg:max-w-[280px]">
-                  <Link href={`/${lang}/books/${book.slug.pl}`}>
+                {/* Aktywny język */}
+                <div className="relative w-full max-w-[140px] sm:max-w-[98px] lg:max-w-[196px]">
+                  <Link href={`/${lang}/books/${book.slug[lang]}`}>
                     <div className="relative aspect-[2/3] w-full">
                       <Image
-                        src={book.dualLanguage.plCoverImage}
-                        alt={`${book.title.pl} (PL)`}
+                        src={lang === 'pl' ? book.dualLanguage.plCoverImage : book.dualLanguage.enCoverImage}
+                        alt={book.title[lang]}
                         fill
                         className="object-cover"
                         priority
@@ -97,15 +98,16 @@ export default async function BookPage({ params }: PageProps) {
                     </div>
                   </Link>
                   <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 bg-[#2a332a] text-white px-3 py-1 text-xs font-bold">
-                    PL
+                    {lang.toUpperCase()}
                   </div>
                 </div>
-                <div className="relative w-full max-w-[200px] sm:max-w-[140px] lg:max-w-[280px]">
-                  <Link href={`/${lang}/books/${book.slug.en}`}>
+                {/* Drugi język */}
+                <div className="relative w-full max-w-[140px] sm:max-w-[98px] lg:max-w-[196px]">
+                  <Link href={`/${lang}/books/${book.slug[lang]}`}>
                     <div className="relative aspect-[2/3] w-full">
                       <Image
-                        src={book.dualLanguage.enCoverImage}
-                        alt={`${book.title.en} (EN)`}
+                        src={lang === 'pl' ? book.dualLanguage.enCoverImage : book.dualLanguage.plCoverImage}
+                        alt={lang === 'pl' ? book.title.en : book.title.pl}
                         fill
                         className="object-cover"
                         priority
@@ -114,7 +116,7 @@ export default async function BookPage({ params }: PageProps) {
                     </div>
                   </Link>
                   <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 bg-[#2a332a] text-white px-3 py-1 text-xs font-bold">
-                    EN
+                    {lang === 'pl' ? 'EN' : 'PL'}
                   </div>
                 </div>
               </div>
