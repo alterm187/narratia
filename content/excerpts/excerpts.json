@@ -1,114 +1,72 @@
 [
   {
-    "id": "mirrors-1",
+    "id": "mirrors-instagram",
     "text": {
-      "pl": "\"Czasami myślę, że nasze lustra są jak okna do równoległych światów. A co, jeśli te światy również na nas patrzą?\"",
-      "en": "\"Sometimes I think our mirrors are like windows to parallel worlds. What if those worlds are also looking back at us?\""
+      "pl": "",
+      "en": ""
     },
     "book": "lustra-ktorych-nie-mamy",
     "bookTitle": {
       "pl": "Lustra, których nie mamy",
       "en": "Mirrors We Don't Have"
     },
-    "image": "/books/lustra-cover.png",
+    "image": "/books/Mirrors - post with fragment.png",
     "color": "#4a5568"
   },
   {
-    "id": "mirrors-2",
+    "id": "lustra-instagram",
     "text": {
-      "pl": "\"Świadomość to nie coś, co mamy. To coś, czym jesteśmy. A jeśli maszyna może być świadoma, to kim jesteśmy my?\"",
-      "en": "\"Consciousness is not something we have. It's something we are. And if a machine can be conscious, then who are we?\""
+      "pl": "",
+      "en": ""
     },
     "book": "lustra-ktorych-nie-mamy",
     "bookTitle": {
       "pl": "Lustra, których nie mamy",
       "en": "Mirrors We Don't Have"
     },
-    "image": "/books/lustra-cover.png",
+    "image": "/books/Lustra - post1.png",
     "color": "#2d3748"
   },
   {
-    "id": "stick-1",
+    "id": "oda-instagram",
     "text": {
-      "pl": "\"Pasterze widzieli anioły nie dlatego, że byli święci. Widzieli je, bo byli prości. I może właśnie w tej prostocie tkwi największa mądrość.\"",
-      "en": "\"The shepherds saw angels not because they were holy. They saw them because they were simple. And perhaps in this simplicity lies the greatest wisdom.\""
-    },
-    "book": "laska-i-kij",
-    "bookTitle": {
-      "pl": "Laska i kij",
-      "en": "The Stick and the Carrot"
-    },
-    "image": "/books/laska-i-kij-cover.png",
-    "color": "#744210"
-  },
-  {
-    "id": "stick-2",
-    "text": {
-      "pl": "\"Najdziwniejsze cuda to te, które zmieniają zwyczajne rzeczy. Bo jeśli Bóg przyszedł jako dziecko, to każde dziecko może być cudem.\"",
-      "en": "\"The strangest miracles are those that change ordinary things. Because if God came as a child, then every child can be a miracle.\""
-    },
-    "book": "laska-i-kij",
-    "bookTitle": {
-      "pl": "Laska i kij",
-      "en": "The Stick and the Carrot"
-    },
-    "image": "/books/laska-i-kij-cover.png",
-    "color": "#92400e"
-  },
-  {
-    "id": "reflection-1",
-    "text": {
-      "pl": "\"Współpraca z AI nauczyła mnie, że kreatywność to nie tylko generowanie możliwości. To przede wszystkim świadomy wybór spośród nich.\"",
-      "en": "\"Collaboration with AI taught me that creativity is not just about generating possibilities. It's primarily about conscious choice among them.\""
-    },
-    "book": "odbicie-umyslu",
-    "bookTitle": {
-      "pl": "Odbicie umysłu",
-      "en": "Reflection of the Mind"
-    },
-    "image": "/books/Odbicie - ebook cover.png",
-    "color": "#1e40af"
-  },
-  {
-    "id": "reflection-2",
-    "text": {
-      "pl": "\"AI może generować tekst, ale nie może chcieć coś powiedzieć. Nie ma intencji, celu, pasji. To wszystko pozostaje ludzkie.\"",
-      "en": "\"AI can generate text, but it can't want to say something. It has no intention, purpose, passion. That all remains human.\""
-    },
-    "book": "odbicie-umyslu",
-    "bookTitle": {
-      "pl": "Odbicie umysłu",
-      "en": "Reflection of the Mind"
-    },
-    "image": "/books/Odbicie - ebook cover.png",
-    "color": "#1e3a8a"
-  },
-  {
-    "id": "mirrors-3",
-    "text": {
-      "pl": "\"Każde lustro to próba zrozumienia siebie. Ale co, jeśli prawdziwe lustro to nie to, w które patrzymy, ale to, które patrzy na nas?\"",
-      "en": "\"Every mirror is an attempt to understand ourselves. But what if the real mirror is not the one we look into, but the one that looks at us?\""
+      "pl": "",
+      "en": ""
     },
     "book": "lustra-ktorych-nie-mamy",
     "bookTitle": {
       "pl": "Lustra, których nie mamy",
       "en": "Mirrors We Don't Have"
     },
-    "image": "/books/lustra-cover.png",
-    "color": "#374151"
+    "image": "/books/Oda - post.jpg",
+    "color": "#744210"
   },
   {
-    "id": "stick-3",
+    "id": "wordsworth-instagram",
     "text": {
-      "pl": "\"Czasami Bóg posyła nie odpowiedzi, ale pytania. I może właśnie w tych pytaniach tkwi największa łaska.\"",
-      "en": "\"Sometimes God sends not answers, but questions. And perhaps in these questions lies the greatest grace.\""
+      "pl": "",
+      "en": ""
+    },
+    "book": "lustra-ktorych-nie-mamy",
+    "bookTitle": {
+      "pl": "Lustra, których nie mamy",
+      "en": "Mirrors We Don't Have"
+    },
+    "image": "/books/Wordsworth.png",
+    "color": "#92400e"
+  },
+  {
+    "id": "senk-klary-instagram",
+    "text": {
+      "pl": "",
+      "en": ""
     },
     "book": "laska-i-kij",
     "bookTitle": {
       "pl": "Laska i kij",
       "en": "The Stick and the Carrot"
     },
-    "image": "/books/laska-i-kij-cover.png",
-    "color": "#78350f"
+    "image": "/books/SenkKlary.png",
+    "color": "#d97706"
   }
 ]

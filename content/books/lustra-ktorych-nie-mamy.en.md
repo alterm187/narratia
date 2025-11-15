@@ -15,24 +15,21 @@ genre:
 featured: true
 buyLinks:
   ebook:
-    - platform: naffy
-      url: https://www.naffy.io/sebastian-96YlQ/lustra-ktorych-nie-mamy-UBf
-      price: 18 PLN
-      region: PL
-      displayName: Naffy.io (E-book)
+    - platform: amazon
+      url: https://www.amazon.com/Mirrors-Dont-Have-Sebastian-Proba-ebook/dp/B0F1BXRRX9/
+      price: 4.94 USD
+      region: EN
+      displayName: Amazon.com (E-book)
+    - platform: many
+      url: https://books2read.com/u/mZDAVp
+      price: 4.94 USD
+      region: EN
+      displayName: Other (E-book)
   print:
-    - platform: bonito
-      url: https://bonito.pl/produkt/lustra-ktorych-nie-mamy
+    - platform: amazon
+      url: https://www.amazon.com/Mirrors-Dont-Have-Sebastian-Proba/dp/8396965757
       region: PL
-      displayName: Bonito
-    - platform: taniaksiazka
-      url: https://www.taniaksiazka.pl/lustra-ktorych-nie-mamy-p-2178635.html
-      region: PL
-      displayName: Tania Książka
-    - platform: tantis
-      url: https://tantis.pl/lustra-ktorych-nie-mamy-p3593566
-      region: PL
-      displayName: Tantis
+      displayName: Amazon.com (PoD)
 testimonials:
   - quote: I haven't read a book so contemporary in a long time. It touches on topics that are present in our daily lives, but which we rarely think about more deeply.
     language: en
