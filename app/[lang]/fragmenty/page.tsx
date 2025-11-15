@@ -56,8 +56,8 @@ export default async function FragmentyPage({ params }: PageProps) {
             </h1>
             <p className="text-xl text-[#2a332a]/70 max-w-2xl mx-auto leading-relaxed">
               {lang === 'pl'
-                ? 'Wybrane cytaty z moich książek - myśli o życiu, świadomości, wierze i naturze człowieczeństwa.'
-                : 'Selected quotes from my books - thoughts on life, consciousness, faith, and the nature of humanity.'}
+                ? '... po prostu'
+                : '... simply'}
             </p>
           </div>
 
