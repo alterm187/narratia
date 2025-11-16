@@ -5,9 +5,9 @@ import path from 'path';
 
 export async function GET(
   request: NextRequest,
-  { params }: { params: { filename: string } }
+  { params }: { params: Promise<{ filename: string }> }
 ) {
-  const filename = params.filename;
+  const { filename } = await params;
   
   // Track the download event
   await track('pdf_download', {
