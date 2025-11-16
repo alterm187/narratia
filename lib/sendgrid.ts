@@ -64,9 +64,9 @@ export async function sendWelcomeEmail(
   const name = firstName || (language === 'pl' ? 'Czytelnik' : 'Reader');
   const isPl = language === 'pl';
 
-  // Direct link to PDF files
+  // Link to download API route for tracking
   const downloadLink = leadMagnet === 'essay'
-    ? `https://narratia.pl/downloads/odbicie-umyslu.pdf`
+    ? `https://narratia.pl/api/download/odbicie-umyslu.pdf`
     : `https://narratia.pl/${language}/download/chapters`;
 
   const subject = isPl
