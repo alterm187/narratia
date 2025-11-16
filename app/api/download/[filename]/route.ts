@@ -3,6 +3,7 @@ import { track } from '@vercel/analytics/server';
 import fs from 'fs';
 import path from 'path';
 
+// Handle PDF downloads with async params
 export async function GET(
   request: NextRequest,
   { params }: { params: Promise<{ filename: string }> }
