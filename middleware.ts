@@ -30,8 +30,8 @@ function getLocale(request: NextRequest): string {
 export function middleware(request: NextRequest) {
   const pathname = request.nextUrl.pathname;
 
-  // Skip sitemap.xml and robots.txt
-  if (pathname === '/sitemap.xml' || pathname === '/robots.txt') {
+  // Skip sitemap.xml, robots.txt, and downloads
+  if (pathname === '/sitemap.xml' || pathname === '/robots.txt' || pathname.startsWith('/downloads/')) {
     return NextResponse.next();
   }
 
