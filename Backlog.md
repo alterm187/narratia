@@ -1,35 +1,3 @@
-**Job Story 1:** Narratia Look&Feel
-
-*   **Job Story:**
-    **Co do zrobienia:**
-      * dostosowanie wielkości czcionek na wszystkich podstronach
-      * sprawdzenie responsive design na różnych typach urządzeńu i są dostosowane do responsive design
-    **Dlaczego:**
-      * strona ma być gotowa do publikacji
-      * strona ma być czytelna i realizować swoje cele marketingowe wyglądem i UXem
-
-**User Story 4:** SEO preparations before publishing page
-
-*   **User Story:**
-    **Jako** twórca strony narratia.pl, **chcę** mieć kontent związany z SEO wygenerowany i wszystkie akcje dotyczące SEO wykonane, **abym** mógł opublikować stronę w kompletnej gotowości SEO, która zapewni pełną realizację celów marketingowych.
-
-*   **Status: ✅ COMPLETED**
-
-*   **Implementation Summary:**
-    * ✅ Dynamic XML sitemap (`/app/sitemap.ts`) - includes all pages (homepage, books, blog, about, contact, fragmenty) in both languages
-    * ✅ Robots.txt (`/app/robots.ts`) - proper crawling directives with sitemap reference
-    * ✅ Meta tags verified on all pages - title, description, Open Graph, Twitter Cards, canonical URLs, hreflang
-    * ✅ Structured data (JSON-LD Schema.org):
-      - Book schema on all book pages
-      - Author schema on about page
-      - Article/BlogPosting schema on all blog posts
-    * ✅ Middleware fixed to allow sitemap.xml and robots.txt access
-    * ✅ Comprehensive documentation created: `SEO_IMPLEMENTATION_SUMMARY.md`
-    
-*   **Note:** Consider creating a branded default Open Graph image (`/public/og-image.jpg`, 1200x630px) before launch. Pages with specific images (books, blog posts) already have proper OG images.
-
-*   **See:** `SEO_IMPLEMENTATION_SUMMARY.md` for complete details, testing checklist, and post-deployment recommendations.
-
 **User Story 5:** Narratia webpage - ARC redirections
 
 *   **User Story:**
