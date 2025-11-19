@@ -1,0 +1,73 @@
+name: Test Suite
+
+on:
+  push:
+    branches: [main, develop, secruity-and-tests]
+  pull_request:
+    branches: [main, develop]
+
+jobs:
+  unit-and-integration:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run linter
+        run: npm run lint
+
+      - name: Run unit and integration tests
+        run: npm run test:coverage
+        env:
+          NEXT_PUBLIC_SITE_URL: http://localhost:3000
+          MAILCHIMP_API_KEY: ${{ secrets.MAILCHIMP_API_KEY_TEST || 'test-key-us10' }}
+          MAILCHIMP_SERVER_PREFIX: us10
+          MAILCHIMP_AUDIENCE_ID: ${{ secrets.MAILCHIMP_AUDIENCE_ID_TEST || 'test-audience-id' }}
+          SENDGRID_API_KEY: ${{ secrets.SENDGRID_API_KEY_TEST || 'SG.test-key' }}
+          OWNER_EMAIL: test@narratia.com
+
+      - name: Upload coverage reports
+        uses: codecov/codecov-action@v4
+        if: always()
+        with:
+          files: ./coverage/lcov.info
+          flags: unit,integration
+          fail_ci_if_error: false
+        env:
+          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build Next.js app
+        run: npm run build
+        env:
+          NEXT_PUBLIC_SITE_URL: http://localhost:3000
+          MAILCHIMP_API_KEY: test-key
+          MAILCHIMP_SERVER_PREFIX: us10
+          MAILCHIMP_AUDIENCE_ID: test-audience
+          SENDGRID_API_KEY: SG.test-key
+          OWNER_EMAIL: test@narratia.com
