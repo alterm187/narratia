@@ -1,4 +1,5 @@
 import sgMail from '@sendgrid/mail';
+import DOMPurify from 'isomorphic-dompurify';
 
 // Initialize SendGrid with API key
 if (process.env.SENDGRID_API_KEY) {
@@ -61,7 +62,11 @@ export async function sendWelcomeEmail(
   language: 'pl' | 'en',
   leadMagnet: 'essay' | 'chapters'
 ) {
-  const name = firstName || (language === 'pl' ? 'Czytelnik' : 'Reader');
+  // Sanitize firstName to prevent XSS
+  const safeName = firstName
+    ? DOMPurify.sanitize(firstName, { ALLOWED_TAGS: [], ALLOWED_ATTR: [] })
+    : (language === 'pl' ? 'Czytelnik' : 'Reader');
+
   const isPl = language === 'pl';
 
   // Link to download API route for tracking
@@ -82,7 +87,7 @@ export async function sendWelcomeEmail(
 </head>
 <body style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; line-height: 1.6; color: #2a332a; max-width: 600px; margin: 0 auto; padding: 20px; background-color: #ffffff;">
   <div style="background: linear-gradient(135deg, #f1ede9 0%, #fff 100%); padding: 30px; border-radius: 8px; margin-bottom: 20px;">
-    <h1 style="color: #2a332a; margin-top: 0;">${isPl ? `Cześć ${name}!` : `Hello ${name}!`}</h1>
+    <h1 style="color: #2a332a; margin-top: 0;">${isPl ? `Cześć ${safeName}!` : `Hello ${safeName}!`}</h1>
     <p style="font-size: 18px; color: #2a332a;">
       ${isPl
         ? 'Dziękuję za zapis! Oto Twoje materiały do pobrania:'
@@ -129,7 +134,7 @@ export async function sendWelcomeEmail(
     </p>
   </div>
 
-  
+
   <div style="padding: 20px; text-align: center; color: #666; font-size: 14px;">
     <p style="margin-bottom: 10px;">
       Sebastian Proba - Narratia
@@ -149,7 +154,7 @@ export async function sendWelcomeEmail(
 </html>`;
 
   const textContent = `
-${isPl ? `Cześć ${name}!` : `Hello ${name}!`}
+${isPl ? `Cześć ${safeName}!` : `Hello ${safeName}!`}
 
 ${isPl
   ? 'Dziękuję za zapis! Oto Twoje materiały do pobrania:'
@@ -195,7 +200,7 @@ ${isPl
 
   return sendEmail({
     to: email,
-    toName: firstName,
+    toName: safeName,
     subject,
     html: htmlContent,
     text: textContent,

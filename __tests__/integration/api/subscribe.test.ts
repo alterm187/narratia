@@ -12,6 +12,20 @@ vi.mock('@sendgrid/mail', () => ({
   default: mockSendGridClient,
 }));
 
+// Mock DOMPurify
+vi.mock('isomorphic-dompurify', () => ({
+  default: {
+    sanitize: vi.fn((input) => input),
+  },
+}));
+
+// Mock validator
+vi.mock('validator', () => ({
+  default: {
+    isEmail: vi.fn((email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)),
+  },
+}));
+
 describe('POST /api/subscribe', () => {
   beforeEach(() => {
     vi.clearAllMocks();

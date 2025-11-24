@@ -11,7 +11,6 @@ export default defineConfig({
     coverage: {
       provider: 'v8',
       reporter: ['text', 'json', 'html', 'lcov'],
-      all: true,
       include: ['app/**', 'components/**', 'lib/**'],
       exclude: [
         'node_modules/',
@@ -41,6 +40,7 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './'),
+      'server-only': path.resolve(__dirname, '__mocks__/server-only.ts'),
     },
   },
 });

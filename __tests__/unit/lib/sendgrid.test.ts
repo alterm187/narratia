@@ -7,6 +7,13 @@ vi.mock('@sendgrid/mail', () => ({
   default: mockSendGridClient,
 }));
 
+// Mock DOMPurify
+vi.mock('isomorphic-dompurify', () => ({
+  default: {
+    sanitize: vi.fn((input) => input),
+  },
+}));
+
 describe('SendGrid Integration', () => {
   beforeEach(() => {
     vi.clearAllMocks();

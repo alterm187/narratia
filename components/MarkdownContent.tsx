@@ -1,6 +1,7 @@
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import rehypeRaw from 'rehype-raw';
+import rehypeSanitize, { defaultSchema } from 'rehype-sanitize';
 
 interface MarkdownContentProps {
   content: string;
@@ -10,15 +11,32 @@ interface MarkdownContentProps {
 /**
  * Component to render markdown content with support for:
  * - GitHub Flavored Markdown (tables, strikethrough, task lists, etc.)
- * - Raw HTML (if needed)
+ * - Raw HTML (if needed, sanitized)
  * - Proper typography and styling
+ * - XSS protection via rehype-sanitize
  */
 export default function MarkdownContent({ content, className = '' }: MarkdownContentProps) {
+  // Create a custom sanitize schema that allows some safe HTML
+  const customSchema = {
+    ...defaultSchema,
+    attributes: {
+      ...defaultSchema.attributes,
+      a: [
+        ...(defaultSchema.attributes?.a || []),
+        ['target', '_blank'],
+        ['rel', 'noopener', 'noreferrer'],
+      ],
+    },
+  };
+
   return (
     <div className={`prose prose-lg max-w-none ${className}`}>
       <ReactMarkdown
         remarkPlugins={[remarkGfm]}
-        rehypePlugins={[rehypeRaw]}
+        rehypePlugins={[
+          rehypeRaw,
+          [rehypeSanitize, customSchema], // Add sanitization
+        ]}
         components={{
           // Customize link behavior - open external links in new tab
           a: ({ node, ...props }) => {

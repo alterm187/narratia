@@ -1,11 +1,40 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
-import { POST } from '@/app/api/contact/route';
-import { mockSendGridClient } from '@/mocks/sendgrid';
 
-// Mock SendGrid
-vi.mock('@sendgrid/mail', () => ({
-  default: mockSendGridClient,
+// Mocks must be before imports that use them
+vi.mock('@sendgrid/mail', () => {
+  const mockSend = vi.fn(() =>
+    Promise.resolve([
+      {
+        statusCode: 202,
+        headers: { 'x-message-id': 'mock-message-id-123' },
+      },
+    ])
+  );
+
+  return {
+    default: {
+      setApiKey: vi.fn(),
+      send: mockSend,
+    },
+  };
+});
+
+// Mock DOMPurify
+vi.mock('isomorphic-dompurify', () => ({
+  default: {
+    sanitize: vi.fn((input) => input),
+  },
 }));
+
+// Mock validator
+vi.mock('validator', () => ({
+  default: {
+    isEmail: vi.fn((email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)),
+  },
+}));
+
+import { POST } from '@/app/api/contact/route';
+import sgMail from '@sendgrid/mail';
 
 describe('POST /api/contact', () => {
   beforeEach(() => {
@@ -29,7 +58,7 @@ describe('POST /api/contact', () => {
 
     expect(response.status).toBe(200);
     expect(data.success).toBe(true);
-    expect(mockSendGridClient.send).toHaveBeenCalled();
+    expect(sgMail.send).toHaveBeenCalled();
   });
 
   it('should send email with long message', async () => {
@@ -49,7 +78,7 @@ describe('POST /api/contact', () => {
 
     expect(response.status).toBe(200);
     expect(data.success).toBe(true);
-    expect(mockSendGridClient.send).toHaveBeenCalledWith(
+    expect(sgMail.send).toHaveBeenCalledWith(
       expect.objectContaining({
         text: expect.stringContaining(longMessage),
       })
@@ -105,9 +134,11 @@ describe('POST /api/contact', () => {
 
     await POST(request);
 
-    expect(mockSendGridClient.send).toHaveBeenCalledWith(
+    expect(sgMail.send).toHaveBeenCalledWith(
       expect.objectContaining({
-        to: 'sebastian.narratia@gmail.com',
+        to: expect.objectContaining({
+          email: 'sebastian.narratia@gmail.com',
+        }),
         html: expect.stringContaining('sender@example.com'),
       })
     );
@@ -126,7 +157,7 @@ describe('POST /api/contact', () => {
 
     await POST(request);
 
-    expect(mockSendGridClient.send).toHaveBeenCalledWith(
+    expect(sgMail.send).toHaveBeenCalledWith(
       expect.objectContaining({
         html: expect.any(String),
         text: expect.any(String),
@@ -204,7 +235,7 @@ describe('POST /api/contact', () => {
   });
 
   it('should handle SendGrid API errors', async () => {
-    mockSendGridClient.send.mockRejectedValueOnce(new Error('SendGrid error'));
+    vi.mocked(sgMail.send).mockRejectedValueOnce(new Error('SendGrid error'));
 
     const request = new Request('http://localhost:3000/api/contact', {
       method: 'POST',
@@ -226,7 +257,7 @@ describe('POST /api/contact', () => {
   it('should handle SendGrid rate limit errors', async () => {
     const rateLimitError = new Error('Rate limit') as any;
     rateLimitError.code = 429;
-    mockSendGridClient.send.mockRejectedValueOnce(rateLimitError);
+    vi.mocked(sgMail.send).mockRejectedValueOnce(rateLimitError);
 
     const request = new Request('http://localhost:3000/api/contact', {
       method: 'POST',
@@ -278,7 +309,7 @@ describe('POST /api/contact', () => {
 
     await POST(request);
 
-    expect(mockSendGridClient.send).toHaveBeenCalledWith(
+    expect(sgMail.send).toHaveBeenCalledWith(
       expect.objectContaining({
         html: expect.stringMatching(/\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}/),
         text: expect.stringMatching(/\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}/),
