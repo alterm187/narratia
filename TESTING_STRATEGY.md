@@ -2778,8 +2778,8 @@ git ls-files | grep .env.local
 
 **Risk:**
 - API keys exposed in public repository
-- Mailchimp API key: `91b27b57e2a44f11bf1a85474e751836-us10`
-- SendGrid API key: `SG.MZ1RDf3ORpOYuMwrEuZyJA...`
+- Mailchimp API key: `[REDACTED - key starting with 91b27b was revoked]`
+- SendGrid API key: `[REDACTED - key starting with SG.MZ1RD was revoked]`
 
 **Immediate Actions Required:**
 1. ✅ Add `.env.local` to `.gitignore`
