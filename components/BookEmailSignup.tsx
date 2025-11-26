@@ -6,6 +6,10 @@ import { Locale } from '@/types/i18n';
 interface BookEmailSignupDict {
   books: {
     emailSignup: {
+      title: string;
+      description: string;
+      placeholder: string;
+      button: string;
       success: string;
       error: string;
     };

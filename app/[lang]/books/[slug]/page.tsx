@@ -257,7 +257,6 @@ export default async function BookPage({ params }: PageProps) {
           <div className="mt-16">
             <BookEmailSignup
               bookId={book.id}
-              bookTitle={book.title[lang]}
               lang={lang}
               dict={dict}
             />
