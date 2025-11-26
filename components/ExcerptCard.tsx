@@ -69,7 +69,7 @@ export default function ExcerptCard({ excerpt, lang }: ExcerptCardProps) {
         {/* Content */}
         <div className="relative p-8">
           {/* Quote Icon */}
-          <div className="text-white/30 text-6xl font-serif mb-4 leading-none">"</div>
+          <div className="text-white/30 text-6xl font-serif mb-4 leading-none">&ldquo;</div>
 
           {/* Quote Text */}
           <blockquote className="text-white text-lg md:text-xl leading-relaxed font-serif italic mb-6">

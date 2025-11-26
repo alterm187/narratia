@@ -14,7 +14,7 @@ interface SecurityEventData {
   endpoint: string;
   ip?: string;
   userAgent?: string;
-  details?: Record<string, any>;
+  details?: Record<string, unknown>;
 }
 
 export async function logSecurityEvent(data: SecurityEventData) {

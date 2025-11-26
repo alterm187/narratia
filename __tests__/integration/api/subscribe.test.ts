@@ -1,32 +1,22 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { POST, GET } from '@/app/api/subscribe/route';
 
-// Create mock functions for Mailchimp
-const mockAddListMember = vi.fn();
-const mockUpdateListMemberTags = vi.fn();
-const mockGetListMember = vi.fn();
-const mockSetConfig = vi.fn();
-
-// Create mock functions for SendGrid
-const mockSendGridSend = vi.fn();
-const mockSetApiKey = vi.fn();
-
 // Mock dependencies
 vi.mock('@mailchimp/mailchimp_marketing', () => ({
   default: {
-    setConfig: mockSetConfig,
+    setConfig: vi.fn(),
     lists: {
-      addListMember: mockAddListMember,
-      updateListMemberTags: mockUpdateListMemberTags,
-      getListMember: mockGetListMember,
+      addListMember: vi.fn(),
+      updateListMemberTags: vi.fn(),
+      getListMember: vi.fn(),
     },
   },
 }));
 
 vi.mock('@sendgrid/mail', () => ({
   default: {
-    setApiKey: mockSetApiKey,
-    send: mockSendGridSend,
+    setApiKey: vi.fn(),
+    send: vi.fn(),
   },
 }));
 
@@ -44,6 +34,15 @@ vi.mock('validator', () => ({
   },
 }));
 
+// Get references to mock functions after mocking
+const mailchimp = (await import('@mailchimp/mailchimp_marketing')).default;
+const mockAddListMember = vi.mocked(mailchimp.lists.addListMember);
+const mockUpdateListMemberTags = vi.mocked(mailchimp.lists.updateListMemberTags);
+const mockGetListMember = vi.mocked(mailchimp.lists.getListMember);
+
+const sgMail = (await import('@sendgrid/mail')).default;
+const mockSendGridSend = vi.mocked(sgMail.send);
+
 describe('POST /api/subscribe', () => {
   beforeEach(() => {
     vi.clearAllMocks();
@@ -51,23 +50,23 @@ describe('POST /api/subscribe', () => {
     process.env.SENDGRID_API_KEY = 'SG.test-key';
 
     // Setup Mailchimp mock implementations
-    mockAddListMember.mockImplementation((audienceId: string, data: any) => {
+    mockAddListMember.mockImplementation((audienceId: string, data: { email_address: string }) => {
       if (data.email_address === 'duplicate@example.com') {
-        const error = new Error('Member Exists') as any;
-        error.status = 400;
-        error.title = 'Member Exists';
-        error.response = {
-          body: {
-            status: 400,
-            title: 'Member Exists',
-            detail: 'test@example.com is already a list member.',
+        const error = Object.assign(new Error('Member Exists'), {
+          status: 400,
+          title: 'Member Exists',
+          response: {
+            body: {
+              status: 400,
+              title: 'Member Exists',
+              detail: 'test@example.com is already a list member.',
+            }
           }
-        };
+        });
         throw error;
       }
       if (data.email_address === 'error@example.com') {
-        const error = new Error('Mailchimp API Error') as any;
-        error.status = 500;
+        const error = Object.assign(new Error('Mailchimp API Error'), { status: 500 });
         throw error;
       }
       return Promise.resolve({

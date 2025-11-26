@@ -3,6 +3,7 @@
  * Script to migrate blog posts from JSON to Markdown format
  */
 
+/* eslint-disable @typescript-eslint/no-require-imports */
 const fs = require('fs');
 const path = require('path');
 

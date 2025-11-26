@@ -26,11 +26,12 @@ export const mockSendGridError = {
 // Mock SendGrid client
 export const mockSendGridClient = {
   setApiKey: vi.fn(),
-  send: vi.fn((msg: any) => {
+  send: vi.fn((msg: { to: string | { email: string }[] }) => {
     if (msg.to === 'invalid@' || (Array.isArray(msg.to) && msg.to[0]?.email === 'error@example.com')) {
-      const error = new Error('SendGrid API Error') as any;
-      error.code = 400;
-      error.response = mockSendGridError.response;
+      const error = Object.assign(new Error('SendGrid API Error'), {
+        code: 400,
+        response: mockSendGridError.response
+      });
       return Promise.reject(error);
     }
     return Promise.resolve(mockSendGridResponse);

@@ -4,7 +4,6 @@ import { getBookReviews, formatReviewDate } from '@/lib/reviews';
 interface ReviewsSectionProps {
   bookId: string;
   lang: Locale;
-  dict: any;
 }
 
 function StarRating({ rating }: { rating: number }) {
@@ -41,7 +40,7 @@ function RatingBar({ rating, count, total }: { rating: number; count: number; to
   );
 }
 
-export default function ReviewsSection({ bookId, lang, dict }: ReviewsSectionProps) {
+export default function ReviewsSection({ bookId, lang }: ReviewsSectionProps) {
   const bookReviews = getBookReviews(bookId);
 
   if (!bookReviews || bookReviews.reviews.length === 0) {

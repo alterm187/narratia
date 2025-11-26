@@ -28,17 +28,17 @@ export const mockDuplicateError = {
 export const mockMailchimpClient = {
   setConfig: vi.fn(),
   lists: {
-    addListMember: vi.fn((audienceId: string, data: any) => {
+    addListMember: vi.fn((_audienceId: string, data: { email_address: string; merge_fields?: Record<string, string> }) => {
       if (data.email_address === 'duplicate@example.com') {
-        const error = new Error('Member Exists') as any;
-        error.status = 400;
-        error.title = 'Member Exists';
-        error.response = { body: mockDuplicateError };
+        const error = Object.assign(new Error('Member Exists'), {
+          status: 400,
+          title: 'Member Exists',
+          response: { body: mockDuplicateError }
+        });
         throw error;
       }
       if (data.email_address === 'error@example.com') {
-        const error = new Error('Mailchimp API Error') as any;
-        error.status = 500;
+        const error = Object.assign(new Error('Mailchimp API Error'), { status: 500 });
         throw error;
       }
       return Promise.resolve({
@@ -48,10 +48,10 @@ export const mockMailchimpClient = {
       });
     }),
     updateListMemberTags: vi.fn(() => Promise.resolve({ tags: [] })),
-    getListMember: vi.fn((audienceId: string, subscriberHash: string) => {
+    getListMember: vi.fn(() => {
       return Promise.resolve(mockSubscriberResponse);
     }),
-    setListMember: vi.fn((audienceId: string, subscriberHash: string, data: any) => {
+    setListMember: vi.fn((_audienceId: string, _subscriberHash: string, data: { email_address: string; merge_fields?: Record<string, string> }) => {
       return Promise.resolve({
         ...mockSubscriberResponse,
         email_address: data.email_address,

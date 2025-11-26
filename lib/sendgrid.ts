@@ -41,17 +41,18 @@ export async function sendEmail(params: EmailParams) {
       messageId: response[0].headers['x-message-id'],
       statusCode: response[0].statusCode,
     };
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error('SendGrid error:', error);
 
-    if (error.response) {
-      console.error('SendGrid error body:', error.response.body);
+    const err = error as { message?: string; response?: { body?: unknown } };
+    if (err.response) {
+      console.error('SendGrid error body:', err.response.body);
     }
 
     return {
       success: false,
-      error: error.message || 'Failed to send email',
-      details: error.response?.body,
+      error: err.message || 'Failed to send email',
+      details: err.response?.body,
     };
   }
 }

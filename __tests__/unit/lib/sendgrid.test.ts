@@ -1,17 +1,17 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { sendEmail, sendWelcomeEmail } from '@/lib/sendgrid';
 
-// Create mock functions
-const mockSend = vi.fn();
-const mockSetApiKey = vi.fn();
-
 // Mock the SendGrid SDK
 vi.mock('@sendgrid/mail', () => ({
   default: {
-    setApiKey: mockSetApiKey,
-    send: mockSend,
+    setApiKey: vi.fn(),
+    send: vi.fn(),
   },
 }));
+
+// Get references to mock functions after mocking
+const sgMail = (await import('@sendgrid/mail')).default;
+const mockSend = vi.mocked(sgMail.send);
 
 // Mock DOMPurify
 vi.mock('isomorphic-dompurify', () => ({
@@ -26,16 +26,21 @@ describe('SendGrid Integration', () => {
     process.env.SENDGRID_API_KEY = 'SG.test-key';
 
     // Setup default mock implementation
-    mockSend.mockImplementation((msg: any) => {
-      const toEmail = Array.isArray(msg.to) ? msg.to[0]?.email : msg.to;
+    mockSend.mockImplementation((msg: { to: string | { email: string } | { email: string }[] }) => {
+      const toEmail = Array.isArray(msg.to)
+        ? msg.to[0]?.email
+        : typeof msg.to === 'object' && 'email' in msg.to
+          ? msg.to.email
+          : msg.to;
       if (toEmail === 'error@example.com') {
-        const error = new Error('SendGrid API Error') as any;
-        error.code = 400;
-        error.response = {
-          body: {
-            errors: [{ message: 'Invalid email' }],
-          },
-        };
+        const error = Object.assign(new Error('SendGrid API Error'), {
+          code: 400,
+          response: {
+            body: {
+              errors: [{ message: 'Invalid email' }],
+            },
+          }
+        });
         return Promise.reject(error);
       }
       return Promise.resolve([

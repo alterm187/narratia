@@ -1,4 +1,4 @@
-import { render, screen, fireEvent, waitFor } from '@testing-library/react';
+import { render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import EmailSignupForm from '@/components/EmailSignupForm';
@@ -87,7 +87,7 @@ describe('EmailSignupForm', () => {
           ok: true,
           json: () => Promise.resolve({ success: true, message: 'Success' }),
         })
-      ) as any;
+      ) as unknown as typeof fetch;
       global.fetch = mockFetch;
 
       const user = userEvent.setup();
@@ -125,7 +125,7 @@ describe('EmailSignupForm', () => {
           ok: true,
           json: () => Promise.resolve({ success: true, message: 'Success' }),
         })
-      ) as any;
+      ) as unknown as typeof fetch;
       global.fetch = mockFetch;
 
       const user = userEvent.setup();
@@ -152,7 +152,7 @@ describe('EmailSignupForm', () => {
           ok: true,
           json: () => Promise.resolve({ success: true, message: 'Success' }),
         })
-      ) as any;
+      ) as unknown as typeof fetch;
       global.fetch = mockFetch;
 
       const user = userEvent.setup();
@@ -178,7 +178,7 @@ describe('EmailSignupForm', () => {
           ok: true,
           json: () => Promise.resolve({ success: true, message: 'Success' }),
         })
-      ) as any;
+      ) as unknown as typeof fetch;
       global.fetch = mockFetch;
 
       const user = userEvent.setup();
@@ -204,7 +204,7 @@ describe('EmailSignupForm', () => {
           ok: true,
           json: () => Promise.resolve({ success: true, message: 'Success' }),
         })
-      ) as any;
+      ) as unknown as typeof fetch;
       global.fetch = mockFetch;
 
       const user = userEvent.setup();
@@ -230,7 +230,7 @@ describe('EmailSignupForm', () => {
           ok: true,
           json: () => Promise.resolve({ success: true, message: 'Success' }),
         }), 100))
-      ) as any;
+      ) as unknown as typeof fetch;
       global.fetch = mockFetch;
 
       const user = userEvent.setup();
@@ -255,7 +255,7 @@ describe('EmailSignupForm', () => {
           ok: true,
           json: () => Promise.resolve({ success: true, message: 'Success' }),
         }), 100))
-      ) as any;
+      ) as unknown as typeof fetch;
       global.fetch = mockFetch;
 
       const user = userEvent.setup();
@@ -278,7 +278,7 @@ describe('EmailSignupForm', () => {
           ok: true,
           json: () => Promise.resolve({ success: true, message: 'Successfully subscribed!' }),
         })
-      ) as any;
+      ) as unknown as typeof fetch;
       global.fetch = mockFetch;
 
       const user = userEvent.setup();
@@ -300,7 +300,7 @@ describe('EmailSignupForm', () => {
           ok: true,
           json: () => Promise.resolve({ success: true, message: 'Success' }),
         })
-      ) as any;
+      ) as unknown as typeof fetch;
       global.fetch = mockFetch;
 
       const user = userEvent.setup();
@@ -321,7 +321,7 @@ describe('EmailSignupForm', () => {
           ok: true,
           json: () => Promise.resolve({ success: true, message: 'Success' }),
         })
-      ) as any;
+      ) as unknown as typeof fetch;
       global.fetch = mockFetch;
 
       const user = userEvent.setup();
@@ -351,7 +351,7 @@ describe('EmailSignupForm', () => {
           ok: false,
           json: () => Promise.resolve({ error: 'Invalid email address' }),
         })
-      ) as any;
+      ) as unknown as typeof fetch;
       global.fetch = mockFetch;
 
       const user = userEvent.setup();
@@ -370,7 +370,7 @@ describe('EmailSignupForm', () => {
     it('should handle network errors gracefully', async () => {
       const mockFetch = vi.fn(() =>
         Promise.reject(new Error('Network error'))
-      ) as any;
+      ) as unknown as typeof fetch;
       global.fetch = mockFetch;
 
       const user = userEvent.setup();
@@ -388,7 +388,7 @@ describe('EmailSignupForm', () => {
     it('should show Polish error message for Polish language', async () => {
       const mockFetch = vi.fn(() =>
         Promise.reject(new Error('Network error'))
-      ) as any;
+      ) as unknown as typeof fetch;
       global.fetch = mockFetch;
 
       const user = userEvent.setup();
@@ -413,7 +413,7 @@ describe('EmailSignupForm', () => {
         .mockResolvedValueOnce({
           ok: true,
           json: () => Promise.resolve({ success: true, message: 'Success' }),
-        }) as any;
+        }) as unknown as typeof fetch;
       global.fetch = mockFetch;
 
       const user = userEvent.setup();

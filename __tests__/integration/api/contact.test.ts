@@ -255,8 +255,7 @@ describe('POST /api/contact', () => {
   });
 
   it('should handle SendGrid rate limit errors', async () => {
-    const rateLimitError = new Error('Rate limit') as any;
-    rateLimitError.code = 429;
+    const rateLimitError = Object.assign(new Error('Rate limit'), { code: 429 });
     vi.mocked(sgMail.send).mockRejectedValueOnce(rateLimitError);
 
     const request = new Request('http://localhost:3000/api/contact', {

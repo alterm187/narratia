@@ -236,7 +236,7 @@ export default async function BookPage({ params }: PageProps) {
                           key={index}
                           className="bg-white/70 p-6 shadow-sm relative handwritten"
                         >
-                          <div className="absolute top-4 left-4 text-6xl text-[#ffbd59] opacity-30 leading-none">"</div>
+                          <div className="absolute top-4 left-4 text-6xl text-[#ffbd59] opacity-30 leading-none">&ldquo;</div>
                           <p className="text-xl text-[#2a332a] leading-relaxed ml-8">
                             {testimonial.quote}
                           </p>

@@ -327,9 +327,9 @@ export default async function HomePage({ params }: PageProps) {
         <section className="bg-[#cbc5bd] py-20">
           <div className="container mx-auto max-w-[800px] px-6 text-center">
             <p className="text-2xl sm:text-3xl text-[#2a332a] font-light italic leading-relaxed">
-              "{lang === 'pl'
+              &ldquo;{lang === 'pl'
                 ? 'Pisanie to nie zawód, to wewnętrzna potrzeba.'
-                : 'Writing is not a profession, it\'s an inner need.'}"
+                : 'Writing is not a profession, it\'s an inner need.'}&rdquo;
             </p>
             <Link
               href={`/${lang}/about`}

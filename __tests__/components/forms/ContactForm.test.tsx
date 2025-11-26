@@ -4,7 +4,21 @@ import { describe, it, expect, vi, beforeEach } from 'vitest';
 import ContactForm from '@/components/ContactForm';
 
 // Mock dictionary for tests
-const mockDict = {
+interface ContactFormDict {
+  contact: {
+    form: {
+      name: string;
+      email: string;
+      message: string;
+      submit: string;
+      sending: string;
+      success: string;
+      error: string;
+    };
+  };
+}
+
+const mockDict: ContactFormDict = {
   contact: {
     form: {
       name: 'Name',
@@ -16,9 +30,9 @@ const mockDict = {
       error: 'Failed to send message. Please try again.',
     },
   },
-} as any;
+};
 
-const mockDictPl = {
+const mockDictPl: ContactFormDict = {
   contact: {
     form: {
       name: 'Imię',
@@ -30,7 +44,7 @@ const mockDictPl = {
       error: 'Nie udało się wysłać wiadomości. Spróbuj ponownie.',
     },
   },
-} as any;
+};
 
 describe('ContactForm', () => {
   beforeEach(() => {
@@ -89,7 +103,7 @@ describe('ContactForm', () => {
           ok: true,
           json: () => Promise.resolve({ success: true }),
         })
-      ) as any;
+      ) as unknown as typeof fetch;
       global.fetch = mockFetch;
 
       const user = userEvent.setup({ delay: null });
@@ -122,7 +136,7 @@ describe('ContactForm', () => {
           ok: true,
           json: () => Promise.resolve({ success: true }),
         }), 100))
-      ) as any;
+      ) as unknown as typeof fetch;
       global.fetch = mockFetch;
 
       const user = userEvent.setup({ delay: null });
@@ -146,7 +160,7 @@ describe('ContactForm', () => {
           ok: true,
           json: () => Promise.resolve({ success: true }),
         }), 100))
-      ) as any;
+      ) as unknown as typeof fetch;
       global.fetch = mockFetch;
 
       const user = userEvent.setup({ delay: null });
@@ -170,7 +184,7 @@ describe('ContactForm', () => {
           ok: true,
           json: () => Promise.resolve({ success: true }),
         })
-      ) as any;
+      ) as unknown as typeof fetch;
       global.fetch = mockFetch;
 
       const user = userEvent.setup({ delay: null });
@@ -192,7 +206,7 @@ describe('ContactForm', () => {
           ok: true,
           json: () => Promise.resolve({ success: true }),
         })
-      ) as any;
+      ) as unknown as typeof fetch;
       global.fetch = mockFetch;
 
       const user = userEvent.setup({ delay: null });
@@ -215,13 +229,14 @@ describe('ContactForm', () => {
     });
 
     it('should clear success message after 5 seconds', async () => {
+      vi.useRealTimers(); // Use real timers to avoid conflicts
       vi.useFakeTimers();
       const mockFetch = vi.fn(() =>
         Promise.resolve({
           ok: true,
           json: () => Promise.resolve({ success: true }),
         })
-      ) as any;
+      ) as unknown as typeof fetch;
       global.fetch = mockFetch;
 
       const user = userEvent.setup({ delay: null });
@@ -254,7 +269,7 @@ describe('ContactForm', () => {
           ok: false,
           json: () => Promise.resolve({ error: 'Error' }),
         })
-      ) as any;
+      ) as unknown as typeof fetch;
       global.fetch = mockFetch;
 
       const user = userEvent.setup({ delay: null });
@@ -273,7 +288,7 @@ describe('ContactForm', () => {
     it('should handle network errors', async () => {
       const mockFetch = vi.fn(() =>
         Promise.reject(new Error('Network error'))
-      ) as any;
+      ) as unknown as typeof fetch;
       global.fetch = mockFetch;
 
       const user = userEvent.setup({ delay: null });
@@ -290,13 +305,14 @@ describe('ContactForm', () => {
     });
 
     it('should clear error message after 5 seconds', async () => {
+      vi.useRealTimers(); // Use real timers to avoid conflicts
       vi.useFakeTimers();
       const mockFetch = vi.fn(() =>
         Promise.resolve({
           ok: false,
           json: () => Promise.resolve({ error: 'Error' }),
         })
-      ) as any;
+      ) as unknown as typeof fetch;
       global.fetch = mockFetch;
 
       const user = userEvent.setup({ delay: null });
@@ -330,7 +346,7 @@ describe('ContactForm', () => {
         .mockResolvedValueOnce({
           ok: true,
           json: () => Promise.resolve({ success: true }),
-        }) as any;
+        }) as unknown as typeof fetch;
       global.fetch = mockFetch;
 
       const user = userEvent.setup({ delay: null });

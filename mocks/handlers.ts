@@ -3,7 +3,7 @@ import { http, HttpResponse } from 'msw';
 export const handlers = [
   // Subscribe API
   http.post('/api/subscribe', async ({ request }) => {
-    const body = await request.json() as any;
+    const body = await request.json() as { email?: string; consent?: boolean };
 
     // Validation
     if (!body.email) {
@@ -54,7 +54,7 @@ export const handlers = [
 
   // Contact API
   http.post('/api/contact', async ({ request }) => {
-    const body = await request.json() as any;
+    const body = await request.json() as { name?: string; email?: string; message?: string };
 
     if (!body.name || !body.email || !body.message) {
       return HttpResponse.json(
