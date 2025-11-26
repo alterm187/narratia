@@ -36,9 +36,10 @@ export async function addSubscriber(data: SubscriberData) {
     }
 
     return { success: true, data: response };
-  } catch (error: any) {
+  } catch (error: unknown) {
     // Handle duplicate email gracefully
-    if (error.status === 400 && error.response?.body?.title === 'Member Exists') {
+    const err = error as { status?: number; response?: { body?: { title?: string } }; message?: string };
+    if (err.status === 400 && err.response?.body?.title === 'Member Exists') {
       // If already subscribed, try to add tags
       if (data.tags && data.tags.length > 0) {
         await addTagsToSubscriber(data.email, data.tags);
@@ -47,8 +48,8 @@ export async function addSubscriber(data: SubscriberData) {
     }
 
     console.error('Mailchimp error:', error);
-    console.error('Error details:', JSON.stringify(error.response?.body, null, 2));
-    return { success: false, error: error.message };
+    console.error('Error details:', JSON.stringify(err.response?.body, null, 2));
+    return { success: false, error: err.message || 'Unknown error' };
   }
 }
 
@@ -68,9 +69,10 @@ export async function addTagsToSubscriber(email: string, tags: string[]) {
     );
 
     return { success: true };
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error('Add tags error:', error);
-    return { success: false, error: error.message };
+    const err = error as { message?: string };
+    return { success: false, error: err.message || 'Unknown error' };
   }
 }
 
@@ -87,8 +89,9 @@ export async function getSubscriberInfo(email: string) {
     );
 
     return { success: true, data: response };
-  } catch (error: any) {
-    return { success: false, error: error.message };
+  } catch (error: unknown) {
+    const err = error as { message?: string };
+    return { success: false, error: err.message || 'Unknown error' };
   }
 }
 
@@ -106,8 +109,9 @@ export async function getAudienceStats() {
         clickRate: response.stats.click_rate,
       }
     };
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error('Get stats error:', error);
-    return { success: false, error: error.message };
+    const err = error as { message?: string };
+    return { success: false, error: err.message || 'Unknown error' };
   }
 }

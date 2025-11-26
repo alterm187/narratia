@@ -3,16 +3,23 @@
 import { useState } from 'react';
 import { Locale } from '@/types/i18n';
 
+interface BookEmailSignupDict {
+  books: {
+    emailSignup: {
+      success: string;
+      error: string;
+    };
+  };
+}
+
 interface BookEmailSignupProps {
   bookId: string;
-  bookTitle: string;
   lang: Locale;
-  dict: any;
+  dict: BookEmailSignupDict;
 }
 
 export default function BookEmailSignup({
   bookId,
-  bookTitle,
   lang,
   dict,
 }: BookEmailSignupProps) {
@@ -39,7 +46,7 @@ export default function BookEmailSignup({
         }),
       });
 
-      const data = await response.json();
+      await response.json();
 
       if (response.ok) {
         setMessage({ type: 'success', text: dict.books.emailSignup.success });
@@ -47,7 +54,7 @@ export default function BookEmailSignup({
       } else {
         setMessage({ type: 'error', text: dict.books.emailSignup.error });
       }
-    } catch (error) {
+    } catch {
       setMessage({ type: 'error', text: dict.books.emailSignup.error });
     } finally {
       setLoading(false);

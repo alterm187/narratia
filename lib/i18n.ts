@@ -20,5 +20,9 @@ export function getLocaleFromPathname(pathname: string): Locale {
 }
 
 export function getPathnameWithoutLocale(pathname: string, locale: Locale): string {
-  return pathname.replace(`/${locale}`, '') || '/';
+  // Only remove locale if it's at the start of the pathname
+  if (pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`) {
+    return pathname.replace(`/${locale}`, '') || '/';
+  }
+  return pathname;
 }
