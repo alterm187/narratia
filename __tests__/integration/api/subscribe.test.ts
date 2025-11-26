@@ -1,15 +1,33 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { POST, GET } from '@/app/api/subscribe/route';
-import { mockMailchimpClient } from '@/mocks/mailchimp';
-import { mockSendGridClient } from '@/mocks/sendgrid';
+
+// Create mock functions for Mailchimp
+const mockAddListMember = vi.fn();
+const mockUpdateListMemberTags = vi.fn();
+const mockGetListMember = vi.fn();
+const mockSetConfig = vi.fn();
+
+// Create mock functions for SendGrid
+const mockSendGridSend = vi.fn();
+const mockSetApiKey = vi.fn();
 
 // Mock dependencies
 vi.mock('@mailchimp/mailchimp_marketing', () => ({
-  default: mockMailchimpClient,
+  default: {
+    setConfig: mockSetConfig,
+    lists: {
+      addListMember: mockAddListMember,
+      updateListMemberTags: mockUpdateListMemberTags,
+      getListMember: mockGetListMember,
+    },
+  },
 }));
 
 vi.mock('@sendgrid/mail', () => ({
-  default: mockSendGridClient,
+  default: {
+    setApiKey: mockSetApiKey,
+    send: mockSendGridSend,
+  },
 }));
 
 // Mock DOMPurify
@@ -31,6 +49,59 @@ describe('POST /api/subscribe', () => {
     vi.clearAllMocks();
     process.env.MAILCHIMP_AUDIENCE_ID = 'test-audience-id';
     process.env.SENDGRID_API_KEY = 'SG.test-key';
+
+    // Setup Mailchimp mock implementations
+    mockAddListMember.mockImplementation((audienceId: string, data: any) => {
+      if (data.email_address === 'duplicate@example.com') {
+        const error = new Error('Member Exists') as any;
+        error.status = 400;
+        error.title = 'Member Exists';
+        error.response = {
+          body: {
+            status: 400,
+            title: 'Member Exists',
+            detail: 'test@example.com is already a list member.',
+          }
+        };
+        throw error;
+      }
+      if (data.email_address === 'error@example.com') {
+        const error = new Error('Mailchimp API Error') as any;
+        error.status = 500;
+        throw error;
+      }
+      return Promise.resolve({
+        id: 'mock-subscriber-id-123',
+        email_address: data.email_address,
+        unique_email_id: 'unique-123',
+        status: 'subscribed',
+        merge_fields: data.merge_fields || {},
+      });
+    });
+
+    mockUpdateListMemberTags.mockResolvedValue({ tags: [] });
+    mockGetListMember.mockResolvedValue({
+      id: 'mock-subscriber-id-123',
+      email_address: 'test@example.com',
+      unique_email_id: 'unique-123',
+      status: 'subscribed',
+      merge_fields: {
+        FNAME: 'John',
+        LNAME: 'Doe',
+      },
+    });
+
+    // Setup SendGrid mock implementation
+    mockSendGridSend.mockResolvedValue([
+      {
+        statusCode: 202,
+        headers: {
+          'x-message-id': 'mock-message-id-123',
+        },
+        body: '',
+      },
+      {},
+    ]);
   });
 
   it('should subscribe user with minimal data (email + consent)', async () => {
@@ -49,7 +120,7 @@ describe('POST /api/subscribe', () => {
 
     expect(response.status).toBe(200);
     expect(data.success).toBe(true);
-    expect(mockMailchimpClient.lists.addListMember).toHaveBeenCalled();
+    expect(mockAddListMember).toHaveBeenCalled();
   });
 
   it('should subscribe with first name', async () => {
@@ -69,7 +140,7 @@ describe('POST /api/subscribe', () => {
 
     expect(response.status).toBe(200);
     expect(data.success).toBe(true);
-    expect(mockMailchimpClient.lists.addListMember).toHaveBeenCalledWith(
+    expect(mockAddListMember).toHaveBeenCalledWith(
       'test-audience-id',
       expect.objectContaining({
         merge_fields: expect.objectContaining({
@@ -96,7 +167,7 @@ describe('POST /api/subscribe', () => {
 
     expect(response.status).toBe(200);
     expect(data.success).toBe(true);
-    expect(mockSendGridClient.send).toHaveBeenCalled(); // Welcome email should be sent
+    expect(mockSendGridSend).toHaveBeenCalled(); // Welcome email should be sent
   });
 
   it('should subscribe with chapters lead magnet', async () => {
@@ -116,7 +187,7 @@ describe('POST /api/subscribe', () => {
 
     expect(response.status).toBe(200);
     expect(data.success).toBe(true);
-    expect(mockSendGridClient.send).toHaveBeenCalled();
+    expect(mockSendGridSend).toHaveBeenCalled();
   });
 
   it('should subscribe with newsletter-only', async () => {
@@ -137,7 +208,7 @@ describe('POST /api/subscribe', () => {
     expect(response.status).toBe(200);
     expect(data.success).toBe(true);
     // Newsletter only should NOT send welcome email
-    expect(mockSendGridClient.send).not.toHaveBeenCalled();
+    expect(mockSendGridSend).not.toHaveBeenCalled();
   });
 
   it('should add correct tags for essay download', async () => {
@@ -155,7 +226,7 @@ describe('POST /api/subscribe', () => {
     await POST(request);
 
     // Check that tags are passed correctly
-    expect(mockMailchimpClient.lists.updateListMemberTags).toHaveBeenCalled();
+    expect(mockUpdateListMemberTags).toHaveBeenCalled();
   });
 
   it('should handle already subscribed user gracefully', async () => {
@@ -263,7 +334,7 @@ describe('POST /api/subscribe', () => {
 
   it('should not fail if SendGrid fails (non-blocking)', async () => {
     // Make SendGrid fail
-    mockSendGridClient.send.mockRejectedValueOnce(new Error('SendGrid error'));
+    mockSendGridSend.mockRejectedValueOnce(new Error('SendGrid error'));
 
     const request = new Request('http://localhost:3000/api/subscribe', {
       method: 'POST',
@@ -290,6 +361,18 @@ describe('GET /api/subscribe', () => {
   beforeEach(() => {
     vi.clearAllMocks();
     process.env.MAILCHIMP_AUDIENCE_ID = 'test-audience-id';
+
+    // Setup mock for GET requests
+    mockGetListMember.mockResolvedValue({
+      id: 'mock-subscriber-id-123',
+      email_address: 'subscribed@example.com',
+      unique_email_id: 'unique-123',
+      status: 'subscribed',
+      merge_fields: {
+        FNAME: 'John',
+        LNAME: 'Doe',
+      },
+    });
   });
 
   it('should check if email is subscribed', async () => {

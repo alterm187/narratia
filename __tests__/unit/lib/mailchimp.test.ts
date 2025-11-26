@@ -1,16 +1,69 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
 import { addSubscriber, addTagsToSubscriber, getSubscriberInfo } from '@/lib/mailchimp';
-import { mockMailchimpClient } from '@/mocks/mailchimp';
+
+// Create mock functions
+const mockAddListMember = vi.fn();
+const mockUpdateListMemberTags = vi.fn();
+const mockGetListMember = vi.fn();
+const mockSetConfig = vi.fn();
 
 // Mock the Mailchimp SDK
 vi.mock('@mailchimp/mailchimp_marketing', () => ({
-  default: mockMailchimpClient,
+  default: {
+    setConfig: mockSetConfig,
+    lists: {
+      addListMember: mockAddListMember,
+      updateListMemberTags: mockUpdateListMemberTags,
+      getListMember: mockGetListMember,
+    },
+  },
 }));
 
 describe('Mailchimp Integration', () => {
   beforeEach(() => {
     vi.clearAllMocks();
     process.env.MAILCHIMP_AUDIENCE_ID = 'test-audience-id';
+
+    // Setup default mock implementations
+    mockAddListMember.mockImplementation((audienceId: string, data: any) => {
+      if (data.email_address === 'duplicate@example.com') {
+        const error = new Error('Member Exists') as any;
+        error.status = 400;
+        error.title = 'Member Exists';
+        error.response = {
+          body: {
+            status: 400,
+            title: 'Member Exists',
+            detail: 'test@example.com is already a list member.',
+          }
+        };
+        throw error;
+      }
+      if (data.email_address === 'error@example.com') {
+        const error = new Error('Mailchimp API Error') as any;
+        error.status = 500;
+        throw error;
+      }
+      return Promise.resolve({
+        id: 'mock-subscriber-id-123',
+        email_address: data.email_address,
+        unique_email_id: 'unique-123',
+        status: 'subscribed',
+        merge_fields: data.merge_fields || {},
+      });
+    });
+
+    mockUpdateListMemberTags.mockResolvedValue({ tags: [] });
+    mockGetListMember.mockResolvedValue({
+      id: 'mock-subscriber-id-123',
+      email_address: 'test@example.com',
+      unique_email_id: 'unique-123',
+      status: 'subscribed',
+      merge_fields: {
+        FNAME: 'John',
+        LNAME: 'Doe',
+      },
+    });
   });
 
   describe('addSubscriber', () => {
@@ -20,7 +73,7 @@ describe('Mailchimp Integration', () => {
       });
 
       expect(result.success).toBe(true);
-      expect(mockMailchimpClient.lists.addListMember).toHaveBeenCalledWith(
+      expect(mockAddListMember).toHaveBeenCalledWith(
         'test-audience-id',
         {
           email_address: 'test@example.com',
@@ -41,7 +94,7 @@ describe('Mailchimp Integration', () => {
       });
 
       expect(result.success).toBe(true);
-      expect(mockMailchimpClient.lists.addListMember).toHaveBeenCalledWith(
+      expect(mockAddListMember).toHaveBeenCalledWith(
         'test-audience-id',
         expect.objectContaining({
           email_address: 'john@example.com',
@@ -60,8 +113,8 @@ describe('Mailchimp Integration', () => {
       });
 
       expect(result.success).toBe(true);
-      expect(mockMailchimpClient.lists.addListMember).toHaveBeenCalled();
-      expect(mockMailchimpClient.lists.updateListMemberTags).toHaveBeenCalled();
+      expect(mockAddListMember).toHaveBeenCalled();
+      expect(mockUpdateListMemberTags).toHaveBeenCalled();
     });
 
     it('should handle duplicate email gracefully', async () => {
@@ -81,7 +134,7 @@ describe('Mailchimp Integration', () => {
 
       expect(result.success).toBe(true);
       expect(result.alreadySubscribed).toBe(true);
-      expect(mockMailchimpClient.lists.updateListMemberTags).toHaveBeenCalled();
+      expect(mockUpdateListMemberTags).toHaveBeenCalled();
     });
 
     it('should handle API errors', async () => {
@@ -100,7 +153,7 @@ describe('Mailchimp Integration', () => {
       });
 
       expect(result.success).toBe(true);
-      expect(mockMailchimpClient.lists.addListMember).toHaveBeenCalledWith(
+      expect(mockAddListMember).toHaveBeenCalledWith(
         'test-audience-id',
         expect.objectContaining({
           merge_fields: {
@@ -117,7 +170,7 @@ describe('Mailchimp Integration', () => {
       const result = await addTagsToSubscriber('test@example.com', ['tag1', 'tag2']);
 
       expect(result.success).toBe(true);
-      expect(mockMailchimpClient.lists.updateListMemberTags).toHaveBeenCalledWith(
+      expect(mockUpdateListMemberTags).toHaveBeenCalledWith(
         'test-audience-id',
         expect.any(String), // MD5 hash of email
         {
@@ -133,7 +186,7 @@ describe('Mailchimp Integration', () => {
       const result = await addTagsToSubscriber('test@example.com', ['single-tag']);
 
       expect(result.success).toBe(true);
-      expect(mockMailchimpClient.lists.updateListMemberTags).toHaveBeenCalledWith(
+      expect(mockUpdateListMemberTags).toHaveBeenCalledWith(
         'test-audience-id',
         expect.any(String),
         {
@@ -146,7 +199,7 @@ describe('Mailchimp Integration', () => {
       await addTagsToSubscriber('Test@Example.COM', ['tag']);
 
       // Both should produce the same hash
-      expect(mockMailchimpClient.lists.updateListMemberTags).toHaveBeenCalled();
+      expect(mockUpdateListMemberTags).toHaveBeenCalled();
     });
   });
 
@@ -156,7 +209,7 @@ describe('Mailchimp Integration', () => {
 
       expect(result.success).toBe(true);
       expect(result.data).toBeDefined();
-      expect(mockMailchimpClient.lists.getListMember).toHaveBeenCalledWith(
+      expect(mockGetListMember).toHaveBeenCalledWith(
         'test-audience-id',
         expect.any(String) // MD5 hash
       );
@@ -164,7 +217,7 @@ describe('Mailchimp Integration', () => {
 
     it('should handle errors when subscriber not found', async () => {
       // Make the mock throw an error for this test
-      mockMailchimpClient.lists.getListMember.mockRejectedValueOnce(
+      mockGetListMember.mockRejectedValueOnce(
         new Error('Subscriber not found')
       );
 

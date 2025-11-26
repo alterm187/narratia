@@ -14,7 +14,7 @@ describe('EmailSignupForm', () => {
       render(<EmailSignupForm variant="inline" language="en" />);
 
       expect(screen.getByLabelText(/first name/i)).toBeInTheDocument();
-      expect(screen.getByLabelText(/email/i)).toBeInTheDocument();
+      expect(screen.getByLabelText(/^email/i)).toBeInTheDocument();
       expect(screen.getByRole('checkbox')).toBeInTheDocument();
       expect(screen.getByRole('button', { name: /subscribe/i })).toBeInTheDocument();
     });
@@ -57,7 +57,7 @@ describe('EmailSignupForm', () => {
   describe('Form Validation', () => {
     it('should mark email as required', () => {
       render(<EmailSignupForm language="en" />);
-      const emailInput = screen.getByLabelText(/email/i);
+      const emailInput = screen.getByLabelText(/^email/i);
       expect(emailInput).toBeRequired();
     });
 
@@ -75,7 +75,7 @@ describe('EmailSignupForm', () => {
 
     it('should have email input type', () => {
       render(<EmailSignupForm language="en" />);
-      const emailInput = screen.getByLabelText(/email/i);
+      const emailInput = screen.getByLabelText(/^email/i);
       expect(emailInput).toHaveAttribute('type', 'email');
     });
   });
@@ -93,7 +93,7 @@ describe('EmailSignupForm', () => {
       const user = userEvent.setup();
       render(<EmailSignupForm language="en" leadMagnet="newsletter" />);
 
-      const emailInput = screen.getByLabelText(/email/i);
+      const emailInput = screen.getByLabelText(/^email/i);
       const consentCheckbox = screen.getByRole('checkbox');
       const submitButton = screen.getByRole('button', { name: /subscribe/i });
 
@@ -132,7 +132,7 @@ describe('EmailSignupForm', () => {
       render(<EmailSignupForm language="en" />);
 
       await user.type(screen.getByLabelText(/first name/i), 'John');
-      await user.type(screen.getByLabelText(/email/i), 'john@example.com');
+      await user.type(screen.getByLabelText(/^email/i), 'john@example.com');
       await user.click(screen.getByRole('checkbox'));
       await user.click(screen.getByRole('button', { name: /subscribe/i }));
 
@@ -158,7 +158,7 @@ describe('EmailSignupForm', () => {
       const user = userEvent.setup();
       render(<EmailSignupForm language="en" />);
 
-      await user.type(screen.getByLabelText(/email/i), 'test@example.com');
+      await user.type(screen.getByLabelText(/^email/i), 'test@example.com');
       await user.click(screen.getByRole('checkbox'));
       await user.click(screen.getByRole('button', { name: /subscribe/i }));
 
@@ -184,7 +184,7 @@ describe('EmailSignupForm', () => {
       const user = userEvent.setup();
       render(<EmailSignupForm language="pl" />);
 
-      await user.type(screen.getByLabelText(/email/i), 'test@example.com');
+      await user.type(screen.getByLabelText(/^email/i), 'test@example.com');
       await user.click(screen.getByRole('checkbox'));
       await user.click(screen.getByRole('button', { name: /zapisz się/i }));
 
@@ -210,7 +210,7 @@ describe('EmailSignupForm', () => {
       const user = userEvent.setup();
       render(<EmailSignupForm language="en" leadMagnet="essay" />);
 
-      await user.type(screen.getByLabelText(/email/i), 'test@example.com');
+      await user.type(screen.getByLabelText(/^email/i), 'test@example.com');
       await user.click(screen.getByRole('checkbox'));
       await user.click(screen.getByRole('button', { name: /subscribe/i }));
 
@@ -236,7 +236,7 @@ describe('EmailSignupForm', () => {
       const user = userEvent.setup();
       render(<EmailSignupForm language="en" />);
 
-      await user.type(screen.getByLabelText(/email/i), 'test@example.com');
+      await user.type(screen.getByLabelText(/^email/i), 'test@example.com');
       await user.click(screen.getByRole('checkbox'));
       await user.click(screen.getByRole('button', { name: /subscribe/i }));
 
@@ -261,7 +261,7 @@ describe('EmailSignupForm', () => {
       const user = userEvent.setup();
       render(<EmailSignupForm language="en" />);
 
-      await user.type(screen.getByLabelText(/email/i), 'test@example.com');
+      await user.type(screen.getByLabelText(/^email/i), 'test@example.com');
       await user.click(screen.getByRole('checkbox'));
 
       const submitButton = screen.getByRole('button', { name: /subscribe/i });
@@ -284,7 +284,7 @@ describe('EmailSignupForm', () => {
       const user = userEvent.setup();
       render(<EmailSignupForm language="en" />);
 
-      await user.type(screen.getByLabelText(/email/i), 'test@example.com');
+      await user.type(screen.getByLabelText(/^email/i), 'test@example.com');
       await user.click(screen.getByRole('checkbox'));
       await user.click(screen.getByRole('button', { name: /subscribe/i }));
 
@@ -306,7 +306,7 @@ describe('EmailSignupForm', () => {
       const user = userEvent.setup();
       render(<EmailSignupForm language="en" onSuccess={onSuccess} />);
 
-      await user.type(screen.getByLabelText(/email/i), 'test@example.com');
+      await user.type(screen.getByLabelText(/^email/i), 'test@example.com');
       await user.click(screen.getByRole('checkbox'));
       await user.click(screen.getByRole('button', { name: /subscribe/i }));
 
@@ -327,7 +327,7 @@ describe('EmailSignupForm', () => {
       const user = userEvent.setup();
       render(<EmailSignupForm language="en" />);
 
-      const emailInput = screen.getByLabelText(/email/i) as HTMLInputElement;
+      const emailInput = screen.getByLabelText(/^email/i) as HTMLInputElement;
       const firstNameInput = screen.getByLabelText(/first name/i) as HTMLInputElement;
       const consentCheckbox = screen.getByRole('checkbox') as HTMLInputElement;
 
@@ -357,7 +357,8 @@ describe('EmailSignupForm', () => {
       const user = userEvent.setup();
       render(<EmailSignupForm language="en" />);
 
-      await user.type(screen.getByLabelText(/email/i), 'invalid@');
+      // Use valid email format to bypass HTML5 validation and test API error handling
+      await user.type(screen.getByLabelText(/^email/i), 'test@example.com');
       await user.click(screen.getByRole('checkbox'));
       await user.click(screen.getByRole('button', { name: /subscribe/i }));
 
@@ -375,7 +376,7 @@ describe('EmailSignupForm', () => {
       const user = userEvent.setup();
       render(<EmailSignupForm language="en" />);
 
-      await user.type(screen.getByLabelText(/email/i), 'test@example.com');
+      await user.type(screen.getByLabelText(/^email/i), 'test@example.com');
       await user.click(screen.getByRole('checkbox'));
       await user.click(screen.getByRole('button', { name: /subscribe/i }));
 
@@ -393,7 +394,7 @@ describe('EmailSignupForm', () => {
       const user = userEvent.setup();
       render(<EmailSignupForm language="pl" />);
 
-      await user.type(screen.getByLabelText(/email/i), 'test@example.com');
+      await user.type(screen.getByLabelText(/^email/i), 'test@example.com');
       await user.click(screen.getByRole('checkbox'));
       await user.click(screen.getByRole('button', { name: /zapisz się/i }));
 
@@ -418,7 +419,7 @@ describe('EmailSignupForm', () => {
       const user = userEvent.setup();
       render(<EmailSignupForm language="en" />);
 
-      await user.type(screen.getByLabelText(/email/i), 'test@example.com');
+      await user.type(screen.getByLabelText(/^email/i), 'test@example.com');
       await user.click(screen.getByRole('checkbox'));
       await user.click(screen.getByRole('button', { name: /subscribe/i }));
 
@@ -440,7 +441,7 @@ describe('EmailSignupForm', () => {
       render(<EmailSignupForm language="en" />);
 
       expect(screen.getByLabelText(/first name/i)).toBeInTheDocument();
-      expect(screen.getByLabelText(/email/i)).toBeInTheDocument();
+      expect(screen.getByLabelText(/^email/i)).toBeInTheDocument();
       expect(screen.getByLabelText(/i agree to receive emails/i)).toBeInTheDocument();
     });
 
@@ -453,7 +454,7 @@ describe('EmailSignupForm', () => {
       expect(screen.getByLabelText(/first name/i)).toHaveFocus();
 
       await user.tab();
-      expect(screen.getByLabelText(/email/i)).toHaveFocus();
+      expect(screen.getByLabelText(/^email/i)).toHaveFocus();
 
       await user.tab();
       expect(screen.getByRole('checkbox')).toHaveFocus();

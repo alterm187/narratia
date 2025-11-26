@@ -1,10 +1,16 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { sendEmail, sendWelcomeEmail } from '@/lib/sendgrid';
-import { mockSendGridClient } from '@/mocks/sendgrid';
+
+// Create mock functions
+const mockSend = vi.fn();
+const mockSetApiKey = vi.fn();
 
 // Mock the SendGrid SDK
 vi.mock('@sendgrid/mail', () => ({
-  default: mockSendGridClient,
+  default: {
+    setApiKey: mockSetApiKey,
+    send: mockSend,
+  },
 }));
 
 // Mock DOMPurify
@@ -18,6 +24,31 @@ describe('SendGrid Integration', () => {
   beforeEach(() => {
     vi.clearAllMocks();
     process.env.SENDGRID_API_KEY = 'SG.test-key';
+
+    // Setup default mock implementation
+    mockSend.mockImplementation((msg: any) => {
+      const toEmail = Array.isArray(msg.to) ? msg.to[0]?.email : msg.to;
+      if (toEmail === 'error@example.com') {
+        const error = new Error('SendGrid API Error') as any;
+        error.code = 400;
+        error.response = {
+          body: {
+            errors: [{ message: 'Invalid email' }],
+          },
+        };
+        return Promise.reject(error);
+      }
+      return Promise.resolve([
+        {
+          statusCode: 202,
+          headers: {
+            'x-message-id': 'mock-message-id-123',
+          },
+          body: '',
+        },
+        {},
+      ]);
+    });
   });
 
   describe('sendEmail', () => {
@@ -32,7 +63,7 @@ describe('SendGrid Integration', () => {
       expect(result.success).toBe(true);
       expect(result.messageId).toBe('mock-message-id-123');
       expect(result.statusCode).toBe(202);
-      expect(mockSendGridClient.send).toHaveBeenCalled();
+      expect(mockSend).toHaveBeenCalled();
     });
 
     it('should send email with recipient name', async () => {
@@ -45,7 +76,7 @@ describe('SendGrid Integration', () => {
       });
 
       expect(result.success).toBe(true);
-      expect(mockSendGridClient.send).toHaveBeenCalledWith(
+      expect(mockSend).toHaveBeenCalledWith(
         expect.objectContaining({
           to: {
             email: 'john@example.com',
@@ -63,7 +94,7 @@ describe('SendGrid Integration', () => {
         text: 'Test',
       });
 
-      expect(mockSendGridClient.send).toHaveBeenCalledWith(
+      expect(mockSend).toHaveBeenCalledWith(
         expect.objectContaining({
           from: {
             email: 'sebastian@narratia.pl',
@@ -113,7 +144,7 @@ describe('SendGrid Integration', () => {
       );
 
       expect(result.success).toBe(true);
-      expect(mockSendGridClient.send).toHaveBeenCalledWith(
+      expect(mockSend).toHaveBeenCalledWith(
         expect.objectContaining({
           to: {
             email: 'test@example.com',
@@ -133,7 +164,7 @@ describe('SendGrid Integration', () => {
       );
 
       expect(result.success).toBe(true);
-      expect(mockSendGridClient.send).toHaveBeenCalledWith(
+      expect(mockSend).toHaveBeenCalledWith(
         expect.objectContaining({
           subject: expect.stringContaining('esej'),
         })
@@ -149,7 +180,7 @@ describe('SendGrid Integration', () => {
       );
 
       expect(result.success).toBe(true);
-      expect(mockSendGridClient.send).toHaveBeenCalledWith(
+      expect(mockSend).toHaveBeenCalledWith(
         expect.objectContaining({
           subject: expect.stringContaining('Chapter'),
         })
@@ -165,7 +196,7 @@ describe('SendGrid Integration', () => {
       );
 
       expect(result.success).toBe(true);
-      expect(mockSendGridClient.send).toHaveBeenCalledWith(
+      expect(mockSend).toHaveBeenCalledWith(
         expect.objectContaining({
           subject: expect.stringContaining('fragmenty'),
         })
@@ -182,7 +213,7 @@ describe('SendGrid Integration', () => {
 
       expect(result.success).toBe(true);
       // The email should use "Reader" as default
-      const call = mockSendGridClient.send.mock.calls[0][0];
+      const call = mockSend.mock.calls[0][0];
       expect(call.html).toContain('Reader');
     });
 
@@ -196,21 +227,21 @@ describe('SendGrid Integration', () => {
 
       expect(result.success).toBe(true);
       // The email should use "Czytelnik" as default
-      const call = mockSendGridClient.send.mock.calls[0][0];
+      const call = mockSend.mock.calls[0][0];
       expect(call.html).toContain('Czytelnik');
     });
 
     it('should include download link in email', async () => {
       await sendWelcomeEmail('test@example.com', 'John', 'en', 'essay');
 
-      const call = mockSendGridClient.send.mock.calls[0][0];
+      const call = mockSend.mock.calls[0][0];
       expect(call.html).toContain('api/download/odbicie-umyslu.pdf');
     });
 
     it('should generate both HTML and text versions', async () => {
       await sendWelcomeEmail('test@example.com', 'John', 'en', 'essay');
 
-      const call = mockSendGridClient.send.mock.calls[0][0];
+      const call = mockSend.mock.calls[0][0];
       expect(call.html).toBeDefined();
       expect(call.text).toBeDefined();
       expect(call.html.length).toBeGreaterThan(0);
@@ -220,7 +251,7 @@ describe('SendGrid Integration', () => {
     it('should personalize with first name', async () => {
       await sendWelcomeEmail('test@example.com', 'Jane', 'en', 'essay');
 
-      const call = mockSendGridClient.send.mock.calls[0][0];
+      const call = mockSend.mock.calls[0][0];
       expect(call.html).toContain('Jane');
       expect(call.text).toContain('Jane');
     });
@@ -228,7 +259,7 @@ describe('SendGrid Integration', () => {
     it('should include correct download link for chapters', async () => {
       await sendWelcomeEmail('test@example.com', 'John', 'en', 'chapters');
 
-      const call = mockSendGridClient.send.mock.calls[0][0];
+      const call = mockSend.mock.calls[0][0];
       expect(call.html).toContain('/en/download/chapters');
     });
   });

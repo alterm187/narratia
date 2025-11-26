@@ -137,7 +137,7 @@ describe('POST /api/contact', () => {
     expect(sgMail.send).toHaveBeenCalledWith(
       expect.objectContaining({
         to: expect.objectContaining({
-          email: 'sebastian.narratia@gmail.com',
+          email: 'test@narratia.com', // Uses OWNER_EMAIL from env
         }),
         html: expect.stringContaining('sender@example.com'),
       })

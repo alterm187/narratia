@@ -36,11 +36,6 @@ describe('ContactForm', () => {
   beforeEach(() => {
     vi.clearAllMocks();
     global.fetch = vi.fn();
-    vi.useFakeTimers();
-  });
-
-  afterEach(() => {
-    vi.useRealTimers();
   });
 
   describe('Rendering', () => {
@@ -48,7 +43,7 @@ describe('ContactForm', () => {
       render(<ContactForm dict={mockDict} />);
 
       expect(screen.getByLabelText(/name/i)).toBeInTheDocument();
-      expect(screen.getByLabelText(/email/i)).toBeInTheDocument();
+      expect(screen.getByLabelText(/^email/i)).toBeInTheDocument();
       expect(screen.getByLabelText(/message/i)).toBeInTheDocument();
       expect(screen.getByRole('button', { name: /send message/i })).toBeInTheDocument();
     });
@@ -70,7 +65,7 @@ describe('ContactForm', () => {
 
     it('should mark email as required', () => {
       render(<ContactForm dict={mockDict} />);
-      const emailInput = screen.getByLabelText(/email/i);
+      const emailInput = screen.getByLabelText(/^email/i);
       expect(emailInput).toBeRequired();
     });
 
@@ -82,7 +77,7 @@ describe('ContactForm', () => {
 
     it('should have email input type', () => {
       render(<ContactForm dict={mockDict} />);
-      const emailInput = screen.getByLabelText(/email/i);
+      const emailInput = screen.getByLabelText(/^email/i);
       expect(emailInput).toHaveAttribute('type', 'email');
     });
   });
@@ -101,7 +96,7 @@ describe('ContactForm', () => {
       render(<ContactForm dict={mockDict} />);
 
       await user.type(screen.getByLabelText(/name/i), 'John Doe');
-      await user.type(screen.getByLabelText(/email/i), 'john@example.com');
+      await user.type(screen.getByLabelText(/^email/i), 'john@example.com');
       await user.type(screen.getByLabelText(/message/i), 'This is a test message');
       await user.click(screen.getByRole('button', { name: /send message/i }));
 
@@ -134,7 +129,7 @@ describe('ContactForm', () => {
       render(<ContactForm dict={mockDict} />);
 
       await user.type(screen.getByLabelText(/name/i), 'John Doe');
-      await user.type(screen.getByLabelText(/email/i), 'john@example.com');
+      await user.type(screen.getByLabelText(/^email/i), 'john@example.com');
       await user.type(screen.getByLabelText(/message/i), 'Test message');
 
       const submitButton = screen.getByRole('button', { name: /send message/i });
@@ -158,7 +153,7 @@ describe('ContactForm', () => {
       render(<ContactForm dict={mockDict} />);
 
       await user.type(screen.getByLabelText(/name/i), 'John Doe');
-      await user.type(screen.getByLabelText(/email/i), 'john@example.com');
+      await user.type(screen.getByLabelText(/^email/i), 'john@example.com');
       await user.type(screen.getByLabelText(/message/i), 'Test message');
 
       const submitButton = screen.getByRole('button', { name: /send message/i });
@@ -182,7 +177,7 @@ describe('ContactForm', () => {
       render(<ContactForm dict={mockDict} />);
 
       await user.type(screen.getByLabelText(/name/i), 'John Doe');
-      await user.type(screen.getByLabelText(/email/i), 'john@example.com');
+      await user.type(screen.getByLabelText(/^email/i), 'john@example.com');
       await user.type(screen.getByLabelText(/message/i), 'Test message');
       await user.click(screen.getByRole('button', { name: /send message/i }));
 
@@ -204,7 +199,7 @@ describe('ContactForm', () => {
       render(<ContactForm dict={mockDict} />);
 
       const nameInput = screen.getByLabelText(/name/i) as HTMLInputElement;
-      const emailInput = screen.getByLabelText(/email/i) as HTMLInputElement;
+      const emailInput = screen.getByLabelText(/^email/i) as HTMLInputElement;
       const messageInput = screen.getByLabelText(/message/i) as HTMLTextAreaElement;
 
       await user.type(nameInput, 'John Doe');
@@ -220,6 +215,7 @@ describe('ContactForm', () => {
     });
 
     it('should clear success message after 5 seconds', async () => {
+      vi.useFakeTimers();
       const mockFetch = vi.fn(() =>
         Promise.resolve({
           ok: true,
@@ -232,7 +228,7 @@ describe('ContactForm', () => {
       render(<ContactForm dict={mockDict} />);
 
       await user.type(screen.getByLabelText(/name/i), 'John Doe');
-      await user.type(screen.getByLabelText(/email/i), 'john@example.com');
+      await user.type(screen.getByLabelText(/^email/i), 'john@example.com');
       await user.type(screen.getByLabelText(/message/i), 'Test message');
       await user.click(screen.getByRole('button', { name: /send message/i }));
 
@@ -246,6 +242,8 @@ describe('ContactForm', () => {
       await waitFor(() => {
         expect(screen.queryByText(/message sent successfully/i)).not.toBeInTheDocument();
       });
+
+      vi.useRealTimers();
     });
   });
 
@@ -263,7 +261,7 @@ describe('ContactForm', () => {
       render(<ContactForm dict={mockDict} />);
 
       await user.type(screen.getByLabelText(/name/i), 'John Doe');
-      await user.type(screen.getByLabelText(/email/i), 'john@example.com');
+      await user.type(screen.getByLabelText(/^email/i), 'john@example.com');
       await user.type(screen.getByLabelText(/message/i), 'Test message');
       await user.click(screen.getByRole('button', { name: /send message/i }));
 
@@ -282,7 +280,7 @@ describe('ContactForm', () => {
       render(<ContactForm dict={mockDict} />);
 
       await user.type(screen.getByLabelText(/name/i), 'John Doe');
-      await user.type(screen.getByLabelText(/email/i), 'john@example.com');
+      await user.type(screen.getByLabelText(/^email/i), 'john@example.com');
       await user.type(screen.getByLabelText(/message/i), 'Test message');
       await user.click(screen.getByRole('button', { name: /send message/i }));
 
@@ -292,6 +290,7 @@ describe('ContactForm', () => {
     });
 
     it('should clear error message after 5 seconds', async () => {
+      vi.useFakeTimers();
       const mockFetch = vi.fn(() =>
         Promise.resolve({
           ok: false,
@@ -304,7 +303,7 @@ describe('ContactForm', () => {
       render(<ContactForm dict={mockDict} />);
 
       await user.type(screen.getByLabelText(/name/i), 'John Doe');
-      await user.type(screen.getByLabelText(/email/i), 'john@example.com');
+      await user.type(screen.getByLabelText(/^email/i), 'john@example.com');
       await user.type(screen.getByLabelText(/message/i), 'Test message');
       await user.click(screen.getByRole('button', { name: /send message/i }));
 
@@ -317,6 +316,8 @@ describe('ContactForm', () => {
       await waitFor(() => {
         expect(screen.queryByText(/failed to send message/i)).not.toBeInTheDocument();
       });
+
+      vi.useRealTimers();
     });
 
     it('should allow retry after error', async () => {
@@ -336,7 +337,7 @@ describe('ContactForm', () => {
       render(<ContactForm dict={mockDict} />);
 
       await user.type(screen.getByLabelText(/name/i), 'John Doe');
-      await user.type(screen.getByLabelText(/email/i), 'john@example.com');
+      await user.type(screen.getByLabelText(/^email/i), 'john@example.com');
       await user.type(screen.getByLabelText(/message/i), 'Test message');
       await user.click(screen.getByRole('button', { name: /send message/i }));
 
@@ -353,7 +354,7 @@ describe('ContactForm', () => {
 
       // Retry - need to re-enter data since form was reset
       await user.type(screen.getByLabelText(/name/i), 'John Doe');
-      await user.type(screen.getByLabelText(/email/i), 'john@example.com');
+      await user.type(screen.getByLabelText(/^email/i), 'john@example.com');
       await user.type(screen.getByLabelText(/message/i), 'Test message again');
       await user.click(screen.getByRole('button', { name: /send message/i }));
 
@@ -368,7 +369,7 @@ describe('ContactForm', () => {
       render(<ContactForm dict={mockDict} />);
 
       expect(screen.getByLabelText(/name/i)).toBeInTheDocument();
-      expect(screen.getByLabelText(/email/i)).toBeInTheDocument();
+      expect(screen.getByLabelText(/^email/i)).toBeInTheDocument();
       expect(screen.getByLabelText(/message/i)).toBeInTheDocument();
     });
 
@@ -381,7 +382,7 @@ describe('ContactForm', () => {
       expect(screen.getByLabelText(/name/i)).toHaveFocus();
 
       await user.tab();
-      expect(screen.getByLabelText(/email/i)).toHaveFocus();
+      expect(screen.getByLabelText(/^email/i)).toHaveFocus();
 
       await user.tab();
       expect(screen.getByLabelText(/message/i)).toHaveFocus();
